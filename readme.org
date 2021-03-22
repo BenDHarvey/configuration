@@ -5,13 +5,37 @@ This repo aims to be the source of truth for configuration items. This includes 
 * Folder structure:
 
 #+begin_src
-| ./  |              |   |       |
-| ├── | ansible      |   |       | <-- Holds ansible src files
-| ├── | dotfiles     |   |       | <-- Dotfiles used for application configuration
-| ├── | readme.org   |   |       |
-| ├── | scripts      |   |       | <-- Scripts for orchestrating instal and calling of anisble playbooks
-| ├── | secrets      |   |       | <-- Encrypted secrets
+| .   |                          |   |       |
+| ├── | ansible-requirements.yml |   |       |
+| ├── | dns                      |   |       |
+| ├── | dotfiles                 |   |       |
+| ├── | endpoints                |   |       |
+| ├── | git                      |   |       |
+| ├── | notsosecret              |   |       |
+| ├── | readme.org               |   |       |
+| ├── | scripts                  |   |       |
+| ├── | secrets                  |   |       |
+| ├── | servers                  |   |       |
+| └── | todo.org                 |   |       |
+|     |                          |   |       |
 #+end_src
+
+** dns
+Contains configuration for dns on various domains. Uses ansible to control configuration
+** dotfiles
+Contains dotfiles and other similar assets that are linked to correct locations during the install process
+** endpoints
+Configuration for workstations and other endpoints that are interfaced directly. Contains ansible scripts to install and configure an endpoint read for working on. Supports macOS and pop_os at this point
+** git
+Terraform code that setups git repos in github
+** notsosecret
+Contains keys and files that are not so secret and do not need to be encrypted with sops
+** scripts
+Nice to have scripts that can start a lot of the deploy process used in this repo. They will generally unencrypt environment variables before kicking off process
+** secrets
+sops gpg encrypted secrets
+** servers
+Ansible playbooks to configure servers ready for use
 
 * Encrytpion of secrets
 
