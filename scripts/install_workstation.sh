@@ -79,7 +79,7 @@ TEMP_DIR="/tmp/configuration"
 
 echo "[git] - cloning the configuration repository to $TEMP_DIR"
 if [ -d "$TEMP_DIR" ]; then rm -Rf $TEMP_DIR; fi
-git clone https://gitlab.com/benharvey/configuration.git /tmp/configuration
+git clone https://github.com/BenDHarvey/configuration.git /tmp/configuration
 
 echo "[ansible] - Installing required ansible pacakges"
 ansible-galaxy install -r /tmp/configuration/ansible-requirements.yml
