@@ -6,7 +6,7 @@
   tasks:
     - name: Checkout configuration repo
       ansible.builtin.git:
-        repo: "git@gitlab.com:benharvey/configuration.git"
+        repo: "https://github.com/BenDHarvey/configuration.git"
         dest: "{{ lookup('env','HOME') }}/.configuration"
         key_file: "{{ lookup('env','HOME') }}/.ssh/id_rsa_personal"
         version: master
