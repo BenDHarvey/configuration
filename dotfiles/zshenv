@@ -1,0 +1,43 @@
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
+
+case `uname` in
+  Darwin)
+    # commands for OS X go hereo
+  export GOPATH=$HOME/Workspace/Go
+  export PATH=$PATH:$GOPATH/bin
+  export PATH=$PATH:$GOROOT/bin
+
+	export PATH="$PATH:$HOME/Workspace/github.com/flutter/bin"
+  export PATH="$PATH:$HOME/Workspace/flutter/bin"
+
+	export PATH=$PATH:/Users/bharvey/Library/Python/2.7/bin
+
+  export ANDROID_HOME=/usr/local/share/android-sdk
+  export PATH="$PATH:/Users/benharvey/.dotnet/tools"
+
+  unset GOROOT
+  ;;
+  Linux)
+    # commands for Linux go here
+	#export GOROOT=/usr/local/go/bin
+	export PATH=$PATH:/usr/local/go/bin
+	export GOPATH=$HOME/Workspace/Go
+	export GOBIN=$GOPATH/bin
+	export PATH=$PATH:$GOPATH
+	export PATH=$PATH:$GOBIN
+
+  unset GOROOT
+
+	export PATH="$PATH:$HOME/Workspace/github.com/flutter/bin"
+  export PATH="$PATH:$HOME/Workspace/flutter/bin"
+  ;;
+  FreeBSD)
+    # commands for FreeBSD go here
+  ;;
+esac
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+GPG_TTY=$(tty)
+export GPG_TTY

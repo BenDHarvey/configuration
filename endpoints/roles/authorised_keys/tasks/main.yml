@@ -1,0 +1,11 @@
+---
+- name: Load public keys from file
+  include_vars:
+    file: "{{ lookup('env','HOME') }}/.configuration/notsosecret/ssh.yml"
+    name: ssh
+
+- name: Set authorized key
+  authorized_key:
+    user: ben
+    state: present
+    key: "{{ ssh.personal_public_key }}"

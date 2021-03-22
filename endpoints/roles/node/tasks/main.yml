@@ -1,0 +1,49 @@
+---
+- name: Check if nvm is already installed
+  stat:
+    path: "{{ lookup('env','HOME') }}/.nvm"
+  register: nvm_dir
+
+- include: install_nvm.yml
+  when: nvm_dir.stat.exists == false
+
+- include: update_nvm.yml
+  when: nvm_dir.stat.exists == true
+
+- name: Check if node version -> {{ node_version }} has been installed
+  stat:
+    path: "{{ lookup('env','HOME') }}/.nvm/versions/node/v{{ node_version }}"
+  register: node_version_installed
+
+- name: Install node version -> {{ node_version }}
+  ansible.builtin.shell: |
+    export NVM_DIR="{{ lookup('env','HOME') }}/.nvm"
+    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+
+    nvm --version
+
+    nvm install {{ node_version }}
+  when: node_version_installed.stat.exists == false
+
+- name: Alias default to node version -> {{ node_version }}
+  ansible.builtin.shell: |
+    export NVM_DIR="{{ lookup('env','HOME') }}/.nvm"
+    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+
+    nvm --version
+
+    nvm alias default {{ node_version }}
+    nvm use default
+    node -v
+
+- name: Install global nodejs packages
+  ansible.builtin.shell: |
+    export NVM_DIR="{{ lookup('env','HOME') }}/.nvm"
+    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+
+    nvm --version
+
+    export PATH=$PATH:{{ lookup('env','HOME') }}/.nvm/versions/node/v{{ node_version }}/bin
+
+    npm install -g {{ item }}
+  loop: "{{ global_node_packages }}"

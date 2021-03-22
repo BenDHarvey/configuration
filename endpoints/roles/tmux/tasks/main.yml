@@ -1,0 +1,17 @@
+---
+- name: Remove tmux config if it exists
+  file:
+    path: "{{ lookup('env','HOME') }}/.tmux.conf"
+    state: absent
+
+- name: Link tmux config from dotfiles
+  file:
+    src: "{{ lookup('env','HOME') }}/.configuration/dotfiles/tmux.conf"
+    dest: "{{ lookup('env','HOME') }}/.tmux.conf"
+    state: link
+
+- name: Checkout tmux-plugins repo
+  ansible.builtin.git:
+    repo: "https://github.com/tmux-plugins/tpm"
+    dest: "{{ lookup('env','HOME') }}/.tmux/plugins/tpm"
+    version: master

@@ -1,0 +1,18 @@
+---
+all:
+  hosts:
+    control-k8s-master-1:
+    control-k8s-node-1:
+    control-rancher-1:
+  children:
+    rancher-children:
+      children:
+        rancher-admin:
+        rancher-master:
+        rancher-node:
+    rancher-admin:
+      hosts:
+        control-rancher-1:
+    rancher-master:
+      hosts:
+        control-k8s-master-1:

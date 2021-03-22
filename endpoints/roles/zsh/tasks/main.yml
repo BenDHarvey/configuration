@@ -1,0 +1,33 @@
+---
+- name: Check if oh-my-zsh is already installed
+  stat:
+    path: "{{ lookup('env','HOME') }}/.oh-my-zsh"
+  register: omz_dir
+
+- include: install_omz.yml
+  when: omz_dir.stat.exists == false
+
+- include: update_omz.yml
+  when: omz_dir.stat.exists == true
+
+- name: Remove file zshrc file
+  file:
+    path: "{{ lookup('env','HOME') }}/.zshrc"
+    state: absent
+
+- name: Link zshrc
+  file:
+    src: "{{ lookup('env','HOME') }}/.configuration/dotfiles/zshrc"
+    dest: "{{ lookup('env','HOME') }}/.zshrc"
+    state: link
+
+- name: Remove file zshenv file
+  file:
+    path: "{{ lookup('env','HOME') }}/.zshenv"
+    state: absent
+
+- name: Link zshenv
+  file:
+    src: "{{ lookup('env','HOME') }}/.configuration/dotfiles/zshenv"
+    dest: "{{ lookup('env','HOME') }}/.zshenv"
+    state: link

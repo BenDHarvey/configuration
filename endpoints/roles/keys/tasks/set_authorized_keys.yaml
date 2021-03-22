@@ -1,0 +1,11 @@
+---
+- name: Load variables from file and store them in a variable
+  community.sops.load_vars:
+    file: /tmp/configuration/secrets/ssh.yaml
+    name: keys
+
+- name: Set authorized key taken from file
+  ansible.posix.authorized_key:
+    user: "{{ lookup('env', 'USER') }}"
+    state: present
+    key: "{{ keys.ssh_keys.personal_public_key }}"

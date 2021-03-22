@@ -1,0 +1,10 @@
+---
+- name: Install oh-my-zsh
+  shell: sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+  register: shell_result
+#- name: Install oh-my-zsh
+#  shell:  chsh -s $(which zsh) $(whoami)
+#  register: shell_result
+#
+#- debug:
+#    var: shell_result.stdout_lines

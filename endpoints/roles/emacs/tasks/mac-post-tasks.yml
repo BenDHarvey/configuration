@@ -1,0 +1,12 @@
+- name: Link emacs to applications
+  file:
+    src: /opt/homebrew/opt/emacs-plus@27/Emacs.app
+    dest: /Applications/Emacs.app
+    state: link
+
+- name: Start the brew service for emacs
+  shell: brew services start d12frosted/emacs-plus/emacs-plus@27
+  register: shell_result
+
+- debug:
+    var: shell_result.stdout_lines

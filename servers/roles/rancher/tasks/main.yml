@@ -1,0 +1,10 @@
+- name: Run the rancher admin container
+  community.docker.docker_container:
+    name: rancher-admin
+    image: rancher/rancher:latest
+    state: started
+    privileged: yes
+    restart_policy: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"

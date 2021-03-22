@@ -1,0 +1,35 @@
+---
+- name: Creates Workspace directory
+  file:
+    path: "{{ lookup('env','HOME') }}/Workspace"
+    state: directory
+
+- name: Creates Workspace directory
+  file:
+    path: "{{ lookup('env','HOME') }}/Workspace/github.com/bdharvey"
+    state: directory
+
+- name: Creates Workspace directory
+  file:
+    path: "{{ lookup('env','HOME') }}/Workspace/gitlab.com/benharvey"
+    state: directory
+
+- name: Creates Workspace directory
+  file:
+    path: "{{ lookup('env','HOME') }}/Workspace/Go/src"
+    state: directory
+
+- name: Creates Workspace directory
+  file:
+    path: "{{ lookup('env','HOME') }}/Workspace/Go/pkg"
+    state: directory
+
+- name: Creates Workspace directory
+  file:
+    path: "{{ lookup('env','HOME') }}/Workspace/Go/bin"
+    state: directory
+
+- name: Creates Workspace directory
+  file:
+    path: "{{ lookup('env','HOME') }}/Workspace/flutter"
+    state: directory

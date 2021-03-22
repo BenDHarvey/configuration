@@ -1,0 +1,53 @@
+#+TITLE: Configuration
+
+This repo aims to be the source of truth for configuration items. This includes dotfile, terraform assets for managing infrastructure and ansible scripts for running config on various machines.
+
+* Folder structure:
+
+#+begin_src
+| ./  |              |   |       |
+| ├── | ansible      |   |       | <-- Holds ansible src files
+| ├── | dotfiles     |   |       | <-- Dotfiles used for application configuration
+| ├── | readme.org   |   |       |
+| ├── | scripts      |   |       | <-- Scripts for orchestrating instal and calling of anisble playbooks
+| ├── | secrets      |   |       | <-- Encrypted secrets
+#+end_src
+
+* Encrytpion of secrets
+
+The sops library is being used to encrypt all secrets so that they can be stored in git. PGP keys are being used on local machine to decrypt these values and put them in the relivant locations. More information about sops can be found [[https://github.com/mozilla/sops][here]].
+
+** .sops.yaml
+
+The `.sops.yaml` file is being used here to provide some configuration about what keys should be used to encrypt files. More info about this file can be found in the sops documentation.
+
+** Some useful sops commands
+
+To open a sops encrypted file the `sops` command is used. Example of opening a file
+#+begin_src sh
+sops ./secrets/example.yaml
+#+end_src
+
+This will decrypt the file (prompting for a password if needed) and open in the editor. NB: Used the EDITOR environment variable to decide what program to open file with
+
+** Print secrets to stdout
+sops can be used to print secrets to the terminal
+#+begin_src sh
+sops -d ./secrets/example.yaml
+#+end_src
+
+** More Documentation
+sops has some great docs. If in doubt have a look through some example [[https://github.com/mozilla/sops][here]]
+
+* Setting up a new workstation
+
+The aim of this project is to be able to setup a new workstation by running a single script. A workstation can be using one of the following OS's/architectures:
+
+- macos (either m1 arm of amd64)
+- pop_os (preferred linux distribution)
+
+#+begin_src
+Scripts and playbooks have been tested on these two architectures
+#+end_src
+
+* Setting up a server

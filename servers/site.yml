@@ -1,0 +1,36 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+    - name: Update apt repo and cache on all Debian/Ubuntu boxes
+      become: yes
+      apt: update_cache=yes force_apt_get=yes cache_valid_time=3600
+
+    - name: Upgrade all packages on servers
+      become: yes
+      apt: upgrade=dist force_apt_get=yes
+
+    - name: Check if a reboot is needed on all servers
+      become: yes
+      register: reboot_required_file
+      stat: path=/var/run/reboot-required get_md5=no
+
+    - name: Reboot the box if kernel updated
+      become: yes
+      reboot:
+      when: reboot_required_file.stat.exists
+
+- hosts: rancher-children
+  become: yes
+  roles:
+    - docker
+
+- hosts: rancher-admin
+  become: yes
+  roles:
+    - rancher
+
+- hosts: rancher-master
+  become: yes
+  roles:
+    - rancher-master

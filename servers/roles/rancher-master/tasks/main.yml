@@ -1,0 +1,17 @@
+---
+- name: Run a rancher master node
+  become: yes
+  community.docker.docker_container:
+    name: rancher-master
+    image: rancher/rancher-agent:v2.5.7
+    state: started
+    privileged: yes
+    restart_policy: unless-stopped
+    network_mode: host
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - "/etc/kubernetes:/etc/kubernetes"
+      - "/var/run:/var/run"
+    command: --server http://control-rancher-1 --token d7464cv7lh4wnhl924pfxppmh5b5pd58vrlthxgv5cqp7nwds2pssv --ca-checksum 5ddd80d3db56cf77819ea21d79a1f2b5b271fa7c55a72434018f1f4e518a4a0a --etcd --controlplane --worker

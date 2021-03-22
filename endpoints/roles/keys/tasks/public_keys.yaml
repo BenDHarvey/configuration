@@ -1,0 +1,53 @@
+---
+- name: Check if the configuration repository has already been cloned to the correct spot
+  stat:
+    path: "{{ lookup('env','HOME') }}/.configuration"
+  register: config_dir
+
+- name: Load secret variables from the temp directory on first run
+  community.sops.load_vars:
+    file: /tmp/configuration/secrets/ssh.yaml
+    name: keys
+  when: config_dir.stat.exists == false
+
+- name: Load secret variables from the configuration repository
+  community.sops.load_vars:
+    file: "{{ lookup('env','HOME') }}/.configuration/secrets/ssh.yaml"
+    name: keys
+  when: config_dir.stat.exists == true
+
+- name: Add SSH personal public key - macos
+  ansible.builtin.copy:
+    content: "{{ keys.ssh_keys.personal_public_key }}"
+    dest: "{{ lookup('env','HOME') }}/.ssh/id_rsa_personal.pub"
+    owner: "{{ lookup('env', 'USER') }}"
+    group: "staff"
+    mode: 0600
+  when: ansible_distribution == "MacOSX"
+
+- name: Add SSH personal public key - linux
+  ansible.builtin.copy:
+    content: "{{ keys.ssh_keys.personal_public_key }}"
+    dest: "{{ lookup('env','HOME') }}/.ssh/id_rsa_personal.pub"
+    owner: "{{ lookup('env', 'USER') }}"
+    group: "{{ lookup('env', 'USER') }}"
+    mode: 0600
+  when: ansible_distribution != "MacOSX"
+
+- name: Add SSH switchdin public key - macos
+  ansible.builtin.copy:
+    content: "{{ keys.ssh_keys.switchdin_public_key }}"
+    dest: "{{ lookup('env','HOME') }}/.ssh/id_rsa_switchdin.pub"
+    owner: "{{ lookup('env', 'USER') }}"
+    group: "staff"
+    mode: 0600
+  when: ansible_distribution == "MacOSX"
+
+- name: Add SSH switchdin public key - linux
+  ansible.builtin.copy:
+    content: "{{ keys.ssh_keys.switchdin_public_key }}"
+    dest: "{{ lookup('env','HOME') }}/.ssh/id_rsa_switchdin.pub"
+    owner: "{{ lookup('env', 'USER') }}"
+    group: "{{ lookup('env', 'USER') }}"
+    mode: 0600
+  when: ansible_distribution != "MacOSX"

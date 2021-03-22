@@ -1,0 +1,36 @@
+---
+- hosts: localhost
+  #  gather_facts: true
+  roles:
+    - keys
+  tasks:
+    - name: Checkout configuration repo
+      ansible.builtin.git:
+        repo: "git@gitlab.com:benharvey/configuration.git"
+        dest: "{{ lookup('env','HOME') }}/.configuration"
+        key_file: "{{ lookup('env','HOME') }}/.ssh/id_rsa_personal"
+        version: master
+        accept_hostkey: yes
+
+    - name: Find the ansible-playbook exe
+      command: "which ansible-playbook"
+      register: ansible_playbook_path
+
+    - name: Update the git repo ready for ansible to run update
+      ansible.builtin.cron:
+        user: "{{ lookup('env', 'USER') }}"
+        name: "Update configuration playbooks"
+        minute: "55"
+        job: "ansible-playbook --verbose {{ lookup('env','HOME') }}/.configuration/ansible/update_configuration.yml >> /tmp/configuration-udpate-ansible-log.txt"
+        disabled: true
+
+    - name: Add crontab entry to run update script each hour
+      ansible.builtin.cron:
+        user: "{{ lookup('env', 'USER') }}"
+        name: "ansible update"
+        minute: "59"
+        job: "ansible-playbook --verbose {{ lookup('env','HOME') }}/.configuration/ansible/workstation.yml >> /tmp/ansible-log.txt"
+        disabled: true
+
+- name: Run the workstation playbook for the first time
+  import_playbook: workstation.yml

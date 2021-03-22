@@ -1,0 +1,6 @@
+* Inbox
+** TODO Complete this file
+- Added this to run ansible commands through docker
+- This should allow for running ansible on mac m1 system as well as new amd64 systems
+
+[[file:~/Workspace/gitlab.com/benharvey/configuration/scripts/install_workstation.sh::Example docker command]]

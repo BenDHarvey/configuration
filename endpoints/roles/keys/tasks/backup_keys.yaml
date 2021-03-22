@@ -1,0 +1,72 @@
+---
+- name: Create a directory if it does not exist
+  ansible.builtin.file:
+    path: "{{ lookup('env','HOME') }}/.ssh/backup"
+    state: directory
+    mode: "0755"
+
+####
+#### REMOVE THIS ONCE id_rsa and id_rsa.pub have been phased out
+####
+- name: Check if personal private key already exists - DEPRECIATED
+  stat: path="{{ lookup('env','HOME') }}/.ssh/id_rsa"
+  register: key
+
+- name: Move existing key to backup dir
+  command: mv "{{ lookup('env','HOME') }}/.ssh/id_rsa" "{{ lookup('env','HOME') }}/.ssh/backup/id_rsa_{{ ansible_date_time.epoch}}"
+  when: key.stat.exists
+
+- name: Check if personal public key already exists - DEPRECIATED
+  stat: path="{{ lookup('env','HOME') }}/.ssh/id_rsa.pub"
+  register: key_public
+
+- name: Move existing key to backup dir
+  command: mv "{{ lookup('env','HOME') }}/.ssh/id_rsa.pub" "{{ lookup('env','HOME') }}/.ssh/backup/id_rsa_pub_{{ ansible_date_time.epoch}}"
+  when: key_public.stat.exists
+####
+#### REMOVE THIS ONCE id_rsa and id_rsa.pub have been phased out
+####
+
+####
+#### Backup personal keys
+####
+- name: Check if personal private key already exists
+  stat: path="{{ lookup('env','HOME') }}/.ssh/id_rsa_personal"
+  register: personal_private_key
+
+- name: Move existing private key to backup dir
+  command: mv "{{ lookup('env','HOME') }}/.ssh/id_rsa_personal" "{{ lookup('env','HOME') }}/.ssh/backup/id_rsa_personal_{{ ansible_date_time.epoch}}"
+  when: personal_private_key.stat.exists
+
+- name: Check if personal public key already exists
+  stat: path="{{ lookup('env','HOME') }}/.ssh/id_rsa_personal.pub"
+  register: personal_public_key
+
+- name: Move existing public key to backup dir
+  command: mv "{{ lookup('env','HOME') }}/.ssh/id_rsa_personal.pub" "{{ lookup('env','HOME') }}/.ssh/backup/id_rsa_personal_pub_{{ ansible_date_time.epoch}}"
+  when: personal_public_key.stat.exists
+####
+#### Backup personal keys
+####
+
+####
+#### Backup switchdin keys
+####
+- name: Check if switchdin private key already exists
+  stat: path="{{ lookup('env','HOME') }}/.ssh/id_rsa_switchdin"
+  register: switchdin_private_key
+
+- name: Move existing private key to backup dir
+  command: mv "{{ lookup('env','HOME') }}/.ssh/id_rsa_switchdin" "{{ lookup('env','HOME') }}/.ssh/backup/id_rsa_switchdin_{{ ansible_date_time.epoch}}"
+  when: switchdin_private_key.stat.exists
+
+- name: Check if switchdin public key already exists
+  stat: path="{{ lookup('env','HOME') }}/.ssh/id_rsa_switchdin.pub"
+  register: switchdin_public_key
+
+- name: Move existing switchdin public key to backup dir
+  command: mv "{{ lookup('env','HOME') }}/.ssh/id_rsa_switchdin.pub" "{{ lookup('env','HOME') }}/.ssh/backup/id_rsa_switchdin_pub_{{ ansible_date_time.epoch}}"
+  when: personal_public_key.stat.exists
+####
+#### Backup switchdin keys
+####

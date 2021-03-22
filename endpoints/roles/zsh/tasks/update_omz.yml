@@ -1,0 +1,5 @@
+- name: oh-my-zsh already installed - Updating
+  ansible.builtin.shell: |
+    cd {{ lookup('env','HOME') }}/.oh-my-zsh
+
+    git pull

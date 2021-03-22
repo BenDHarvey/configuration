@@ -1,0 +1,80 @@
+---
+apt_packages:
+  - vim
+  - tmux
+  - git
+  - neovim
+  - xclip
+  - jq
+  - zsh
+  - ripgrep
+  - fd-find
+  - htop
+  - terraform
+  - awscli
+  - kitty
+  - make
+  - nfs-common
+  - docker-compose
+  - python3-pip
+  - python3-venv
+  - net-tools
+  - python2
+  - python3
+  - ranger
+  - python3-dev
+  - libpq-dev
+  - git
+  - virtualenv
+  - tree
+  - golang
+
+snap_packages:
+  - k9s
+
+snap_packages_classic:
+  - kubectl
+  - helm
+  - code
+  - emacs
+
+global_node_packages:
+  - typescript
+  - tslint
+  - prettier
+  - typescript-language-server
+  - jest
+  - "@nestjs/cli"
+  - js-beautify
+  - "@angular/cli"
+  - "@angular/language-server"
+
+homebrew_packages:
+  - nvim
+  - tmux
+  - emacs-plus@27
+  - htop
+  - golang
+  - zsh
+  #  - google-chrome
+  #  - brave-browser
+  - terraform
+  - ranger
+  - jq
+  - ripgrep
+  - fd
+  - awscli
+  - k9s
+  - reattach-to-user-namespace
+  - cocoapods
+  - rsync
+  - tree
+#  - osxfuse // TODO: Work out why this is not installing correctly
+
+homebrew_packages_build_from_source:
+#  - sshfs // TODO: Work out why this is not installing correctly
+
+homebrew_taps:
+  - d12frosted/emacs-plus
+
+node_version: 15.10.0

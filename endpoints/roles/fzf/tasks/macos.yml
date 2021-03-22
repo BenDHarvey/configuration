@@ -1,0 +1,11 @@
+---
+- community.general.homebrew:
+    name: fzf
+    state: present
+
+- name: Run install command to get bash completion
+  shell:  $(brew --prefix)/opt/fzf/install --all
+  register: shell_result
+
+- debug:
+    var: shell_result.stdout_lines

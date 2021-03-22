@@ -1,0 +1,8 @@
+# Add all ssh identities
+IdentityFile ~/.ssh/id_rsa_personal
+IdentityFile ~/.ssh/id_rsa_switchdin
+
+Host switchdin-bitbucket
+    Hostname bitbucket.com
+    User git
+    IdentityFile ~/.ssh/switchdin_rsa

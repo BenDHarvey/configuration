@@ -1,0 +1,11 @@
+---
+- hosts: localhost
+  vars:
+    harvey_onl_zone: "harvey.onl"
+  pre_tasks:
+    - name: Load secret variables from the configuration repository
+      community.sops.load_vars:
+        file: "{{ lookup('env','HOME') }}/.configuration/secrets/aws.yaml"
+        name: keys
+  roles:
+    - harvey_onl

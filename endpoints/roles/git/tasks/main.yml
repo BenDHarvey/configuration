@@ -1,0 +1,43 @@
+---
+- name: Remove gitconfig if it exists
+  file:
+    path: "{{ lookup('env','HOME') }}/.gitconfig"
+    state: absent
+
+- name: Link assets gitconfig file
+  file:
+    src: "{{ lookup('env','HOME') }}/.configuration/dotfiles/gitconfig"
+    dest: "{{ lookup('env','HOME') }}/.gitconfig"
+    state: link
+
+- name: Remove gitconfig-ben if it exists
+  file:
+    path: "{{ lookup('env','HOME') }}/.gitconfig-ben"
+    state: absent
+
+- name: Link assets gitconfig-ben file
+  file:
+    src: "{{ lookup('env','HOME') }}/.configuration/dotfiles/gitconfig-ben"
+    dest: "{{ lookup('env','HOME') }}/.gitconfig-ben"
+    state: link
+
+- name: Remove gitconfig-switchdin if it exists
+  file:
+    path: "{{ lookup('env','HOME') }}/.gitconfig-switchdin"
+    state: absent
+
+- name: Link assets gitconfig-switchdin file
+  file:
+    src: "{{ lookup('env','HOME') }}/.configuration/dotfiles/gitconfig-switchdin"
+    dest: "{{ lookup('env','HOME') }}/.gitconfig-switchdin"
+    state: link
+#- name: Remove ssh config if it already exists
+#  file:
+#    path: ~/.ssh/config
+#    state: absent
+#
+#- name: Link assets file with ~/.ssh/config file
+#  file:
+#    src: "~/.personal_config/assets/ssh/config"
+#    dest: "~/.ssh/config"
+#    state: link

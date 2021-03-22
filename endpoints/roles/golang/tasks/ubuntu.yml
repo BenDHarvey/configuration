@@ -1,0 +1,13 @@
+---
+- name: Download golang binary
+  get_url: url="https://dl.google.com/go/go1.16.1.linux-amd64.tar.gz"
+    dest="/tmp/go1.16.1.linux-amd64.tar.gz"
+
+- name: Install golang binary
+  become: yes
+  environment:
+    GOPATH: "{{ lookup('env','HOME') }}/Workspace/Go"
+  shell: >
+    cd /tmp
+    sudo tar -xvf go1.16.1.linux-amd64.tar.gz
+    sudo mv go /usr/local

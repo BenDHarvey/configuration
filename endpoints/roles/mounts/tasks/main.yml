@@ -1,0 +1,16 @@
+---
+- name: Ensure nfs client packages are available
+  become: true
+  package:
+    name: nfs-common
+    state: present
+
+- name: Mount an NFS volume
+  become: yes
+  ansible.posix.mount:
+    src: 192.168.1.50:/mnt/storage-pool-01/storage-01-ds
+    path: /mnt/storage-01
+    opts: rw,sync,hard,intr
+    state: mounted
+    fstype: nfs
+    backup: yes
