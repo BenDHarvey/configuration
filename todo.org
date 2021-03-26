@@ -1,4 +1,7 @@
 * Inbox
+** TODO Add task to copy k8s config from server to local dir
+
+[[file:~/.configuration/servers/site.yml][file:~/.configuration/servers/site.yml]]
 ** TODO Complete this file
 - Added this to run ansible commands through docker
 - This should allow for running ansible on mac m1 system as well as new amd64 systems
