@@ -4,3 +4,7 @@ collections:
   - name: ansible.posix
   - name: community.sops
   - name: community.aws
+roles:
+  - name: geerlingguy.postgresql
+  - name: geerlingguy.nginx
+  - name: xanmanning.k3s

@@ -20,17 +20,12 @@
       reboot:
       when: reboot_required_file.stat.exists
 
-- hosts: rancher-children
+### https://github.com/PyratLabs/ansible-role-k3s
+- hosts: control-k8s
   become: yes
+  vars:
+    k3s_become_for_all: true
+    k3s_etcd_datastore: true
+    k3s_use_experimental: true
   roles:
-    - docker
-
-- hosts: rancher-admin
-  become: yes
-  roles:
-    - rancher
-
-- hosts: rancher-master
-  become: yes
-  roles:
-    - rancher-master
+    - role: xanmanning.k3s
