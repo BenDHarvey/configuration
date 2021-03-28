@@ -5,3 +5,11 @@ resource "github_repository" "configuration" {
   visibility = "private"
 
 }
+
+resource "github_repository" "org" {
+  name        = "org"
+  description = "The repo that holds all the org files"
+
+  visibility = "private"
+
+}
