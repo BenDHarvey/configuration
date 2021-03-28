@@ -63,3 +63,12 @@
     k3s_use_experimental: true
   roles:
     - role: xanmanning.k3s
+
+- hosts: prod-k8s
+  become: yes
+  vars:
+    k3s_become_for_all: true
+    k3s_etcd_datastore: true
+    k3s_use_experimental: true
+  roles:
+    - role: xanmanning.k3s
