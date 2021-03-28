@@ -20,8 +20,42 @@
       reboot:
       when: reboot_required_file.stat.exists
 
-### https://github.com/PyratLabs/ansible-role-k3s
+#- hosts: control-lb
+#  become: yes
+#  vars:
+#    k3s_nodes: "{{ groups['control-k8s'] }}"
+#  roles:
+#    - { role: geerlingguy.nginx }
+#  tasks:
+#    - name: Template out config file
+#      become: yes
+#      template:
+#        src: ./templates/nginx-loadbalancer-config.j2
+#        dest: /etc/nginx/nginx.conf
+
 - hosts: control-k8s
+  become: yes
+  vars:
+    k3s_become_for_all: true
+    k3s_etcd_datastore: true
+    k3s_use_experimental: true
+  roles:
+    - role: xanmanning.k3s
+
+#- hosts: dev-lb
+#  become: yes
+#  vars:
+#    k3s_nodes: "{{ groups['control-k8s'] }}"
+#  roles:
+#    - { role: geerlingguy.nginx }
+#  tasks:
+#    - name: Template out config file
+#      become: yes
+#      template:
+#        src: ./templates/nginx-loadbalancer-config.j2
+#        dest: /etc/nginx/nginx.conf
+
+- hosts: dev-k8s
   become: yes
   vars:
     k3s_become_for_all: true
