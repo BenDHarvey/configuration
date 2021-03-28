@@ -11,5 +11,4 @@ resource "github_repository" "org" {
   description = "The repo that holds all the org files"
 
   visibility = "private"
-
 }
