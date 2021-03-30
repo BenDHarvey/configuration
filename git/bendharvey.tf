@@ -3,7 +3,6 @@ resource "github_repository" "configuration" {
   description = "configuration repo containing all personal configuration and dotfiles"
 
   visibility = "private"
-
 }
 
 resource "github_repository" "org" {
@@ -11,6 +10,20 @@ resource "github_repository" "org" {
   description = "The repo that holds all the org files"
 
   visibility = "private"
+}
+
+resource "github_repository" "personal-blog" {
+  name        = "blog"
+  description = "My personal blog where I write things down"
+
+  visibility = "public"
+}
+
+resource "github_repository" "bloomsprout_blog" {
+  name        = "bloomsprout-blog"
+  description = "The blog for the bloomsprout project"
+
+  visibility = "public"
 }
 
 resource "github_repository" "bloomsprout_infrastructure" {
