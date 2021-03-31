@@ -2,6 +2,7 @@
 - hosts: localhost
   vars:
     harvey_onl_zone: "harvey.onl"
+    bloomsprout_zone: "bloomsprout.in"
   pre_tasks:
     - name: Load secret variables from the configuration repository
       community.sops.load_vars:
@@ -9,3 +10,4 @@
         name: keys
   roles:
     - harvey_onl
+    - bloomsprout_in

@@ -1,4 +1,10 @@
 * Inbox
+** TODO Create mac and ubuntu specific files
+
+- This setting breaks when trying to run this config file on ubuntu
+- Update file so that it has OS specific config or create a seperate file for each OS
+
+[[file:~/.configuration/dotfiles/tmux.conf::set-option -g default-command "reattach-to-user-namespace -l zsh"]]
 ** TODO Add task to copy k8s config from server to local dir
 
 [[file:~/.configuration/servers/site.yml][file:~/.configuration/servers/site.yml]]
