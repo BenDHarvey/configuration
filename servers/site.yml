@@ -1,6 +1,8 @@
 ---
 - hosts: all
   become: yes
+  roles:
+    - mounts
   tasks:
     - name: Update apt repo and cache on all Debian/Ubuntu boxes
       become: yes
