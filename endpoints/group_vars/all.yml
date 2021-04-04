@@ -48,7 +48,7 @@ global_node_packages:
   - "@nestjs/cli"
   - js-beautify
   - "@angular/cli"
-  - "@angular/language-server"
+  - "@angular/language-service"
   - gatsby-cli
 
 homebrew_packages:
