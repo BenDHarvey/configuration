@@ -1,0 +1,17 @@
+---
+- name: Start radarr container
+  become: true
+  community.docker.docker_container:
+    name: radarr
+    image: ghcr.io/linuxserver/radarr
+    state: started
+    ports:
+      - "7878:7878"
+    env:
+      PUID: "1000"
+      PGID: "1000"
+      TZ: Australia/Sydney
+    volumes:
+      - "{{ config_directory }}/radarr:/config"
+      - "{{ downloads_directory }}/movies:/downloads"
+      - "{{ media_directory }}/movies:/movies"

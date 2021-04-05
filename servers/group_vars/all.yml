@@ -1,4 +1,14 @@
 ---
+mounts:
+  - src: "truenas:/mnt/storage-01/ds-01"
+    path: "/mnt/storage-01"
+
+media_directory: "/mnt/storage-01/control/media/"
+mounted_media_directory: "/media" # This is the media directory when mounted in a container
+config_directory: "/mnt/storage-01/control/config"
+downloads_directory: "/mnt/storage-01/control/media/downloads"
+incompleted_downloads_directory: "/mnt/storage-01/control/media/downloads/incomplete"
+
 postgresql_group: postgres
 postgresql_service_state: started
 postgresql_service_enabled: true

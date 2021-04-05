@@ -48,3 +48,12 @@
     k3s_use_experimental: true
   roles:
     - role: xanmanning.k3s
+
+- hosts: control-docker-hosts
+  become: yes
+  roles:
+    - mounts
+    - docker
+    - sabnzbd
+    - sonarr
+    - radarr

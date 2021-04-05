@@ -8,9 +8,10 @@
 - name: Mount an NFS volume
   become: yes
   ansible.posix.mount:
-    src: truenas:/mnt/storage-01/ds-01
-    path: /mnt/storage-01
+    src: "{{ item.src }}"
+    path: "{{ item.path }}"
     opts: rw,sync,hard,intr
     state: mounted
     fstype: nfs
     backup: yes
+  loop: "{{ mounts }}"
