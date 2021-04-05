@@ -10,7 +10,7 @@
     - packages
     - emacs
     - dirs
-    #    - node
+    - node
     - fzf
     - zsh
     - golang

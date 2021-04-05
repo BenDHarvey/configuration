@@ -1,6 +1,8 @@
 ---
 - hosts: all
   become: yes
+  roles:
+    - mounts
   tasks:
     - name: Update apt repo and cache on all Debian/Ubuntu boxes
       become: yes
@@ -20,17 +22,38 @@
       reboot:
       when: reboot_required_file.stat.exists
 
-- hosts: rancher-children
+- hosts: control-k8s
+  become: yes
+  vars:
+    k3s_become_for_all: true
+    k3s_etcd_datastore: true
+    k3s_use_experimental: true
+  roles:
+    - role: xanmanning.k3s
+
+- hosts: dev-k8s
+  become: yes
+  vars:
+    k3s_become_for_all: true
+    k3s_etcd_datastore: true
+    k3s_use_experimental: true
+  roles:
+    - role: xanmanning.k3s
+
+- hosts: prod-k8s
+  become: yes
+  vars:
+    k3s_become_for_all: true
+    k3s_etcd_datastore: true
+    k3s_use_experimental: true
+  roles:
+    - role: xanmanning.k3s
+
+- hosts: control-docker-hosts
   become: yes
   roles:
+    - mounts
     - docker
-
-- hosts: rancher-admin
-  become: yes
-  roles:
-    - rancher
-
-- hosts: rancher-master
-  become: yes
-  roles:
-    - rancher-master
+    - sabnzbd
+    - sonarr
+    - radarr

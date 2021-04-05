@@ -1,0 +1,53 @@
+---
+mounts:
+  - src: "truenas:/mnt/storage-01/ds-01"
+    path: "/mnt/storage-01"
+
+media_directory: "/mnt/storage-01/control/media/"
+mounted_media_directory: "/media" # This is the media directory when mounted in a container
+config_directory: "/mnt/storage-01/control/config"
+downloads_directory: "/mnt/storage-01/control/media/downloads"
+incompleted_downloads_directory: "/mnt/storage-01/control/media/downloads/incomplete"
+
+postgresql_group: postgres
+postgresql_service_state: started
+postgresql_service_enabled: true
+postgresql_users:
+  - name: ben
+    password: Password123!
+  - name: k8s
+    password: kube123!
+postgresql_databases:
+  - name: k3s
+postgresql_hba_entries:
+  - { type: local, database: all, user: postgres, auth_method: peer }
+  - { type: local, database: all, user: ben, auth_method: peer }
+  - { type: local, database: all, user: k8s, auth_method: peer }
+  - { type: local, database: all, user: all, auth_method: peer }
+  - {
+      type: host,
+      database: all,
+      user: all,
+      address: "127.0.0.1/32",
+      auth_method: md5,
+    }
+  - {
+      type: host,
+      database: all,
+      user: all,
+      address: "::1/128",
+      auth_method: md5,
+    }
+  - {
+      type: host,
+      database: all,
+      user: all,
+      address: "0.0.0.0/0",
+      auth_method: md5,
+    }
+
+nginx_worker_processes: "{{ ansible_processor_vcpus|default(ansible_processor_count) }}"
+nginx_worker_connections: "1024"
+nginx_multi_accept: "off"
+nginx_remove_default_vhost: true
+nginx_vhosts: []

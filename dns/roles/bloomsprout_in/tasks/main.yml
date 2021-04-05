@@ -1,0 +1,32 @@
+- name: Add cname for pointing to vercel hosting
+  community.aws.route53:
+    aws_access_key: "{{ keys.ben_harvy_ninja.admin.key }}"
+    aws_secret_key: "{{ keys.ben_harvy_ninja.admin.secret }}"
+    state: present
+    zone: "{{ bloomsprout_zone }}"
+    record: "blog.{{ bloomsprout_zone }}"
+    type: CNAME
+    ttl: 30
+    value: cname.vercel-dns.com.
+
+- name: Add A record for vercel hosting
+  community.aws.route53:
+    aws_access_key: "{{ keys.ben_harvy_ninja.admin.key }}"
+    aws_secret_key: "{{ keys.ben_harvy_ninja.admin.secret }}"
+    state: present
+    zone: "{{ bloomsprout_zone }}"
+    record: bloomsprout.in
+    type: A
+    ttl: 30
+    value: 76.76.21.21
+
+- name: Add CAA record for vercel hosting
+  community.aws.route53:
+    aws_access_key: "{{ keys.ben_harvy_ninja.admin.key }}"
+    aws_secret_key: "{{ keys.ben_harvy_ninja.admin.secret }}"
+    state: present
+    zone: "{{ bloomsprout_zone }}"
+    record: bloomsprout.in
+    type: CAA
+    ttl: 30
+    value: 0 issue "letsencrypt.org"

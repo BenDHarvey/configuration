@@ -1,18 +1,27 @@
 ---
 all:
   hosts:
-    control-k8s-master-1:
-    control-k8s-node-1:
-    control-rancher-1:
+    control-k8s-node-[1:3]:
+    dev-k8s-node-[1:3]:
+    prod-k8s-node-[1:3]:
+    control-docker-host-1:
+
   children:
-    rancher-children:
-      children:
-        rancher-admin:
-        rancher-master:
-        rancher-node:
-    rancher-admin:
+    control-k8s:
       hosts:
-        control-rancher-1:
-    rancher-master:
+        control-k8s-node-[1:3]:
+          k3s_control_node: true
+
+    dev-k8s:
       hosts:
-        control-k8s-master-1:
+        dev-k8s-node-[1:3]:
+          k3s_control_node: true
+
+    prod-k8s:
+      hosts:
+        dev-k8s-node-[1:3]:
+          k3s_control_node: true
+
+    control-docker-hosts:
+      hosts:
+        control-docker-host-1:

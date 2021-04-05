@@ -1,0 +1,18 @@
+---
+- name: Start sonarr container
+  become: true
+  community.docker.docker_container:
+    name: sonarr
+    image: ghcr.io/linuxserver/sonarr
+    state: started
+    restart_policy: "unless-stopped"
+    ports:
+      - "8989:8989"
+    env:
+      PUID: "1000"
+      PGID: "1000"
+      TZ: Australia/Sydney
+    volumes:
+      - "{{ config_directory }}/sonarr:/config"
+      - "{{ downloads_directory }}/tv:/downloads"
+      - "{{ media_directory }}/tv:/tv"

@@ -1,7 +1,7 @@
 ;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
 
 (setq user-full-name "Ben Harvey"
-      user-mail-address "ben@harvy.ninja")
+      user-mail-address "ben@harvey.onl")
 
 (setq doom-font (font-spec :family "monospace" :size 14))
 
@@ -30,14 +30,14 @@
 (setq mac-option-modifier nil
       mac-command-modifier 'meta)
 
-(setq lsp-clients-angular-language-server-command
-  '("node"
-    "/home/ben/.nvm/versions/node/v15.10.0/lib/node_modules/@angular/language-server"
-    "--ngProbeLocations"
-    "/usr/lib/node_modules"
-    "--tsProbeLocations"
-    "/usr/lib/node_modules"
-    "--stdio"))
+;(setq lsp-clients-angular-language-server-command
+;  '("node"
+;    "/home/ben/.nvm/versions/node/v15.10.0/lib/node_modules/@angular/language-server"
+;    "--ngProbeLocations"
+;    "/usr/lib/node_modules"
+;    "--tsProbeLocations"
+;    "/usr/lib/node_modules"
+;    "--stdio"))
 
 ;; Module imports
 (load! "+org")     ;; Org mode stuff like todos and rebindings

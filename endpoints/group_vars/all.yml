@@ -31,6 +31,7 @@ apt_packages:
 
 snap_packages:
   - k9s
+  - hugo
 
 snap_packages_classic:
   - kubectl
@@ -47,7 +48,8 @@ global_node_packages:
   - "@nestjs/cli"
   - js-beautify
   - "@angular/cli"
-  - "@angular/language-server"
+  - "@angular/language-service"
+  - gatsby-cli
 
 homebrew_packages:
   - nvim
@@ -69,6 +71,7 @@ homebrew_packages:
   - cocoapods
   - rsync
   - tree
+  - hugo
 #  - osxfuse // TODO: Work out why this is not installing correctly
 
 homebrew_packages_build_from_source:

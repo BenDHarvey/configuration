@@ -1,5 +1,5 @@
 [user]
-	email = benharvey@posteo.net
-	name = Ben
+	email = ben@harvey.onl
+	name = Ben Harvey
 [includeIf "gitdir:~/Workspace/bitbucket.com/"]
   path = .gitconfig-switchdin
