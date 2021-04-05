@@ -16,7 +16,7 @@ resource "github_repository" "personal-blog" {
   name        = "blog"
   description = "My personal blog where I write things down"
 
-  visibility = "public"
+  visibility = "private"
 }
 
 resource "github_repository" "bloomsprout_blog" {
