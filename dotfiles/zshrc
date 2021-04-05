@@ -51,6 +51,15 @@ dockerNuke () {
   docker system prune -a -f
 }
 
+postgresUp () {
+  docker run --name switchdin-postgres \
+    -e POSTGRES_PASSWORD=postgres \
+    -e POSTGRES_USER=postgres \
+    -e POSTGRES_DB=switchdin \
+    -p "5432:5432" \
+    -d postgres
+}
+
 # Removes node_modules folder and package-lock.json reinstalls node_modules
 node-reinstall() {
   echo "Removing node_modules...."
