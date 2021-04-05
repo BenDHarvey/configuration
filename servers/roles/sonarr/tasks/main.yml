@@ -14,5 +14,5 @@
       TZ: Australia/Sydney
     volumes:
       - "{{ config_directory }}/sonarr:/config"
-      - "{{ downloads_directory }}/tv:/downloads"
+      - "{{ downloads_directory }}/tv:/downloads/tv"
       - "{{ media_directory }}/tv:/tv"
