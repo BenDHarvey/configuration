@@ -5,6 +5,7 @@
     name: sonarr
     image: ghcr.io/linuxserver/sonarr
     state: started
+    restart_policy: "unless-stopped"
     ports:
       - "8989:8989"
     env:

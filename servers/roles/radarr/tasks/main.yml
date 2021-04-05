@@ -5,6 +5,7 @@
     name: radarr
     image: ghcr.io/linuxserver/radarr
     state: started
+    restart_policy: "unless-stopped"
     ports:
       - "7878:7878"
     env:
