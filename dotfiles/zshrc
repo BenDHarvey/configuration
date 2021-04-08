@@ -91,3 +91,7 @@ function killByPort {
 
 GPG_TTY=$(tty)
 export GPG_TTY
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/home/ben/.sdkman"
+[[ -s "/home/ben/.sdkman/bin/sdkman-init.sh" ]] && source "/home/ben/.sdkman/bin/sdkman-init.sh"
