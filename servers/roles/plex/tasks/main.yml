@@ -1,0 +1,19 @@
+---
+- name: Start plex container
+  become: true
+  community.docker.docker_container:
+    name: plex
+    image: ghcr.io/linuxserver/plex
+    network_mode: host
+    state: started
+    restart_policy: "unless-stopped"
+    privileged: yes
+    env:
+      PUID: "1000"
+      PGID: "1000"
+      TZ: Australia/Sydney
+      VERSION: docker
+    volumes:
+      - "{{ config_directory }}/plex:/config"
+      - "{{ media_directory }}/movies:/movies"
+      - "{{ media_directory }}/tv:/tv"
