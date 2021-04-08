@@ -58,8 +58,6 @@ homebrew_packages:
   - htop
   - golang
   - zsh
-  #  - google-chrome
-  #  - brave-browser
   - terraform
   - ranger
   - jq
@@ -72,6 +70,8 @@ homebrew_packages:
   - rsync
   - tree
   - hugo
+  - k3d
+  - argocd
 #  - osxfuse // TODO: Work out why this is not installing correctly
 
 homebrew_packages_build_from_source:

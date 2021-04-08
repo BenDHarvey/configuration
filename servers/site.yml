@@ -57,3 +57,10 @@
     - sabnzbd
     - sonarr
     - radarr
+
+- hosts: control-plex-1
+  become: yes
+  roles:
+    - mounts
+    - docker
+    - plex
