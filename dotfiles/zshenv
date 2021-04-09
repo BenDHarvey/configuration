@@ -31,6 +31,25 @@ case `uname` in
 
 	export PATH="$PATH:$HOME/Workspace/github.com/flutter/bin"
   export PATH="$PATH:$HOME/Workspace/flutter/bin"
+
+  export ANDROID_HOME=$HOME/Android/Sdk
+  export ANDROID_SDK=$HOME/Android/Sdk
+  export ANDROID_SDK_ROOT=$HOME/Android/Sdk
+
+  # avdmanager, sdkmanager
+  export PATH=$PATH:$ANDROID_SDK_ROOT/tools/bin
+
+  # adb, logcat
+  export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
+
+  # emulator
+  export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
+
+  export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+
+  # ensure android is in PAth
+  export PATH="$HOME/Android/Sdk:$PATH"
+
   ;;
   FreeBSD)
     # commands for FreeBSD go here
