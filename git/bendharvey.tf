@@ -39,3 +39,10 @@ resource "github_repository" "bloomsprout_temperature_sensor" {
 
   visibility = "public"
 }
+
+resource "github_repository" "comment-generator" {
+  name        = "comment-generator"
+  description = "The comment generator project"
+
+  visibility = "private"
+}
