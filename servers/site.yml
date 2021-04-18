@@ -39,11 +39,6 @@
     k3s_use_experimental: true
   roles:
     - role: xanmanning.k3s
-  tasks:
-    - name: Diable firewall
-      become: true
-      ufw:
-        state: disabled
 
 - hosts: prod-k8s
   become: yes
