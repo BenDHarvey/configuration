@@ -6,3 +6,27 @@ Host switchdin-bitbucket
     Hostname bitbucket.com
     User git
     IdentityFile ~/.ssh/switchdin_rsa
+
+Host devops
+    HostName devops.a.switchd.in
+    ForwardAgent yes
+    # postgres
+    LocalForward 15432 postgres.vpca.switchd.in:5432
+    # Storm
+    LocalForward 49080 10.2.0.20:49080
+    # Redis
+    LocalForward 6379 redis.vpca.switchd.in:6379
+    # Druid
+    LocalForward 8082 druid2020-query.vpca.switchd.in:8082
+    LocalForward 8089 druid2020-query.vpca.switchd.in:8089
+    # MQTT
+    LocalForward 1883 10.2.1.90:1883
+    # MQTT
+    LocalForward 15675 10.2.1.90:15675
+    # AMQP Spout
+    LocalForward 5672 10.2.1.90:5672
+    # Rabbit admin
+    # Druid  co-ordinator
+    #LocalForward 8081 13.211.190.168:8081
+    #LocalForward 8081 10.2.1.40:8081
+    User bdh
