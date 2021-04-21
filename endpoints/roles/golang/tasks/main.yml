@@ -46,3 +46,9 @@
     GOPATH: "{{ lookup('env','HOME') }}/Workspace/Go"
   shell: >
     go get -u github.com/fatih/gomodifytags
+
+- name: Install golang package gomodifytags
+  environment:
+    GOPATH: "{{ lookup('env','HOME') }}/Workspace/Go"
+  shell: >
+    GO111MODULE=on go get golang.org/x/tools/gopls@latest
