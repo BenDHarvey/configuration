@@ -64,3 +64,8 @@
     - mounts
     - docker
     - plex
+
+- hosts: backups
+  become: yes
+  roles:
+    - backups

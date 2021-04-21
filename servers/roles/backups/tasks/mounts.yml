@@ -1,0 +1,30 @@
+---
+- name: Create a directory if it does not exist
+  ansible.builtin.file:
+    path: "/mnt/ext-storage-01"
+    state: directory
+    mode: "0755"
+
+- name: Create a directory if it does not exist
+  ansible.builtin.file:
+    path: "/mnt/ext-storage-02"
+    state: directory
+    mode: "0755"
+
+- name: Mount ext-storage-1
+  become: yes
+  ansible.posix.mount:
+    path: /mnt/ext-storage-01
+    src: LABEL=ext-storage-01
+    fstype: ext4
+    state: mounted
+    backup: yes
+
+- name: Mount ext-storage-1
+  become: yes
+  ansible.posix.mount:
+    path: /mnt/ext-storage-02
+    src: LABEL=ext-storage-02
+    fstype: ext4
+    state: mounted
+    backup: yes
