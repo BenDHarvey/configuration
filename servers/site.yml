@@ -57,6 +57,7 @@
     - sabnzbd
     - sonarr
     - radarr
+    - lidarr
 
 - hosts: control-plex-1
   become: yes
