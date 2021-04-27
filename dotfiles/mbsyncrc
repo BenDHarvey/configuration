@@ -1,12 +1,9 @@
-####
-# ben@harvey.onl
-####
 MaildirStore ben@harvey.onl-local
 Path ~/.mail/ben@harvey.onl/
 Inbox ~/.mail/ben@harvey.onl/Inbox
 Trash Trash
 SubFolders Verbatim
-#
+
 IMAPStore ben@harvey.onl-remote
 Host imap.fastmail.com
 Port 993
@@ -14,36 +11,13 @@ User ben@harvey.onl
 PassCmd "cat ~/emailpw"
 SSLType IMAPS
 SSLVersions TLSv1.2
-#
+
 Channel ben@harvey.onl
-Master :ben@harvey.onl-remote:
-Slave :ben@harvey.onl-local:
+Far :ben@harvey.onl-remote:
+Near :ben@harvey.onl-local:
 Patterns *
 Expunge None
 CopyArrivalDate yes
 Sync All
 Create Slave
 SyncState *
-
-######
-## bdharvey112@gmail.com
-######
-#IMAPStore bdharvey112-remote
-#Host imap.gmail.com
-#User bdharvey112@gmail.com
-#Port 993
-#PassCmd "cat ~/emailpw2"
-#SSLType IMAPS
-#AuthMechs Login
-#
-#MaildirStore bdharvey112-local
-#Subfolders Verbatim
-#Path ~/.mail/bdharvey112@gmail.com/
-#Inbox ~/.mail/bdharvey112@gmail.com/Inbox
-#
-#Channel bdharvey112@gmail.com
-#Far :bdharvey112-remote:
-#Near :bdharvey112-local:
-#Patterns * ![Gmail]* "[Gmail]/Sent Mail" "[Gmail]/Starred" "[Gmail]/All Mail" "[Gmail]/Trash"
-#Create Both
-#SyncState *

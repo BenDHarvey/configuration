@@ -73,6 +73,7 @@ homebrew_packages:
   - k3d
   - argocd
   - isync
+  - mu
 #  - osxfuse // TODO: Work out why this is not installing correctly
 
 homebrew_packages_build_from_source:
