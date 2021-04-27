@@ -1,0 +1,6 @@
+---
+- name: Link vimrc
+  file:
+    src: "{{ lookup('env','HOME') }}/.configuration/dotfiles/mbsyncrc"
+    dest: "{{ lookup('env','HOME') }}/.mbsyncrc"
+    state: link
