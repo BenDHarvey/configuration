@@ -40,6 +40,13 @@ resource "github_repository" "bloomsprout_temperature_sensor" {
   visibility = "public"
 }
 
+resource "github_repository" "bloomsprout_metric_consumer" {
+  name        = "bloomsprout-metric-consumer"
+  description = "Project for the consumer of metrics coming from the bloomsprout project"
+
+  visibility = "public"
+}
+
 resource "github_repository" "comment-generator" {
   name        = "comment-generator"
   description = "The comment generator project"
