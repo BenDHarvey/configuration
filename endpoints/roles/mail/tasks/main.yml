@@ -1,6 +1,38 @@
 ---
-- name: Link vimrc
+- name: Create ben@harvey.onl mail directory
+  file:
+    path: "{{ lookup('env','HOME') }}/.mail/ben@harvey.onl"
+    state: directory
+
+- name: Create ben.harvey@switchdin.com mail directory
+  file:
+    path: "{{ lookup('env','HOME') }}/.mail/ben.harvey@switchdin.com"
+    state: directory
+
+- name: link mbsyncrc file into home directory
   file:
     src: "{{ lookup('env','HOME') }}/.configuration/dotfiles/mbsyncrc"
     dest: "{{ lookup('env','HOME') }}/.mbsyncrc"
     state: link
+
+- name: Run mbsync
+  shell: >
+    chdir {{ lookup('env','HOME') }}
+
+    mbsync -a
+
+    # Run sync command - mbsync -a
+    # Run mu to index mail - mu init --maildir ~/.mail/ben@harvey.onl --my-address ben@harvey.onl
+    # Run mu indexing - mu index
+
+- name: Run init mu index of mail for ben@harvey.onl
+  shell: >
+    chdir {{ lookup('env','HOME') }}
+
+    mu init --maildir ~/.mail/ben@harvey.onl --my-address ben@harvey.onl
+
+- name: Run mu index
+  shell: >
+    chdir {{ lookup('env','HOME') }}
+
+    mu index

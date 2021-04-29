@@ -32,6 +32,7 @@ apt_packages:
 snap_packages:
   - k9s
   - hugo
+  - maildir-utils # This is much more up-to-date than the apt package
 
 snap_packages_classic:
   - kubectl
