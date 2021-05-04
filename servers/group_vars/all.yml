@@ -8,6 +8,7 @@ mounted_media_directory: "/media" # This is the media directory when mounted in 
 config_directory: "/mnt/storage-01/control/config"
 downloads_directory: "/mnt/storage-01/control/media/downloads"
 incompleted_downloads_directory: "/mnt/storage-01/control/media/downloads/incomplete"
+sync_directory: "/mnt/storage-01/control/sync"
 
 postgresql_group: postgres
 postgresql_service_state: started

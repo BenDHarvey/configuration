@@ -1,0 +1,22 @@
+---
+- name: Start syncthing container
+  become: true
+  community.docker.docker_container:
+    name: syncthing
+    image: ghcr.io/linuxserver/syncthing
+    state: started
+    restart_policy: "unless-stopped"
+    ports:
+      - "8384:8384"
+      - "22000:22000/tcp"
+      - "22000:22000/udp"
+      - "21027:21027/udp"
+    env:
+      PUID: "1000"
+      PGID: "1000"
+      TZ: Australia/Sydney
+    volumes:
+      - "{{ config_directory }}/syncthing:/config"
+      - "{{ sync_directory }}:/data"
+    sysctls:
+      - net.core.rmem_max=2097152
