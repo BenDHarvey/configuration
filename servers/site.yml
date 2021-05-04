@@ -58,6 +58,7 @@
     - sonarr
     - radarr
     - lidarr
+    - syncthing
 
 - hosts: control-plex-1
   become: yes
