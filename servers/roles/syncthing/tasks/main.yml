@@ -18,5 +18,5 @@
     volumes:
       - "{{ config_directory }}/syncthing:/config"
       - "{{ sync_directory }}:/data"
-    sysctls:
-      - net.core.rmem_max=2097152
+#    sysctls:
+#      - net.core.rmem_max=2097152
