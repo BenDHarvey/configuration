@@ -10,7 +10,7 @@ services:
       - TZ=Australia/Sydney
     volumes:
       - /home/ben/.syncthing_config:/config
-      - /home/ben/sync:/data
+      - /home/ben/syncthing:/data
     ports:
       - 8384:8384
       - 22000:22000

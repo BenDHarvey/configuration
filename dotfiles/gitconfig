@@ -1,3 +1,5 @@
+[core]
+  editor = nvim
 [user]
 	email = ben@harvey.onl
 	name = Ben Harvey

@@ -8,13 +8,13 @@ IMAPStore ben@harvey.onl-remote
 Host imap.fastmail.com
 Port 993
 User ben@harvey.onl
-PassCmd "cat ~/emailpw"
+PassCmd "sops -d --extract '[\"benHarveyOnl_fastmail\"][\"password\"]' ~/.configuration/secrets/mail.yaml"
 SSLType IMAPS
 SSLVersions TLSv1.2
 
 Channel ben@harvey.onl
-Far :ben@harvey.onl-remote:
-Near :ben@harvey.onl-local:
+Master :ben@harvey.onl-remote:
+Slave :ben@harvey.onl-local:
 Patterns *
 Expunge None
 CopyArrivalDate yes

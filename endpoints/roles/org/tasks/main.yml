@@ -1,0 +1,8 @@
+---
+- name: Checkout the org file repo locally
+  ansible.builtin.git:
+    repo: "git@github.com:BenDHarvey/org.git"
+    dest: "{{ lookup('env','HOME') }}/org"
+    key_file: "{{ lookup('env','HOME') }}/.ssh/id_rsa_personal"
+    version: master
+    accept_hostkey: yes

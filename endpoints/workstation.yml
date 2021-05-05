@@ -9,6 +9,7 @@
     - ssh
     - packages
     - emacs
+    - org
     - dirs
     - node
     - fzf
