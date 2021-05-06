@@ -53,3 +53,10 @@ resource "github_repository" "comment-generator" {
 
   visibility = "private"
 }
+
+resource "github_repository" "switchdin_django_orchestrator" {
+  name        = "switchdin-django-orchestrator"
+  description = "A collection of docker files and scripts that can run the switchdin djano project"
+
+  visibility = "private"
+}
