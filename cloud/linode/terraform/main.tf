@@ -16,8 +16,19 @@ provider "linode" {
   token = var.LINODE_TOKEN
 }
 
+#resource "linode_lke_cluster" "control_cluster" {
+#  label       = "control-personal"
+#  k8s_version = "1.20"
+#  region      = "ap-southeast"
+#
+#  pool {
+#    type  = "g6-standard-1"
+#    count = 1
+#  }
+#}
+
 resource "linode_lke_cluster" "control_cluster" {
-  label       = "control"
+  label       = "dev-personal"
   k8s_version = "1.20"
   region      = "ap-southeast"
 
