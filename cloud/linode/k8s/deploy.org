@@ -1,0 +1,26 @@
+* Deploy
+
+The following should show how to deploy configuration found here into a new cluster
+
+#+BEGIN_SRC sh
+helm repo add argo-cd https://argoproj.github.io/argo-helm
+helm dep update charts/argo-cd/
+#+END_SRC
+
+#+BEGIN_SRC sh
+helm install -n argo --create-namespace argo-cd charts/argo-cd/
+#+END_SRC
+
+Password = Password123!
+#+BEGIN_SRC sh
+kubectl -n argo patch secret argocd-secret \
+  -p '{"stringData": {
+    "admin.password": "$2a$10$3Z3jzUWq6jaY5UtupkAdJO99JkHiRY6woo1mdY1C6czmnOauExJ3.",
+    "admin.passwordMtime": "'$(date +%FT%T%Z)'"
+  }}'
+#+END_SRC
+
+Port forward so we can hit the web interface
+#+BEGIN_SRC
+kubectl port-forward -n argo svc/argo-cd-argocd-server 8080:443
+#+END_SRC
