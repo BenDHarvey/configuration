@@ -1,0 +1,32 @@
+---
+- name: Backup movies to external storage
+  ansible.builtin.cron:
+    backup: yes
+    name: "movies backup external"
+    minute: "0"
+    hour: "7"
+    job: "rsync -avu --ignore-existing /mnt/storage-01/control/media/movies/ /mnt/ext-storage-02/movies > /tmp/movies-backup-log.log"
+
+- name: Backup tv to external storage
+  ansible.builtin.cron:
+    backup: yes
+    name: "tv backup external"
+    minute: "0"
+    hour: "1"
+    job: "rsync -avu --ignore-existing /mnt/storage-01/control/media/tv/ /mnt/ext-storage-01/tv > /tmp/tv-backup-log.log"
+
+- name: Backup music to external storage
+  ansible.builtin.cron:
+    backup: yes
+    name: "tv backup external"
+    minute: "0"
+    hour: "3"
+    job: "rsync -avu --ignore-existing /mnt/storage-01/control/media/music/ /mnt/ext-storage-02/music/ > /tmp/tv-backup-log.log"
+
+- name: Backup config directory
+  ansible.builtin.cron:
+    backup: yes
+    name: "config directory backup"
+    minute: "30"
+    hour: "6"
+    job: "rsync -avu /mnt/storage-01/control/config/ /mnt/ext-storage-02/files/config/ > /tmp/config-backup.log"
