@@ -5,6 +5,8 @@ all:
     control-plex-1:
     control-backups-1:
     control-rancher-1:
+    control-k8s-master-1:
+    control-k8s-node-[1:2]:
 
   children:
     control-docker-hosts:
@@ -22,3 +24,8 @@ all:
     control-rancher:
       hosts:
         control-rancher-1:
+
+    control-k8s:
+      hosts:
+        control-k8s-master-1:
+        control-k8s-node-[1:2]:

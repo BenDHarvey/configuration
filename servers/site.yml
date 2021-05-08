@@ -51,3 +51,9 @@
     - mounts
     - docker
     - rancher
+
+- hosts: control-k8s
+  become: yes
+  roles:
+    - mounts
+    - docker
