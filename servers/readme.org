@@ -1,8 +1,0 @@
-#+TITLE: Server configuration
-
-Here we have some configuration for the servers that are in my environment.
-
-The blow command will run the ansible playbook to install k8s
-#+BEGIN_SRC
-ansible-playbook --ask-becom-pass -i inventory.yml ./kubeadm-ansible/site.yml
-#+END_SRC
