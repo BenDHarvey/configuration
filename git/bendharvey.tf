@@ -67,3 +67,10 @@ resource "github_repository" "infrastructure" {
 
   visibility = "private"
 }
+
+resource "github_repository" "pipelines" {
+  name        = "pipelines"
+  description = "All the concourse pipelines and everything that goes along with them"
+
+  visibility = "private"
+}
