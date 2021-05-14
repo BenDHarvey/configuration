@@ -30,6 +30,9 @@
 (setq mac-option-modifier nil
       mac-command-modifier 'meta)
 
+; This is not working at the moment...
+;(set-formatter! 'black \"black -q -S -\")
+
 ;(setq lsp-clients-angular-language-server-command
 ;  '("node"
 ;    "/home/ben/.nvm/versions/node/v15.10.0/lib/node_modules/@angular/language-server"

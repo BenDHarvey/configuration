@@ -4,9 +4,10 @@ This repo aims to be the source of truth for configuration items. This includes 
 
 * Folder structure:
 
-#+begin_src
+#+BEGIN_SRC
 | .   |                          |   |       |
 | ├── | ansible-requirements.yml |   |       |
+| ├── | cloud                    |   |       |
 | ├── | dns                      |   |       |
 | ├── | dotfiles                 |   |       |
 | ├── | endpoints                |   |       |
@@ -18,8 +19,11 @@ This repo aims to be the source of truth for configuration items. This includes 
 | ├── | servers                  |   |       |
 | └── | todo.org                 |   |       |
 |     |                          |   |       |
-#+end_src
+| 9   | directories,             | 3 | files |
+#+END_SRC
 
+** cloud
+This contains configuration for setting up cloud resources
 ** dns
 Contains configuration for dns on various domains. Uses ansible to control configuration
 ** dotfiles
@@ -39,7 +43,7 @@ Ansible playbooks to configure servers ready for use
 
 * Encrytpion of secrets
 
-The sops library is being used to encrypt all secrets so that they can be stored in git. PGP keys are being used on local machine to decrypt these values and put them in the relivant locations. More information about sops can be found [[https://github.com/mozilla/sops][here]].
+The sops library is being used to encrypt all secrets so that they can be stored in git. PGP keys are being used on local machine to decrypt these values and put them in the relevant locations. More information about sops can be found [[https://github.com/mozilla/sops][here]].
 
 ** .sops.yaml
 
