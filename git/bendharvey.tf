@@ -60,3 +60,17 @@ resource "github_repository" "switchdin_django_orchestrator" {
 
   visibility = "private"
 }
+
+resource "github_repository" "infrastructure" {
+  name        = "infrastructure"
+  description = "A repo that contains all code dealing with server and infra for my personal environment. Largely a collection of terraform and ansible scripts with some k8s config as well"
+
+  visibility = "private"
+}
+
+resource "github_repository" "pipelines" {
+  name        = "pipelines"
+  description = "All the concourse pipelines and everything that goes along with them"
+
+  visibility = "private"
+}
