@@ -31,7 +31,7 @@
       mac-command-modifier 'meta)
 
 ; This is not working at the moment...
-;(set-formatter! 'black \"black -q -S -\")
+(set-formatter! 'black "black -q -S -")
 
 ;(setq lsp-clients-angular-language-server-command
 ;  '("node"
