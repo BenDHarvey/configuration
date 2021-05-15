@@ -9,7 +9,7 @@ terraform {
 
 variable "github_token" {}
 variable "public_key" {}
-variable "delpoy_public_key" {}
+variable "deploy_public_key" {}
 
 provider "github" {
   token = var.github_token
