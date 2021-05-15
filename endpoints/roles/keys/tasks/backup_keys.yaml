@@ -70,3 +70,25 @@
 ####
 #### Backup switchdin keys
 ####
+
+####
+#### Backup deploy keys
+####
+- name: Check if github_deploy private key already exists
+  stat: path="{{ lookup('env','HOME') }}/.ssh/github_deploy_key"
+  register: github_deploy_key_private
+
+- name: Move existing private key to backup dir
+  command: mv "{{ lookup('env','HOME') }}/.ssh/github_deploy_key" "{{ lookup('env','HOME') }}/.ssh/backup/github_deploy_key_{{ ansible_date_time.epoch}}"
+  when: github_deploy_key_private.stat.exists
+
+- name: Check if github_deploy public key already exists
+  stat: path="{{ lookup('env','HOME') }}/.ssh/github_deploy_key.pub"
+  register: github_deploy_key_public
+
+- name: Move existing switchdin public key to backup dir
+  command: mv "{{ lookup('env','HOME') }}/.ssh/github_deploy_key.pub" "{{ lookup('env','HOME') }}/.ssh/backup/github_deploy_key_pub_{{ ansible_date_time.epoch}}"
+  when: github_deploy_key_public.stat.exists
+####
+#### Backup switchdin keys
+####
