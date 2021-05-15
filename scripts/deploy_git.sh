@@ -3,6 +3,7 @@ set -euo pipefail
 
 GITHUB_TOKEN=$(sops -d --extract '["github"]["access_token"]' ./secrets/git.yaml)
 PUBLIC_KEY=$(sops -d --extract '["ssh_keys"]["personal_public_key"]' ./secrets/ssh.yaml)
+PUBLIC_KEY=$(sops -d --extract '["ssh_keys"]["git_deploy_key_public"]' ./secrets/ssh.yaml)
 
 cd ./git
 
