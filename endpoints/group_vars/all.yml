@@ -28,6 +28,7 @@ apt_packages:
   - virtualenv
   - tree
   - golang
+  - cmake
 
 snap_packages:
   - k9s
