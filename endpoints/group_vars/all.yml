@@ -78,6 +78,7 @@ homebrew_packages:
   - mu
   - libpq
   - alfred
+  - watch
 #  - osxfuse // TODO: Work out why this is not installing correctly
 
 homebrew_packages_build_from_source:
