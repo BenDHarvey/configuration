@@ -5,3 +5,5 @@
 	name = Ben Harvey
 [includeIf "gitdir:~/Workspace/bitbucket.com/"]
   path = .gitconfig-switchdin
+[init]
+	defaultBranch = main
