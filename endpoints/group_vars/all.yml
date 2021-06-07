@@ -29,6 +29,9 @@ apt_packages:
   - tree
   - golang
   - cmake
+  - texlive-fonts-recommended
+  - texlive-fonts-extra
+  - texlive-latex-base
 
 snap_packages:
   - k9s

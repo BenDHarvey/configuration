@@ -5,7 +5,7 @@
 
 (setq doom-font (font-spec :family "monospace" :size 14))
 
-(setq doom-theme 'doom-acario-dark)
+(setq doom-theme 'doom-gruvbox)
 
 (setq org-directory "~/org")
 
