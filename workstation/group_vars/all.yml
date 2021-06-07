@@ -80,9 +80,8 @@ homebrew_packages:
   - isync
   - mu
   - libpq
-  - alfred
   - watch
-#  - osxfuse // TODO: Work out why this is not installing correctly
+  - mactex
 
 homebrew_packages_build_from_source:
 #  - sshfs // TODO: Work out why this is not installing correctly
