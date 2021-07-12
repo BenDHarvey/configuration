@@ -78,6 +78,14 @@ updateConfig() {
   ansible-playbook ~/.configuration/endpoints/workstation.yml
 }
 
+clean-repo() {
+  git clean -xfd
+  git submodule foreach --recursive git clean -xfd
+  git reset --hard
+  git submodule foreach --recursive git reset --hard
+  git submodule update --init --recursive
+}
+
 function killByPort {
   if [ "$1" != "" ]
   then
