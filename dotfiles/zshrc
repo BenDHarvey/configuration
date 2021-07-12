@@ -86,6 +86,10 @@ clean-repo() {
   git submodule update --init --recursive
 }
 
+git-contributors() {
+  git shortlog --summary --numbered --email
+}
+
 function killByPort {
   if [ "$1" != "" ]
   then
