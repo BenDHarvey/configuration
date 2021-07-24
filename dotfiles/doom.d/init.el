@@ -87,7 +87,7 @@
         +lsp)                ; the hipster dialect
        (javascript
          +lsp
-         +onsave )        ; all(hope(abandon(ye(who(enter(here))))))
+         +onsave)        ; all(hope(abandon(ye(who(enter(here))))))
        markdown          ; writing docs for people to ignore
        (org              ; organize your plain life in plain text
         +dragndrop       ; drag & drop files/images into org buffers
