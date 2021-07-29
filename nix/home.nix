@@ -25,6 +25,28 @@ in
   # packages to install
   home.packages = [
     pkgs.tmux
+    pkgs.git
+    pkgs.xclip
+    pkgs.jq
+    pkgs.zsh
+    pkgs.ripgrep
+    pkgs.fd
+    pkgs.htop
+    pkgs.terraform
+    pkgs.awscli
+    # pkgs.iterm2 # TODO: Install this with homebrew instead
+    pkgs.docker-compose
+    pkgs.ranger
+    pkgs.tree
+    pkgs.go
+    pkgs.reattach-to-user-namespace
+    pkgs.cocoapods
+    pkgs.rsync
+    pkgs.hugo
+    # pkgs.kube3d # Not yet working on arm systems
+    pkgs.argocd
+    pkgs.mu
+    pkgs.unixtools.watch
     doom-emacs # This will install emacs as well
   ];
 
@@ -40,6 +62,44 @@ in
   home.file.".gitconfig-switchdin".source = ../dotfiles/gitconfig-switchdin;
   home.file.".tmux.conf".source = ../dotfiles/tmux.conf;
 
+
+  # Mail configuration
+  programs.msmtp.enable = true;
+
+
+  # Store mails in ~/Mail
+  accounts.email.maildirBasePath = "Mail";
+
+  # Use mbsync to fetch email. Configuration is constructed manually
+  # to keep my current email layout.
+  programs.mbsync = {
+    enable = true;
+    extraConfig = lib.mkBefore ''
+      MaildirStore ben@harvey.onl-local
+      Path ~/Mail/ben@harvey.onl/
+      Inbox ~/Mail/ben@harvey.onl/Inbox
+      Trash Trash
+      SubFolders Verbatim
+
+      IMAPStore ben@harvey.onl-remote
+      Host imap.fastmail.com
+      Port 993
+      User ben@harvey.onl
+      PassCmd "sops -d --extract '[\"benHarveyOnl_fastmail\"][\"password\"]' ~/.configuration/secrets/mail.yaml"
+      SSLType IMAPS
+      SSLVersions TLSv1.2
+
+      Channel ben@harvey.onl
+      Master :ben@harvey.onl-remote:
+      Slave :ben@harvey.onl-local:
+      Patterns *
+      Expunge None
+      CopyArrivalDate yes
+      Sync All
+      Create Slave
+      SyncState *
+    '';
+  };
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
