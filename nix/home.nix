@@ -119,9 +119,11 @@ in
       cl = "clear";
     };
 
-    envExtra = ''
-      GPG_TTY=$(tty)
-      export GPG_TTY
+    profileExtra = ''
+      export GPG_TTY=$(tty)
+      if ! pgrep -x "gpg-agent" > /dev/null; then
+          ${pkgs.gnupg}/bin/gpgconf --launch gpg-agent
+      fi
     '';
 
     initExtra = ''
