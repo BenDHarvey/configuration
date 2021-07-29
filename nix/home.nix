@@ -47,6 +47,7 @@ in
     pkgs.argocd
     pkgs.mu
     pkgs.unixtools.watch
+    pkgs.sops
     doom-emacs # This will install emacs as well
   ];
 
@@ -118,6 +119,11 @@ in
       cl = "clear";
     };
 
+    envExtra = ''
+      GPG_TTY=$(tty)
+      export GPG_TTY
+    '';
+
     initExtra = ''
       bindkey '^ ' autosuggest-accept
       AGKOZAK_CMD_EXEC_TIME=5
@@ -181,8 +187,6 @@ in
         fi
       }
 
-      GPG_TTY=$(tty)
-      export GPG_TTY
      '';
 
     plugins = with pkgs; [
