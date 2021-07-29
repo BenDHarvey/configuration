@@ -1,4 +1,9 @@
 * Inbox
+** TODO Get These functions working
+
+[[file:~/.configuration/nix/home.nix::dockerNuke() {]]
+
+These functions are not working after they have been moved over from the .zshrc file. Need to have a look and find out what is stopping them from working
 ** TODO Create mac and ubuntu specific files
 
 - This setting breaks when trying to run this config file on ubuntu

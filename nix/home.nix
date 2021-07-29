@@ -101,6 +101,149 @@ in
     '';
   };
 
+  # ZSH config
+  programs.zsh = {
+    enable = true;
+    autocd = true;
+    dotDir = ".config/zsh";
+    enableAutosuggestions = true;
+    enableCompletion = true;
+    shellAliases = {
+      ls = "ls -las";
+      emacs = "emacs -nw";
+      gs = "git status";
+      gl = "git log --decorate --graph";
+      gd = "git diff";
+      vim = "nvim";
+      cl = "clear";
+    };
+
+    initExtra = ''
+      bindkey '^ ' autosuggest-accept
+      AGKOZAK_CMD_EXEC_TIME=5
+      AGKOZAK_COLORS_CMD_EXEC_TIME='yellow'
+      AGKOZAK_COLORS_PROMPT_CHAR='magenta'
+      AGKOZAK_CUSTOM_SYMBOLS=( '⇣⇡' '⇣' '⇡' '+' 'x' '!' '>' '?' )
+      AGKOZAK_MULTILINE=0
+      AGKOZAK_PROMPT_CHAR=( ❯ ❯ ❮ )
+      autopair-init
+
+      if [ -e /Users/ben/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/ben/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+
+      # Extra functions
+
+      dockerNuke() {
+        docker stop $(docker ps -a -q)
+        docker system prune -a -f
+      }
+
+      postgresUp() {
+        docker run --name switchdin-postgres \
+          -e POSTGRES_PASSWORD=postgres \
+          -e POSTGRES_USER=postgres \
+          -e POSTGRES_DB=switchdin \
+          -p "5432:5432" \
+          -d postgres
+      }
+
+      # Removes node_modules folder and package-lock.json reinstalls node_modules
+      node-reinstall() {
+        echo "Removing node_modules...."
+        sudo rm -r node_modules
+        echo "Removing package-lock.json"
+        sudo rm package-lock.json
+        echo "Installing node_modules"
+        npm i
+      }
+
+      jwtDecode () {
+        sed 's/\./\n/g' <<< $(cut -d. -f1,2 <<< $1) | base64 --decode | jq
+      }
+
+      clean-repo() {
+        git clean -xfd
+        git submodule foreach --recursive git clean -xfd
+        git reset --hard
+        git submodule foreach --recursive git reset --hard
+        git submodule update --init --recursive
+      }
+
+      git-contributors() {
+        git shortlog --summary --numbered --email
+      }
+
+      function killByPort {
+        if [ "$1" != "" ]
+        then
+          kill -9 $(lsof -ni tcp:"$1" | awk 'FNR==2{print $2}')
+        else
+          echo "Missing argument! Usage: kill-by-port $PORT"
+        fi
+      }
+
+      GPG_TTY=$(tty)
+      export GPG_TTY
+     '';
+
+    plugins = with pkgs; [
+      {
+        name = "agkozak-zsh-prompt";
+        src = fetchFromGitHub {
+          owner = "agkozak";
+          repo = "agkozak-zsh-prompt";
+          rev = "v3.7.0";
+          sha256 = "1iz4l8777i52gfynzpf6yybrmics8g4i3f1xs3rqsr40bb89igrs";
+        };
+        file = "agkozak-zsh-prompt.plugin.zsh";
+      }
+      {
+        name = "formarks";
+        src = fetchFromGitHub {
+          owner = "wfxr";
+          repo = "formarks";
+          rev = "8abce138218a8e6acd3c8ad2dd52550198625944";
+          sha256 = "1wr4ypv2b6a2w9qsia29mb36xf98zjzhp3bq4ix6r3cmra3xij90";
+        };
+        file = "formarks.plugin.zsh";
+      }
+      {
+        name = "zsh-syntax-highlighting";
+        src = fetchFromGitHub {
+          owner = "zsh-users";
+          repo = "zsh-syntax-highlighting";
+          rev = "0.6.0";
+          sha256 = "0zmq66dzasmr5pwribyh4kbkk23jxbpdw4rjxx0i7dx8jjp2lzl4";
+        };
+        file = "zsh-syntax-highlighting.zsh";
+      }
+      {
+        name = "zsh-abbrev-alias";
+        src = fetchFromGitHub {
+          owner = "momo-lab";
+          repo = "zsh-abbrev-alias";
+          rev = "637f0b2dda6d392bf710190ee472a48a20766c07";
+          sha256 = "16saanmwpp634yc8jfdxig0ivm1gvcgpif937gbdxf0csc6vh47k";
+        };
+        file = "abbrev-alias.plugin.zsh";
+      }
+      {
+        name = "zsh-autopair";
+        src = fetchFromGitHub {
+          owner = "hlissner";
+          repo = "zsh-autopair";
+          rev = "34a8bca0c18fcf3ab1561caef9790abffc1d3d49";
+          sha256 = "1h0vm2dgrmb8i2pvsgis3lshc5b0ad846836m62y8h3rdb3zmpy1";
+        };
+        file = "autopair.zsh";
+      }
+    ];
+  };
+
+  programs.fzf = {
+    enable = true;
+    enableZshIntegration = true;
+  };
+
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
   # when a new Home Manager release introduces backwards
