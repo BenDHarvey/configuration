@@ -250,6 +250,17 @@ in
     enableZshIntegration = true;
   };
 
+  programs.gpg = {
+    enable = true;
+    settings = {
+      default-key = "EB4C80B64D5FBF255C5F4633518A2E5A77959839";
+
+      auto-key-locate = "keyserver";
+      keyserver = "hkps://hkps.pool.sks-keyservers.net";
+      keyserver-options = "no-honor-keyserver-url include-revoked auto-key-retrieve";
+    };
+  };
+
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
   # when a new Home Manager release introduces backwards
