@@ -48,6 +48,9 @@ in
     pkgs.mu
     pkgs.unixtools.watch
     pkgs.sops
+    pkgs.k9s
+    pkgs.kubernetes-helm
+    pkgs.influxdb2
     doom-emacs # This will install emacs as well
   ];
 
@@ -107,7 +110,7 @@ in
     enable = true;
     autocd = true;
     dotDir = ".config/zsh";
-    enableAutosuggestions = true;
+    enableAutosuggestions = false;
     enableCompletion = true;
     shellAliases = {
       ls = "ls -las";
