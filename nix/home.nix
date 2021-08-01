@@ -38,7 +38,6 @@ in
     pkgs.docker-compose
     pkgs.ranger
     pkgs.tree
-    pkgs.go
     pkgs.reattach-to-user-namespace
     pkgs.cocoapods
     pkgs.rsync
@@ -66,10 +65,22 @@ in
   home.file.".gitconfig-switchdin".source = ../dotfiles/gitconfig-switchdin;
   home.file.".tmux.conf".source = ../dotfiles/tmux.conf;
 
+  programs.go = {
+    enable = true;
+    packages = {
+      "github.com/motemen/gore/cmd/gore" = builtins.fetchGit "https://github.com/motemen/gore";
+      "github.com/stamblerre/gocode" = builtins.fetchGit "https://github.com/stamblerre/gocode";
+      "golang.org/x/tools/cmd/goimports" = builtins.fetchGit "https://github.com/golang/tools";
+      "golang.org/x/tools/cmd/gorename" = builtins.fetchGit "https://github.com/golang/tools";
+      "golang.org/x/tools/cmd/guru" = builtins.fetchGit "https://github.com/golang/tools";
+      "github.com/cweill/gotests/..." = builtins.fetchGit "https://github.com/cweill/gotests";
+      "github.com/fatih/gomodifytags" = builtins.fetchGit "https://github.com/fatih/gomodifytags";
+      "golang.org/x/tools/gopls@latest" = builtins.fetchGit "https://github.com/golang/tools";
+    };
+  };
 
   # Mail configuration
   programs.msmtp.enable = true;
-
 
   # Store mails in ~/Mail
   accounts.email.maildirBasePath = "Mail";
