@@ -1,8 +1,8 @@
  ;;; ../.personal_config/assets/doom.d/+email.el -*- lexical-binding: t; -*-
 
- (use-package mu4e
-   :ensure nil
-   :config
+;; (use-package mu4e
+;;   :ensure nil
+;;   :config
 
    ;; This is set to 't' to avoid mail syncing issues when using mbsync
    (setq mu4e-change-filenames-when-moving t)

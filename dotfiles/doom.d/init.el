@@ -104,8 +104,8 @@
 
        :email
        (mu4e
-        +org
-        +gmail)
+         +org
+         +gmail)
 
        :app
        (rss +org)        ; emacs as an RSS reader

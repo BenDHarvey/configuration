@@ -43,4 +43,4 @@
 
 ;; Module imports
 (load! "+org")     ;; Org mode stuff like todos and rebindings
-;; (load! "+email") ;; Load email configuration
+;;(load! "+email") ;; Load email configuration

@@ -1,4 +1,9 @@
 * Inbox
+** TODO Get this working
+
+[[file:~/.configuration/nix/home.nix::TODO: Get go packages working here]]
+
+Tried getting this working but it seems that the packages are not getting installed correctly. Currently using pkgs.gopls to get this working
 ** TODO Get These functions working
 
 [[file:~/.configuration/nix/home.nix::dockerNuke() {]]

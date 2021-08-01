@@ -50,6 +50,23 @@ in
     pkgs.k9s
     pkgs.kubernetes-helm
     pkgs.influxdb2
+
+    # go and golang packages
+    pkgs.gopls
+    pkgs.gore
+    pkgs.gocode
+    pkgs.gotests
+    pkgs.gomodifytags
+
+    # Node and node packages
+    pkgs.nodejs-16_x
+    pkgs.nodePackages.typescript
+    pkgs.nodePackages.eslint
+    pkgs.nodePackages.prettier
+    pkgs.nodePackages.typescript-language-server
+    pkgs.nodePackages.js-beautify
+
+    # emacs and other emacs things
     doom-emacs # This will install emacs as well
   ];
 
@@ -67,16 +84,17 @@ in
 
   programs.go = {
     enable = true;
-    packages = {
-      "github.com/motemen/gore/cmd/gore" = builtins.fetchGit "https://github.com/motemen/gore";
-      "github.com/stamblerre/gocode" = builtins.fetchGit "https://github.com/stamblerre/gocode";
-      "golang.org/x/tools/cmd/goimports" = builtins.fetchGit "https://github.com/golang/tools";
-      "golang.org/x/tools/cmd/gorename" = builtins.fetchGit "https://github.com/golang/tools";
-      "golang.org/x/tools/cmd/guru" = builtins.fetchGit "https://github.com/golang/tools";
-      "github.com/cweill/gotests/..." = builtins.fetchGit "https://github.com/cweill/gotests";
-      "github.com/fatih/gomodifytags" = builtins.fetchGit "https://github.com/fatih/gomodifytags";
-      "golang.org/x/tools/gopls@latest" = builtins.fetchGit "https://github.com/golang/tools";
-    };
+# TODO: Get go packages working here
+#    packages = {
+#      "github.com/motemen/gore/cmd/gore" = builtins.fetchGit "https://github.com/motemen/gore";
+#      "github.com/stamblerre/gocode" = builtins.fetchGit "https://github.com/stamblerre/gocode";
+#      "golang.org/x/tools/cmd/goimports" = builtins.fetchGit "https://github.com/golang/tools";
+#      "golang.org/x/tools/cmd/gorename" = builtins.fetchGit "https://github.com/golang/tools";
+#      "golang.org/x/tools/cmd/guru" = builtins.fetchGit "https://github.com/golang/tools";
+#      "github.com/cweill/gotests/..." = builtins.fetchGit "https://github.com/cweill/gotests";
+#      "github.com/fatih/gomodifytags" = builtins.fetchGit "https://github.com/fatih/gomodifytags";
+#      "golang.org/x/tools/gopls@latest" = builtins.fetchGit "https://github.com/golang/tools";
+#    };
   };
 
   # Mail configuration
