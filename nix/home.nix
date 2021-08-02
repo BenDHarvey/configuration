@@ -60,6 +60,7 @@ in
 
     # Kinda go packages
     pkgs.protobuf
+    pkgs.protoc-gen-go
 
     # Node and node packages
     pkgs.nodejs-16_x
