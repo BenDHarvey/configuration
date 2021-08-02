@@ -58,6 +58,9 @@ in
     pkgs.gotests
     pkgs.gomodifytags
 
+    # Kinda go packages
+    pkgs.protobuf
+
     # Node and node packages
     pkgs.nodejs-16_x
     pkgs.nodePackages.typescript
