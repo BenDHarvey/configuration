@@ -174,6 +174,7 @@ in
       dockerNuke() {
         docker stop $(docker ps -a -q)
         docker system prune -a -f
+        docker volume prune
       }
 
       postgresUp() {
