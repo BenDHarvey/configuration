@@ -23,6 +23,7 @@ in
   home.homeDirectory = "/Users/ben";
 
   # packages to install
+
   home.packages = [
     pkgs.tmux
     pkgs.git
@@ -44,7 +45,12 @@ in
     pkgs.hugo
     # pkgs.kube3d # Not yet working on arm systems
     pkgs.argocd
+    pkgs.neovim
+
+    #Mail packages
     pkgs.mu
+    pkgs.isync
+
     pkgs.unixtools.watch
     pkgs.sops
     pkgs.k9s
