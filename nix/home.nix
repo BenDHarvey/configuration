@@ -94,17 +94,6 @@ in
 
   programs.go = {
     enable = true;
-# TODO: Get go packages working here
-#    packages = {
-#      "github.com/motemen/gore/cmd/gore" = builtins.fetchGit "https://github.com/motemen/gore";
-#      "github.com/stamblerre/gocode" = builtins.fetchGit "https://github.com/stamblerre/gocode";
-#      "golang.org/x/tools/cmd/goimports" = builtins.fetchGit "https://github.com/golang/tools";
-#      "golang.org/x/tools/cmd/gorename" = builtins.fetchGit "https://github.com/golang/tools";
-#      "golang.org/x/tools/cmd/guru" = builtins.fetchGit "https://github.com/golang/tools";
-#      "github.com/cweill/gotests/..." = builtins.fetchGit "https://github.com/cweill/gotests";
-#      "github.com/fatih/gomodifytags" = builtins.fetchGit "https://github.com/fatih/gomodifytags";
-#      "golang.org/x/tools/gopls@latest" = builtins.fetchGit "https://github.com/golang/tools";
-#    };
   };
 
   # Mail configuration
