@@ -46,6 +46,7 @@ in
     # pkgs.kube3d # Not yet working on arm systems
     pkgs.argocd
     pkgs.neovim
+    # pkgs.ansible TODO: Fix this
 
     #Mail packages
     pkgs.mu

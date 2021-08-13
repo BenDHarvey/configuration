@@ -1,4 +1,9 @@
 * Inbox
+** TODO Fix this failing install
+
+[[file:~/.configuration/nix/home.nix::pkgs.ansible TODO: Fix this]]
+
+This fails to install for some reason. Investigate some more and fix what might be going wrong
 ** TODO Get this working
 
 [[file:~/.configuration/nix/home.nix::TODO: Get go packages working here]]
