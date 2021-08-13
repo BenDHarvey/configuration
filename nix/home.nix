@@ -46,7 +46,7 @@ in
     # pkgs.kube3d # Not yet working on arm systems
     pkgs.argocd
     pkgs.neovim
-    # pkgs.ansible TODO: Fix this
+    # pkgs.kitty # TODO: Does compile with apple m1
 
     #Mail packages
     pkgs.mu
@@ -79,6 +79,9 @@ in
 
     # emacs and other emacs things
     doom-emacs # This will install emacs as well
+
+    # Python packages
+    pkgs.python38Packages.ansible
   ];
 
   # Load the emacs package

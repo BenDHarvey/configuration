@@ -1,9 +1,16 @@
 * Inbox
-** TODO Fix this failing install
+** TODO Kitty doesn't compile with apple m1
+
+[[file:~/.configuration/nix/home.nix::pkgs.kitty # TODO: Does compile with apple m1]]
+
+- Have a look into this and work out why its not compiling or find a work around
+** DONE Fix this failing install
 
 [[file:~/.configuration/nix/home.nix::pkgs.ansible TODO: Fix this]]
 
 This fails to install for some reason. Investigate some more and fix what might be going wrong
+
+- Fixed. Installed ansible with a python package
 ** TODO Get this working
 
 [[file:~/.configuration/nix/home.nix::TODO: Get go packages working here]]
