@@ -32,15 +32,6 @@
 
 (set-formatter! 'black "black -q -S -")
 
-;(setq lsp-clients-angular-language-server-command
-;  '("node"
-;    "/home/ben/.nvm/versions/node/v15.10.0/lib/node_modules/@angular/language-server"
-;    "--ngProbeLocations"
-;    "/usr/lib/node_modules"
-;    "--tsProbeLocations"
-;    "/usr/lib/node_modules"
-;    "--stdio"))
-
 ;; Module imports
 (load! "+org")     ;; Org mode stuff like todos and rebindings
-;;(load! "+email") ;; Load email configuration
+(load! "+email") ;; Load email configuration

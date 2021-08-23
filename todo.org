@@ -1,4 +1,52 @@
 * Inbox
+** TODO Setup the yabai window manager
+
+[[file:~/.configuration/nix/darwin-configuration.nix::TODO: Add config for yabai window manager. See todo.org for details]]
+
+Have already found some config that should work for this. At the moment yabai is not compiling correctly. Suspect this might have something to do with being on m1
+
+#+BEGIN_SRC
+services.yabai = {
+  enable = true;
+  package = pkgs.yabai;
+  config = {
+    mouse_follows_focus = "off";
+    focus_follows_mouse = "off";
+    window_placement = "second_child";
+    window_topmost = "off";
+    window_opacity = "off";
+    window_opacity_duration = 0.0;
+    window_shadow = "on";
+    window_border = "off";
+    window_border_placement = "inset";
+    window_border_width = 4;
+    window_border_radius = -1.0;
+    active_window_border_topmost = "off";
+    active_window_border_color = "0xff775759";
+    normal_window_border_color = "0xff505050";
+    insert_window_border_color = "0xffd75f5f";
+    active_window_opacity = 1.0;
+    normal_window_opacity = 0.9;
+    split_ratio = 0.5;
+    auto_balance = "on";
+    mouse_modifier = "fn";
+    mouse_action1 = "move";
+    mouse_action2 = "resize";
+    layout = "bsp";
+    top_padding = 5;
+    bottom_padding = 5;
+    left_padding = 5;
+    right_padding = 5;
+    window_gap = 5;
+  };
+};
+
+services.skhd = {
+  enable = true;
+  package = pkgs.skhd;
+  skhdConfig = builtins.readFile "${config_home}/dotfiles/skhdrc";
+};
+#+END_SRC
 ** TODO Kitty doesn't compile with apple m1
 
 [[file:~/.configuration/nix/home.nix::pkgs.kitty # TODO: Does compile with apple m1]]
@@ -16,22 +64,9 @@ This fails to install for some reason. Investigate some more and fix what might 
 [[file:~/.configuration/nix/home.nix::TODO: Get go packages working here]]
 
 Tried getting this working but it seems that the packages are not getting installed correctly. Currently using pkgs.gopls to get this working
-** TODO Get These functions working
-
-[[file:~/.configuration/nix/home.nix::dockerNuke() {]]
-
-These functions are not working after they have been moved over from the .zshrc file. Need to have a look and find out what is stopping them from working
 ** TODO Create mac and ubuntu specific files
 
 - This setting breaks when trying to run this config file on ubuntu
 - Update file so that it has OS specific config or create a seperate file for each OS
 
 [[file:~/.configuration/dotfiles/tmux.conf::set-option -g default-command "reattach-to-user-namespace -l zsh"]]
-** TODO Add task to copy k8s config from server to local dir
-
-[[file:~/.configuration/servers/site.yml][file:~/.configuration/servers/site.yml]]
-** TODO Complete this file
-- Added this to run ansible commands through docker
-- This should allow for running ansible on mac m1 system as well as new amd64 systems
-
-[[file:~/Workspace/gitlab.com/benharvey/configuration/scripts/install_workstation.sh::Example docker command]]

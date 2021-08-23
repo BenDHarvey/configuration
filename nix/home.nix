@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+  { config, pkgs, ... }:
 
 with import <nixpkgs> {};
 with builtins;
