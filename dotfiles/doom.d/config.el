@@ -7,7 +7,7 @@
 
 (setq doom-theme 'doom-gruvbox)
 
-(setq org-directory "~/org")
+(setq org-directory "~/Documents/org")
 
 (setq display-line-numbers-type 'relative)
 
@@ -30,8 +30,6 @@
 (setq mac-option-modifier nil
       mac-command-modifier 'meta)
 
-(set-formatter! 'black "black -q -S -")
-
 ;; Module imports
 (load! "+org")     ;; Org mode stuff like todos and rebindings
-(load! "+email") ;; Load email configuration
+(load! "+email")   ;; Load email configuration
