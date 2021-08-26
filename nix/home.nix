@@ -93,7 +93,7 @@ in
   home.file.".vimrc".source = ../dotfiles/vimrc;
   home.file.".gitconfig".source = ../dotfiles/gitconfig;
   home.file.".gitconfig-ben".source = ../dotfiles/gitconfig-ben;
-  home.file.".gitconfig-switchdin".source = ../dotfiles/gitconfig-switchdin;
+  home.file.".gitconfig-bmlonline".source = ../dotfiles/gitconfig-bmlonline;
   home.file.".tmux.conf".source = ../dotfiles/tmux.conf;
 
   programs.go = {
