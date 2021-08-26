@@ -3,7 +3,7 @@
 [user]
 	email = ben@harvey.onl
 	name = Ben Harvey
-[includeIf "gitdir:~/Workspace/bitbucket.com/"]
-  path = .gitconfig-switchdin
+[includeIf "gitdir:~/Workspace/github.com/BMLOnline/"]
+  path = .gitconfig-bmlonline
 [init]
 	defaultBranch = main
