@@ -96,6 +96,7 @@ in
   home.file.".gitconfig-ben".source = ../dotfiles/gitconfig-ben;
   home.file.".gitconfig-bmlonline".source = ../dotfiles/gitconfig-bmlonline;
   home.file.".tmux.conf".source = ../dotfiles/tmux.conf;
+  home.file.".authinfo.gpg".source = ../dotfiles/authinfo.gpg;
 
   programs.go = {
     enable = true;
