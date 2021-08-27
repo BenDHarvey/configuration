@@ -47,6 +47,7 @@ in
     pkgs.argocd
     pkgs.neovim
     # pkgs.kitty # TODO: Does compile with apple m1
+    pkgs.gh
 
     #Mail packages
     pkgs.mu
