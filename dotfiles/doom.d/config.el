@@ -11,6 +11,8 @@
 
 (setq display-line-numbers-type 'relative)
 
+(setq auth-sources '("~/.authinfo.gpg"))
+
 (setq-default evil-shift-width 2 ;; I normally use 2wide for my projects.
               tab-width 2)
 
