@@ -48,6 +48,7 @@ in
     pkgs.neovim
     # pkgs.kitty # TODO: Does compile with apple m1
     pkgs.gh
+    pkgs.act
 
     #Mail packages
     pkgs.mu
@@ -144,7 +145,7 @@ in
     enable = true;
     autocd = true;
     dotDir = ".config/zsh";
-    enableAutosuggestions = false;
+    enableAutosuggestions = true;
     enableCompletion = true;
     shellAliases = {
       ls = "ls -las";
@@ -227,6 +228,9 @@ in
         fi
       }
 
+      ## zsh-vim-mode config
+      ZVM_VI_INSERT_ESCAPE_BINDKEY=jk
+
      '';
 
     plugins = with pkgs; [
@@ -279,6 +283,16 @@ in
           sha256 = "1h0vm2dgrmb8i2pvsgis3lshc5b0ad846836m62y8h3rdb3zmpy1";
         };
         file = "autopair.zsh";
+      }
+      {
+        name = "zsh-vi-mode";
+        src = fetchFromGitHub {
+          owner = "jeffreytse";
+          repo = "zsh-vi-mode";
+          rev = "5eb9c43f941a3ac419584a5c390aeedf4916b245";
+          sha256 = null;
+        };
+        file = "zsh-vi-mode.zsh";
       }
     ];
   };
