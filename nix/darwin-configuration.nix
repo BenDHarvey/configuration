@@ -14,6 +14,7 @@ in {
   services = {
     nix-daemon.enable = false;
     activate-system.enable = true;
+    emacs.enable = true;
   };
 
   programs = {

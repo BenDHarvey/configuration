@@ -231,6 +231,8 @@ in
       ## zsh-vim-mode config
       ZVM_VI_INSERT_ESCAPE_BINDKEY=jk
 
+      # Append a command directly
+      zvm_after_init_commands+=('[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh')
      '';
 
     plugins = with pkgs; [
