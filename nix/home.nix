@@ -49,6 +49,7 @@ in
     # pkgs.kitty # TODO: Does compile with apple m1
     pkgs.gh
     pkgs.act
+    pkgs.yq
 
     #Mail packages
     pkgs.mu
@@ -181,7 +182,7 @@ in
       dockerNuke() {
         docker stop $(docker ps -a -q)
         docker system prune -a -f
-        docker volume prune
+        docker volume prune -f
       }
 
       postgresUp() {
@@ -315,13 +316,5 @@ in
     };
   };
 
-  # This value determines the Home Manager release that your
-  # configuration is compatible with. This helps avoid breakage
-  # when a new Home Manager release introduces backwards
-  # incompatible changes.
-  #
-  # You can update Home Manager without changing this value. See
-  # the Home Manager release notes for a list of state version
-  # changes in each release.
   home.stateVersion = "21.11";
 }

@@ -1,0 +1,14 @@
+* Inbox
+** [2021-09-06 Mon 07:49] Example of installing a git repo at build time
+
+#+begin_src
+home.file = {
+  ".config/awesome/calendar".source = fetchFromGitHub {
+    owner = "yrashk";
+    repo = "calendar";
+    rev = "1ed19a3";
+    sha256 = "1xfax18y4ddafzmwqp8qfs6k34nh163bwjxb7llvls5hxr79vr9s";
+  };
+}
+#+end_src
+

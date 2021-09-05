@@ -50,6 +50,4 @@ in {
       remapCapsLockToControl = true;
     };
   };
-
-  # TODO: Add config for yabai window manager. See todo.org for details
 }

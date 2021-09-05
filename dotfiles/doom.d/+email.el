@@ -8,8 +8,8 @@
   (require 'org-mu4e)
 
   ;; Refresh mail using isync every 10 minutes
-  (setq mu4e-update-interval (* 10 60))
-  (setq mu4e-get-mail-command "mbsync -a")
+;;  (setq mu4e-update-interval (* 10 60))
+;;  (setq mu4e-get-mail-command "mbsync -a")
   (setq mu4e-maildir "~/Mail")
 
   ;; Make sure that moving a message (like to Trash) causes the
@@ -27,7 +27,7 @@
             :vars '(
                     (user-full-name . "Ben Harvey")
                     (user-mail-address . "ben@harvey.onl")
-                    (mu4e-sent-folder . "/ben@harvey.onl/Sent Items")
+                    (mu4e-sent-folder . "/ben@harvey.onl/Sent")
                     (mu4e-trash-folder . "/ben@harvey.onl/Trash")
                     (mu4e-drafts-folder . "/ben@harvey.onl/Drafts")
                     (mu4e-refile-folder . "/ben@harvey.onl/Archive")
