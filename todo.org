@@ -1,4 +1,8 @@
 * Inbox
+** TODO Update readme
+
+readme is out of date. Update to reflect the new setup using nix and nix-darwin
+
 ** TODO Setup the yabai window manager
 
 [[file:~/.configuration/nix/darwin-configuration.nix::TODO: Add config for yabai window manager. See todo.org for details]]
