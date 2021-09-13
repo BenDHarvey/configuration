@@ -22,11 +22,23 @@ link-nix: ## Link the nix config file from this dir to their correct locations
 	ln -s ~/.configuration/nix/home.nix ~/.config/nixpkgs/home.nix
 	ln -s ~/.configuration/nix/darwin-configuration.nix ~/.nixpkgs/darwin-configuration.nix
 
-config-workstation: ## Run configuration for a workstation
-	ansible-playbook workstation/workstation.yml
+create-directories: ## Create all the common directories that I ues
+	mkdir -p ~/Workspace/github.com/BenDHarvey
+	mkdir -p ~/Workspace/github.com/BMLOnline
+	mkdir -p ~/Workspace/github.com/teacher-daybook
 
-initial-config-workstation: ## Run configuration of a workstation for the first time
-	bash ./orchestration_scripts/install_workstation.sh
+clone-repos: ## Clone important repos that I use a lot
+	# BenDHarvey repos
+	gh repo clone BenDHarvey/infrastructure ~/Workspace/github.com/BenDHarvey || true
 
-deploy-git: ## Runs terraform scripts to create and configurate git repos
-	bash ./orchestration_scripts/deploy_git.sh
+	# BMLOnline repo	s
+	gh repo clone BMLOnline/online-hub-front-end ~/Workspace/github.com/BMLOnline || true
+
+###config-workstation: ## Run configuration for a workstation
+###	ansible-playbook workstation/workstation.yml
+###
+###initial-config-workstation: ## Run configuration of a workstation for the first time
+###	bash ./orchestration_scripts/install_workstation.sh
+###
+###deploy-git: ## Runs terraform scripts to create and configurate git repos
+###	bash ./orchestration_scripts/deploy_git.sh
