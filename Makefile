@@ -29,10 +29,12 @@ create-directories: ## Create all the common directories that I ues
 
 clone-repos: ## Clone important repos that I use a lot
 	# BenDHarvey repos
-	gh repo clone BenDHarvey/infrastructure ~/Workspace/github.com/BenDHarvey || true
+	gh repo clone BenDHarvey/infrastructure ~/Workspace/github.com/BenDHarvey/infrastructure || true
 
 	# BMLOnline repo	s
-	gh repo clone BMLOnline/online-hub-front-end ~/Workspace/github.com/BMLOnline || true
+	gh repo clone BMLOnline/online-hub-front-end ~/Workspace/github.com/BMLOnline/online-hub-front-end || true
+	gh repo clone BMLOnline/bmlonline-go-bkend ~/Workspace/github.com/BMLOnline/bmlonline-go-bkend || true
+
 
 ###config-workstation: ## Run configuration for a workstation
 ###	ansible-playbook workstation/workstation.yml
