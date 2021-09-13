@@ -9,7 +9,10 @@ let home           = builtins.getEnv "HOME";
     config_home  = "${home}/.configuration";
 
 in {
-  imports = [ <home-manager/nix-darwin> ];
+  imports = [
+          <home-manager/nix-darwin>
+#          ./homebrew.nix
+  ];
 
   services = {
     nix-daemon.enable = false;
