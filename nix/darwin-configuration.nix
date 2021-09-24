@@ -25,6 +25,15 @@ in {
     zsh.enable = true;
   };
 
+  nixpkgs = {
+    config = {
+      allowUnfree = true;
+      allowBroken = false;
+      allowInsecure = false;
+      allowUnsupportedSystem = true;
+    };
+  };
+
   users = {
     users.ben = {
       name = "ben";
