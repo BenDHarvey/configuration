@@ -303,6 +303,13 @@ in
   programs.fzf = {
     enable = true;
     enableZshIntegration = true;
+    enableBashIntegration = true;
+  };
+
+  programs.direnv = {
+    enable = true;
+    enableBashIntegration = true;
+    enableZshIntegration = true;
   };
 
   programs.gpg = {
@@ -316,5 +323,5 @@ in
     };
   };
 
-  home.stateVersion = "21.11";
+  home.stateVersion = "20.09";
 }

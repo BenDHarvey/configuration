@@ -50,13 +50,13 @@
        :term
        ;;eshell            ; a consistent, cross-platform shell (WIP)
 
-       term              ; terminals in Emacs
-       ;;vterm             ; another terminals in Emacs
+       ;; term              ; terminals in Emacs
+       vterm             ; another terminals in Emacs
 
        :checkers
        syntax              ; tasing you for every semicolon you forget
        spell             ; tasing you for misspelling mispelling
-       ;;grammar           ; tasing grammar mistake every you make
+       grammar           ; tasing grammar mistake every you make
 
        :tools
        ansible
@@ -68,7 +68,7 @@
        (eval +overlay)     ; run code, run (also, repls)
        ;;gist              ; interacting with github gists
        lookup              ; navigate your code and its documentation
-       lsp
+       (lsp +peek)
        (magit
         +forge)             ; a git porcelain for Emacs
        ;;make              ; run make tasks from Emacs
@@ -90,6 +90,7 @@
          +lsp
          +onsave)        ; all(hope(abandon(ye(who(enter(here))))))
        markdown          ; writing docs for people to ignore
+       nix
        (org              ; organize your plain life in plain text
         +dragndrop       ; drag & drop files/images into org buffers
         +present)        ; using org-mode for presentations

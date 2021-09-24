@@ -20,6 +20,7 @@ in {
     emacs.enable = true;
   };
 
+  ## Need to keep this. nix-darwin seems to be missing from the path if it is removed
   programs = {
     zsh.enable = true;
   };

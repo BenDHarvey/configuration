@@ -34,13 +34,4 @@ clone-repos: ## Clone important repos that I use a lot
 	# BMLOnline repo	s
 	gh repo clone BMLOnline/online-hub-front-end ~/Workspace/github.com/BMLOnline/online-hub-front-end || true
 	gh repo clone BMLOnline/bmlonline-go-bkend ~/Workspace/github.com/BMLOnline/bmlonline-go-bkend || true
-
-
-###config-workstation: ## Run configuration for a workstation
-###	ansible-playbook workstation/workstation.yml
-###
-###initial-config-workstation: ## Run configuration of a workstation for the first time
-###	bash ./orchestration_scripts/install_workstation.sh
-###
-###deploy-git: ## Runs terraform scripts to create and configurate git repos
-###	bash ./orchestration_scripts/deploy_git.sh
+	gh repo clone BMLOnline/student-hub-cypress ~/Workspace/github.com/BMLOnline/student-hub-cypress || true
