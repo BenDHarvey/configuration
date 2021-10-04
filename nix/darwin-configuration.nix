@@ -10,8 +10,8 @@ let home           = builtins.getEnv "HOME";
 
 in {
   imports = [
-          <home-manager/nix-darwin>
-          ./homebrew.nix
+    <home-manager/nix-darwin>
+    ./homebrew.nix
   ];
 
   services = {
@@ -21,7 +21,9 @@ in {
 
   ## Need to keep this. nix-darwin seems to be missing from the path if it is removed
   programs = {
-    zsh.enable = true;
+    zsh = {
+      enable = true;
+    };
   };
 
   nixpkgs = {

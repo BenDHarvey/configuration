@@ -1,4 +1,11 @@
 * Inbox
+** TODO Get this working with zsh-vi-mode
+
+There is a plugin for zsh that we are using that enables vi on the shell prompt. This looks like it is not interacting well with fzf. Likely have to find that correct location of the fzf.sh file.
+
+This will likely fix things
+https://github.com/jeffreytse/zsh-vi-mode#execute-extra-commands
+
 ** TODO Have a look at this for adding node_modules to personal config
 https://github.com/nocoolnametom/nixos-configuration/tree/main/myPkgs/development/node-packages
 

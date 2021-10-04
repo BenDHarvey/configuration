@@ -246,6 +246,12 @@ in
 
         ## zsh-vim-mode config
         ZVM_VI_INSERT_ESCAPE_BINDKEY=jk
+        ## Allow fzf to still work with vi-mode
+        # Define an init function and append to zvm_after_init_commands
+        function vi_mode_init() {
+          [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+        }
+        zvm_after_init_commands+=(vi_mode_init)
       '';
 
       plugins = with pkgs; [
