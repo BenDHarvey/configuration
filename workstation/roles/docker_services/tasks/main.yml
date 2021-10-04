@@ -1,9 +1,0 @@
----
-- name: Create and start services
-  become: yes
-  community.general.docker_compose:
-    project_src: "{{ playbook_dir }}/roles/docker_services/config"
-  register: output
-
-- debug:
-    var: output

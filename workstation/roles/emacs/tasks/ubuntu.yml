@@ -1,6 +1,0 @@
----
-- name: Install snap packages with --classic flag
-  become: yes
-  community.general.snap:
-    name: "emacs"
-    classic: yes

@@ -1,4 +1,9 @@
 * Inbox
+** TODO Have a look at this for adding node_modules to personal config
+https://github.com/nocoolnametom/nixos-configuration/tree/main/myPkgs/development/node-packages
+
+This could be a good way of managing the node_modules that are installed globally
+
 ** TODO Update readme
 
 readme is out of date. Update to reflect the new setup using nix and nix-darwin

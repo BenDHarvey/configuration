@@ -1,9 +1,0 @@
----
-- hosts: localhost
-  #  gather_facts: true
-  vars:
-    repo_url: git@gitlab.com:benharvey/configuration.git
-    branch: master
-  roles:
-    - keys
-    - ssh

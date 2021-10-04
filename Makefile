@@ -26,6 +26,7 @@ create-directories: ## Create all the common directories that I ues
 	mkdir -p ~/Workspace/github.com/BenDHarvey
 	mkdir -p ~/Workspace/github.com/BMLOnline
 	mkdir -p ~/Workspace/github.com/teacher-daybook
+	mkdir -p ~/Mail/ben@harvey.onl/
 
 clone-repos: ## Clone important repos that I use a lot
 	# BenDHarvey repos

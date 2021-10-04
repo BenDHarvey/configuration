@@ -1,9 +1,0 @@
----
-- hosts: localhost
-  #  gather_facts: true
-  tasks:
-    - name: Checkout configuration repo
-      ansible.builtin.git:
-        repo: "git@gitlab.com:benharvey/configuration.git"
-        dest: "{{ lookup('env','HOME') }}/.configuration"
-        version: master

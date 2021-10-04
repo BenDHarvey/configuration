@@ -24,57 +24,57 @@ in
       EDITOR = "emacs";
     };
 
-    packages = [
-      pkgs.tmux
-      pkgs.git
-      pkgs.xclip
-      pkgs.jq
-      pkgs.zsh
-      pkgs.ripgrep
-      pkgs.fd
-      pkgs.htop
-      pkgs.terraform
-      pkgs.awscli
-      pkgs.docker-compose
-      pkgs.ranger
-      pkgs.tree
-      pkgs.reattach-to-user-namespace
-      pkgs.cocoapods
-      pkgs.rsync
-      pkgs.hugo
-      pkgs.argocd
-      pkgs.neovim
-      pkgs.gh
-      pkgs.act
-      pkgs.yq
-      pkgs.unixtools.watch
-      pkgs.sops
-      pkgs.k9s
-      pkgs.kubernetes-helm
-      pkgs.influxdb2
+    packages = with pkgs; [
+      tmux
+      git
+      xclip
+      jq
+      zsh
+      ripgrep
+      fd
+      htop
+      terraform
+      awscli
+      docker-compose
+      ranger
+      tree
+      reattach-to-user-namespace
+      cocoapods
+      rsync
+      hugo
+      argocd
+      neovim
+      gh
+      act
+      yq
+      unixtools.watch
+      sops
+      k9s
+      kubernetes-helm
+      influxdb2
       #Mail packages
-      pkgs.mu
-      pkgs.isync
+      mu
+      isync
       # go and golang packages
-      pkgs.gopls
-      pkgs.gore
-      pkgs.gocode
-      pkgs.gotests
-      pkgs.gomodifytags
+      gopls
+      gore
+      gocode
+      gotests
+      gomodifytags
       # Kinda go packages
-      pkgs.protobuf
-      pkgs.protoc-gen-go
+      protobuf
+      protoc-gen-go
       # Node and node packages
-      pkgs.nodejs-16_x
-      pkgs.nodePackages.typescript
-      pkgs.nodePackages.eslint
-      pkgs.nodePackages.prettier
-      pkgs.nodePackages.typescript-language-server
-      pkgs.nodePackages.js-beautify
+      nodejs-16_x
+      nodePackages.typescript
+      nodePackages.eslint
+      nodePackages.prettier
+      nodePackages.typescript-language-server
+      nodePackages.js-beautify
       # emacs and other emacs things
       doom-emacs # This will install emacs as well
       # Python packages
-      pkgs.python38Packages.ansible
+      python38Packages.ansible
       # TODO: Packages that are having issues and need to be looked at
       # pkgs.nyxt # likely an m1 arch issue
       # pkgs.kitty # likely an m1 arch issue
@@ -88,8 +88,27 @@ in
     file.".gitconfig".source = ../dotfiles/gitconfig;
     file.".gitconfig-ben".source = ../dotfiles/gitconfig-ben;
     file.".gitconfig-bmlonline".source = ../dotfiles/gitconfig-bmlonline;
-    file.".tmux.conf".source = ../dotfiles/tmux.conf;
     file.".authinfo.gpg".source = ../dotfiles/authinfo.gpg;
+
+#    prettierrc = {
+#      target = ".prettierrc.js";
+#      text = ''
+#        const config = {
+#          printWidth: 100,
+#          arrowParens: 'always',
+#          singleQuote: true,
+#          tabWidth: 2,
+#          useTabs: false,
+#          semi: true,
+#          bracketSpacing: false,
+#          jsxBracketSameLine: false,
+#          requirePragma: false,
+#          proseWrap: 'preserve',
+#          trailingComma: 'all',
+#        };
+#        module.exports = config;
+#      '';
+#    };
   };
 
   programs = {
@@ -144,6 +163,14 @@ in
         gd = "git diff";
         vim = "nvim";
         cl = "clear";
+
+        # Nix aliases
+        nixre="darwin-rebuild switch";
+        nixrb="darwin-rebuild --rollback";
+        nixgc="nix-collect-garbage -d";
+        nixq="nix-env -qaP";
+        nixupgrade-darwin="sudo -i sh -c 'nix-channel --update && nix-env -iA nixpkgs.nix && launchctl remove org.nixos.nix-daemon && launchctl load /Library/LaunchDaemons/org.nixos.nix-daemon.plist'";
+        nixup="nix-env -u";
       };
 
       profileExtra = ''
@@ -307,6 +334,68 @@ in
         keyserver-options = "no-honor-keyserver-url include-revoked auto-key-retrieve";
       };
     };
+
+#    git = {
+#      enable = true;
+#      username = "BenDHarvey";
+#    };
+
+    tmux = {
+        enable = true;
+        tmuxp.enable = true;
+        historyLimit = 500000;
+        extraConfig = ''
+          unbind C-b
+          set -g prefix `
+          bind-key ` send-prefix
+
+          setw -g mouse on
+          setw -g mode-keys vi
+
+          set -g @scroll-speed-num-lines-per-scroll 1
+
+          set -g status-interval 60
+          set -g status off
+          setw -g monitor-activity off
+          set -g visual-activity on
+          #
+          ## Quick window selection
+          bind -r C-h select-window -t :-
+          bind -r C-l select-window -t :+
+          bind -r C-s set -g status
+          #
+          set-option -ga terminal-overrides ",xterm-256color:Tc"
+          #set-option -g default-shell /usr/bin/zsh
+          ## Default terminal is 256 colors
+          set -g default-terminal "screen-256color"
+          ## This option has issues when running in linux
+          set-option -g default-command "reattach-to-user-namespace -l zsh"
+          #
+          unbind c
+          unbind '"'
+          unbind %
+          bind '"' split-window -c "#{pane_current_path}"
+          bind % split-window -h -c "#{pane_current_path}"
+          bind c new-window -c "#{pane_current_path}"
+          bind h select-pane -L
+          bind j select-pane -D
+          bind k select-pane -U
+          bind l select-pane -R
+          #
+          bind -r H resize-pane -L 5
+          bind -r J resize-pane -D 5
+          bind -r K resize-pane -U 5
+          bind -r L resize-pane -R 5
+          #
+          set -g @plugin 'tmux-plugins/tpm'
+          set -g @plugin 'nhdaly/tmux-better-mouse-mode'
+          set -g @plugin 'tmux-plugins/tmux-sensible'
+          set -g @plugin 'tmux-plugins/tmux-yank'
+          #
+          run '~/.tmux/plugins/tpm/tpm'
+          #
+        '';
+      };
   };
 
   # Store mails in ~/Mail
