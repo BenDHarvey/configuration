@@ -29,6 +29,7 @@ in
       git
       xclip
       jq
+      wget
       zsh
       ripgrep
       fd
