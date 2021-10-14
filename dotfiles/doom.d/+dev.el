@@ -51,4 +51,4 @@
 (add-to-list 'auto-mode-alist '("[._]bash.*" . shell-script-mode))
 
 (provide '+dev)
-;;; +dev.el ends here
+;;;
