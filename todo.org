@@ -1,4 +1,8 @@
 * Inbox
+** TODO Recreate the secrets dir
+
+Looks like the secrets directory got lost at some point. Find this and recreate so that some of this config works
+
 ** TODO Get this working with zsh-vi-mode
 
 There is a plugin for zsh that we are using that enables vi on the shell prompt. This looks like it is not interacting well with fzf. Likely have to find that correct location of the fzf.sh file.
@@ -10,10 +14,6 @@ https://github.com/jeffreytse/zsh-vi-mode#execute-extra-commands
 https://github.com/nocoolnametom/nixos-configuration/tree/main/myPkgs/development/node-packages
 
 This could be a good way of managing the node_modules that are installed globally
-
-** TODO Update readme
-
-readme is out of date. Update to reflect the new setup using nix and nix-darwin
 
 ** TODO Setup the yabai window manager
 
@@ -74,21 +74,3 @@ services.skhd = {
 [[file:~/.configuration/nix/home.nix::pkgs.kitty # TODO: Does compile with apple m1]]
 
 - Have a look into this and work out why its not compiling or find a work around
-** DONE Fix this failing install
-
-[[file:~/.configuration/nix/home.nix::pkgs.ansible TODO: Fix this]]
-
-This fails to install for some reason. Investigate some more and fix what might be going wrong
-
-- Fixed. Installed ansible with a python package
-** TODO Get this working
-
-[[file:~/.configuration/nix/home.nix::TODO: Get go packages working here]]
-
-Tried getting this working but it seems that the packages are not getting installed correctly. Currently using pkgs.gopls to get this working
-** TODO Create mac and ubuntu specific files
-
-- This setting breaks when trying to run this config file on ubuntu
-- Update file so that it has OS specific config or create a seperate file for each OS
-
-[[file:~/.configuration/dotfiles/tmux.conf::set-option -g default-command "reattach-to-user-namespace -l zsh"]]
