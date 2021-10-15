@@ -28,11 +28,10 @@ in
     Pages = 409201541;
     Slack = 803453959;
     Vimari = 1480933944;
-    Xcode = 497799835;
+#    Xcode = 497799835;
   };
 
   homebrew.casks = [
-    "visual-studio-code"
     "vlc"
   ];
 }
