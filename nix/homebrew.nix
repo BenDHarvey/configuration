@@ -11,6 +11,7 @@ in
   homebrew.cleanup = "zap";
   homebrew.global.brewfile = true;
   homebrew.global.noLock = true;
+  homebrew.brewPrefix= "/opt/homebrew/bin";
 
   homebrew.taps = [
     "homebrew/cask"
@@ -23,7 +24,6 @@ in
 
   homebrew.masApps = {
     "1Password" = 1333542190;
-    "Dark Mode for Safari" = 1397180934;
     Numbers = 409203825;
     Pages = 409201541;
     Slack = 803453959;
@@ -32,7 +32,6 @@ in
   };
 
   homebrew.casks = [
-    "transmit"
     "visual-studio-code"
     "vlc"
   ];
