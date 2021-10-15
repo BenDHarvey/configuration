@@ -179,6 +179,8 @@ in
         if ! pgrep -x "gpg-agent" > /dev/null; then
             ${pkgs.gnupg}/bin/gpgconf --launch gpg-agent
         fi
+
+        export PATH=/opt/homebrew/bin:$PATH
       '';
 
       initExtra = ''
