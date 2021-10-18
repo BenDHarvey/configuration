@@ -28,10 +28,16 @@ in
     Pages = 409201541;
     Slack = 803453959;
     Vimari = 1480933944;
+    Notability = 360593530;
+    Telegram = 747648890;
+    Magnet = 441258766;
 #    Xcode = 497799835;
   };
 
   homebrew.casks = [
     "vlc"
+    "visual-studio-code"
+    "notion"
+    "postman"
   ];
 }
