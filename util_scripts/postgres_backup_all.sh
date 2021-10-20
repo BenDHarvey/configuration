@@ -1,7 +1,7 @@
 #!/bin/bash
 
-PGPASSWORD=SuperSecret123!
-PGUSERNAME=switchdin
+PGPASSWORD=<db_password>
+PGUSERNAME=<db_username>
 PGPORT=5432
 PGHOST=localhost
 DB_NAME_STRING=postgresql://$PGUSERNAME:$PGPASSWORD@$PGHOST:$PGPORT

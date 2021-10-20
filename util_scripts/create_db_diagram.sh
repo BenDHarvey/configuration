@@ -5,9 +5,9 @@ cat <<EOT >> /tmp/schemaspy.properties
 schemaspy.t=pgsql
 schemaspy.host=localhost
 schemaspy.port=5432
-schemaspy.db=docker_switchdin
-schemaspy.u=switchdin
-schemaspy.p=SuperSecret123!
+schemaspy.db=<db_name>
+schemaspy.u=<db_username>
+schemaspy.p=<db_password>
 schemaspy.schemas=public
 EOT
 

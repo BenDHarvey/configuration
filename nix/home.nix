@@ -80,6 +80,7 @@ in
       # pkgs.nyxt # likely an m1 arch issue
       # pkgs.kitty # likely an m1 arch issue
       # pkgs.yabai # likely an m1 arch issue
+      emacs-all-the-icons-fonts
     ];
 
     file.".emacs.d/init.el".text = ''
