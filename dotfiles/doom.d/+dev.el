@@ -21,18 +21,18 @@
 
 ;; web, js, css
 (setq css-indent-offset 2
-        js2-basic-offset 2
-        js-switch-indent-offset 2
-        js-indent-level 2
-        typescript-indent-level 2
-        js2-mode-show-parse-errors nil
-        js2-mode-show-strict-warnings nil
-        web-mode-attr-indent-offset 2
-        web-mode-code-indent-offset 2
-        web-mode-css-indent-offset 2
-        web-mode-markup-indent-offset 2
-        web-mode-enable-current-element-highlight t
-        web-mode-enable-current-column-highlight t)
+      js2-basic-offset 2
+      js-switch-indent-offset 2
+      js-indent-level 2
+      typescript-indent-level 2
+      js2-mode-show-parse-errors nil
+      js2-mode-show-strict-warnings nil
+      web-mode-attr-indent-offset 2
+      web-mode-code-indent-offset 2
+      web-mode-css-indent-offset 2
+      web-mode-markup-indent-offset 2
+      web-mode-enable-current-element-highlight t
+      web-mode-enable-current-column-highlight t)
 
 (after! typescript-mode
   (add-hook 'typescript-mode-hook #'flycheck-mode)

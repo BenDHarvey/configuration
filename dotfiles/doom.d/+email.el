@@ -1,3 +1,24 @@
+;;; +email.el --- Email configuration -*- lexical-binding: t; -*-
+;;
+;; Copyright (C) 2021 Ben Harvey
+;;
+;; Author: Ben Harvey <https://github.com/BenDHarvey>
+;; Maintainer: Ben Harvey <ben@harvey.onl>
+;; Created: October 22, 2021
+;; Modified: October 22, 2021
+;; Version: 0.0.1
+;; Keywords: Symbol’s value as variable is void: finder-known-keywords
+;; Homepage: https://github.com/ben/+email
+;; Package-Requires: ((emacs "24.3"))
+;;
+;; This file is not part of GNU Emacs.
+;;
+;;; Commentary:
+;;
+;;  Description
+;;
+;;; Code:
+
 (add-to-list 'load-path "~/.nix-profile/share/emacs/site-lisp/mu4e/")
 
 (use-package mu4e
@@ -8,8 +29,8 @@
   (require 'org-mu4e)
 
   ;; Refresh mail using isync every 10 minutes
-  ;;  (setq mu4e-update-interval (* 10 60))
-  ;;  (setq mu4e-get-mail-command "mbsync -a")
+  (setq mu4e-update-interval (* 10 60))
+  (setq mu4e-get-mail-command "mbsync -a")
   (setq mu4e-maildir "~/Mail")
 
   ;; Make sure that moving a message (like to Trash) causes the
@@ -33,15 +54,6 @@
                     (mu4e-refile-folder . "/ben@harvey.onl/Archive")
                     (mu4e-sent-messages-behavior . sent)
                     ))
-          ;;          ,(make-mu4e-context
-          ;;            :name "Personal"
-          ;;            :match-func (lambda (msg) (when msg
-          ;;                                        (string-prefix-p "/Personal" (mu4e-message-field msg :maildir))))
-          ;;            :vars '(
-          ;;                    (mu4e-sent-folder . "/Personal/Sent")
-          ;;                    (mu4e-trash-folder . "/Personal/Deleted")
-          ;;                    (mu4e-refile-folder . "/Personal/Archive")
-          ;;                    ))
           ))
   (setq mu4e-context-policy 'pick-first)
 
@@ -77,28 +89,10 @@
         smtpmail-smtp-service 465
         smtpmail-stream-type  'ssl)
 
-  ;; (See the documentation for `mu4e-sent-messages-behavior' if you have
-  ;; additional non-Gmail addresses and want assign them different
-  ;; behavior.)
-
-  ;; setup some handy shortcuts
-  ;; you can quickly switch to your Inbox -- press ``ji''
-  ;; then, when you want archive some messages, move them to
-  ;; the 'All Mail' folder by pressing ``ma''.
-  ;;  (setq mu4e-maildir-shortcuts
-  ;;        '(("/Fastmail/INBOX"       . ?i)
-  ;;          ("/Fastmail/Lists/*"     . ?l)
-  ;;          ("/Fastmail/Sent Mail"   . ?s)
-  ;;          ("/Fastmail/Trash"       . ?t)))
-
-  ;;  (add-to-list 'mu4e-bookmarks
-  ;;               (make-mu4e-bookmark
-  ;;                :name "All Inboxes"
-  ;;                :query "maildir:/Fastmail/INBOX OR maildir:/Personal/Inbox"
-  ;;                :key ?i))
-
   ;; don't keep message buffers around
   (setq message-kill-buffer-on-exit t)
 
   ;; Start mu4e in the background so that it syncs mail periodically
   (mu4e t))
+
+(provide '+email)

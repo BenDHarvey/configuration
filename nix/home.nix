@@ -53,6 +53,8 @@ in
       k9s
       kubernetes-helm
       influxdb2
+      coreutils
+      clang
       #Mail packages
       mu
       isync
@@ -79,7 +81,6 @@ in
       # TODO: Packages that are having issues and need to be looked at
       # pkgs.nyxt # likely an m1 arch issue
       # pkgs.kitty # likely an m1 arch issue
-      # pkgs.yabai # likely an m1 arch issue
       emacs-all-the-icons-fonts
     ];
 
