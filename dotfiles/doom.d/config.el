@@ -46,7 +46,7 @@
 (load! "+org")     ;; Org mode stuff like todos and rebindings
 (load! "+email")   ;; Load email configuration
 (load! "+dev")     ;; Load email configuration
-(load! "+slack")    ;; Load email configuration
+;;(load! "+slack")    ;; Load email configuration
 
 (provide 'config)
 ;;; config.el ends here

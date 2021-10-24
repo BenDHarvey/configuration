@@ -24,12 +24,7 @@
 (package! format-all)
 (package! nvm)
 
-;; slack-el dependancies
-(package! alert)
-(package! circe)
-(package! oauth2)
-(package! request)
-(package! websocket)
+;;(package! slack)
 
 (provide 'packages)
 ;;; packages.el ends here
