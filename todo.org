@@ -1,4 +1,11 @@
 * Inbox
+** TODO Get this working correctly
+
+Started looking into this but was unable to get it working correctly.
+
+Looking for a package that can help with "smartly" moving between folders. Another option could be https://github.com/ajeetdsouza/zoxide
+
+[[file:~/.configuration/nix/home.nix::autojump = {]]
 ** TODO Recreate the secrets dir
 
 Looks like the secrets directory got lost at some point. Find this and recreate so that some of this config works

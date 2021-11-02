@@ -28,10 +28,9 @@ in
     Pages = 409201541;
     Slack = 803453959;
     Vimari = 1480933944;
-    Notability = 360593530;
     Telegram = 747648890;
     Magnet = 441258766;
-#    Xcode = 497799835;
+    GoodNotes = 1444383602;
   };
 
   homebrew.casks = [
@@ -39,5 +38,6 @@ in
     "visual-studio-code"
     "notion"
     "postman"
+    "docker"
   ];
 }

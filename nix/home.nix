@@ -55,6 +55,8 @@ in
       influxdb2
       coreutils
       clang
+      cmake
+
       #Mail packages
       mu
       isync
@@ -92,29 +94,12 @@ in
     file.".gitconfig-ben".source = ../dotfiles/gitconfig-ben;
     file.".gitconfig-bmlonline".source = ../dotfiles/gitconfig-bmlonline;
     file.".authinfo.gpg".source = ../dotfiles/authinfo.gpg;
-
-#    prettierrc = {
-#      target = ".prettierrc.js";
-#      text = ''
-#        const config = {
-#          printWidth: 100,
-#          arrowParens: 'always',
-#          singleQuote: true,
-#          tabWidth: 2,
-#          useTabs: false,
-#          semi: true,
-#          bracketSpacing: false,
-#          jsxBracketSameLine: false,
-#          requirePragma: false,
-#          proseWrap: 'preserve',
-#          trailingComma: 'all',
-#        };
-#        module.exports = config;
-#      '';
-#    };
   };
 
+
   programs = {
+    zoxide.enable = true;
+
     go = {
       enable = true;
     };
@@ -257,6 +242,8 @@ in
           [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
         }
         zvm_after_init_commands+=(vi_mode_init)
+
+        eval "$(zoxide init zsh)"
       '';
 
       plugins = with pkgs; [
