@@ -21,7 +21,7 @@ in
     username = "ben";
     homeDirectory = "/Users/ben";
     sessionVariables = {
-      EDITOR = "emacs";
+      EDITOR = "emacs -nw";
     };
 
     packages = with pkgs; [

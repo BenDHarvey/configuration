@@ -39,5 +39,6 @@ in
     "notion"
     "postman"
     "docker"
+    "google-cloud-sdk"
   ];
 }
