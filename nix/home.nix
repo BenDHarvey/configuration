@@ -56,6 +56,7 @@ in
       coreutils
       clang
       cmake
+      reflex
 
       #Mail packages
       mu

@@ -40,5 +40,6 @@ in
     "postman"
     "docker"
     "google-cloud-sdk"
+    "ledger-live"
   ];
 }

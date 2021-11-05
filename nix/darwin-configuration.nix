@@ -12,6 +12,7 @@ in {
   imports = [
     <home-manager/nix-darwin>
     ./homebrew.nix
+#    ./modules/talos.nix
   ];
 
   services = {

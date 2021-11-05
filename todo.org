@@ -1,4 +1,7 @@
 * Inbox
+** TODO Get this working
+
+[[file:~/.configuration/nix/modules/talos.nix::{ pkgs, config, lib, ... }:]]
 ** TODO Get this working correctly
 
 Started looking into this but was unable to get it working correctly.
