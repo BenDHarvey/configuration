@@ -41,5 +41,6 @@ in
     "docker"
     "google-cloud-sdk"
     "ledger-live"
+    "caffeine"
   ];
 }
