@@ -33,6 +33,9 @@ in
     GoodNotes = 1444383602;
   };
 
+  homebrew.brews = [
+  ];
+
   homebrew.casks = [
     "vlc"
     "visual-studio-code"
