@@ -45,5 +45,6 @@ in
     "google-cloud-sdk"
     "ledger-live"
     "caffeine"
+    "alacritty"
   ];
 }
