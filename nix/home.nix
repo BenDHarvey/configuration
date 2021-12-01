@@ -56,7 +56,7 @@ in
       coreutils
       clang
       cmake
-      reflex
+      ffmpeg
 
       #Mail packages
       mu

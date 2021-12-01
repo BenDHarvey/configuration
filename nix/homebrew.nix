@@ -41,7 +41,6 @@ in
     "visual-studio-code"
     "notion"
     "postman"
-    "docker"
     "google-cloud-sdk"
     "ledger-live"
     "caffeine"
