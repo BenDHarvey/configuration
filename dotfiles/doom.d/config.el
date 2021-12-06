@@ -39,9 +39,6 @@
 (setq-default evil-shift-width 2 ;; I normally use 2wide for my projects.
               tab-width 2)
 
-(use-package emojify
-  :hook (after-init . global-emojify-mode))
-
 ;; Module imports
 (load! "+org")     ;; Org mode stuff like todos and rebindings
 (load! "+email")   ;; Load email configuration
