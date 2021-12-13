@@ -57,6 +57,8 @@ in
       clang
       cmake
       ffmpeg
+      vagrant
+      nmap
 
       #Mail packages
       mu

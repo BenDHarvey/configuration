@@ -25,6 +25,7 @@
 ;;(package! nvm)
 
 ;;(package! slack)
+;;(package! code-review)
 
 (provide 'packages)
 ;;; packages.el ends here
