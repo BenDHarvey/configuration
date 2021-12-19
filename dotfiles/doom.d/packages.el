@@ -26,6 +26,7 @@
 
 ;;(package! slack)
 ;;(package! code-review)
+(package! restclient)
 
 (provide 'packages)
 ;;; packages.el ends here

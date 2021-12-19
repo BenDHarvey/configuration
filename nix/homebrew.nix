@@ -45,5 +45,6 @@ in
     "ledger-live"
     "caffeine"
     "alacritty"
+    "dbeaver-community"
   ];
 }
