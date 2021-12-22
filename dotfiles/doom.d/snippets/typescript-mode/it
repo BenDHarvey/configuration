@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: it
+# key: it
+# --
+it("", () => {
+  console.log("Should do the thing")
+})

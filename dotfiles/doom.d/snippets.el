@@ -19,7 +19,8 @@
 ;;
 ;;; Code:
 
-
+(setq yas-snippet-dirs (append yas-snippet-dirs
+                               '("~/.snippets")))
 
 ;; Work in progress
 ;; Here are some notes about things that we need to do

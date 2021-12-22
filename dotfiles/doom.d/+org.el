@@ -24,7 +24,4 @@
 
 ;;; $DOOMDIR/+org.el -*- lexical-binding: t; -*-
 
-;; Allow for org-mode to know about plantuml
-(setq org-plantuml-jar-path (expand-file-name "/usr/local/bin/plantuml.jar"))
-
 (setq org-refile-targets '((org-agenda-files :maxlevel . 5)))

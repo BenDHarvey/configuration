@@ -97,6 +97,7 @@ in
     file.".gitconfig-ben".source = ../dotfiles/gitconfig-ben;
     file.".gitconfig-bmlonline".source = ../dotfiles/gitconfig-bmlonline;
     file.".authinfo.gpg".source = ../dotfiles/authinfo.gpg;
+    file.".snippets".source = ../dotfiles/doom.d/snippets;
   };
 
 
