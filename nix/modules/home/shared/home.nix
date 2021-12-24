@@ -307,15 +307,15 @@ with import <home-manager/modules/lib/dag.nix> { inherit lib; };
           };
           file = "autopair.zsh";
         }
-        {
-          name = "zsh-vi-mode";
-          src = fetchFromGitHub {
-            owner = "jeffreytse";
-            repo = "zsh-vi-mode";
-            rev = "5eb9c43f941a3ac419584a5c390aeedf4916b245";
-            sha256 = null;
-          };
-          file = "zsh-vi-mode.zsh";
+#        {
+#          name = "zsh-vi-mode";
+#          src = fetchFromGitHub {
+#            owner = "jeffreytse";
+#            repo = "zsh-vi-mode";
+#            rev = "5eb9c43f941a3ac419584a5c390aeedf4916b245";
+#            sha256 = null;
+#          };
+#          file = "zsh-vi-mode.zsh";
         }
       ];
     };
