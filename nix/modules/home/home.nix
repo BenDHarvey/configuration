@@ -39,8 +39,8 @@ in
       docker-compose
       ranger
       tree
-#      reattach-to-user-namespace
-      cocoapods
+#      reattach-to-user-namespace # This is a mac only package
+#      cocoapods # This is a mac only package
       rsync
       hugo
       argocd
