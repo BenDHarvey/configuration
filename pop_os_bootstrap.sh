@@ -10,16 +10,11 @@ sh <(curl -L https://nixos.org/nix/install) --daemon
 # Reboot
 sudo reboot
 
-# Install 1password
-
 # Copy SSH key and pgp keys
 echo "COPY SSH AND PGP FROM THUMBDRIVE
 This step has not been automated yet. You will have to do this manually"
 
-# Update permissions of the copied ssh keys
-
 # clone configuration repo
 
-
-
-# Run inital 
+# Link default.nix file from .configuration repo to local home directory
+ln -s ~/.configuration/nix/default.nix ~/default.nix
