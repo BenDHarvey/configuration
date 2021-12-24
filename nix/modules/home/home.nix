@@ -10,6 +10,7 @@ let
 in {
   imports = [
 #    <home-manager/nix-darwin>
+    ./config.nix
     ./shared/home.nix
     ./linux/home.nix
   ];
