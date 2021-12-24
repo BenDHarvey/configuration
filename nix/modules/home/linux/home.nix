@@ -1,4 +1,4 @@
-  { config, pkgs, ... }:
+{ config, pkgs, ... }:
 
 with import <nixpkgs> {};
 with builtins;
@@ -33,12 +33,12 @@ with lib;
 
     file."./i3/config".source = ./files/i3_config;
     file.".config/i3/bar".source = ./i3_status_rs.toml";
-
-    services.screen-locker = {
-      enable = true;
-      lockCmd = "\${pkgs.i3lock-fancy}/bin/i3lock-fancy";
-    };
-
-    services.unclutter.enable = true;
   };
+  
+  services.screen-locker = {
+    enable = true;
+    lockCmd = "\${pkgs.i3lock-fancy}/bin/i3lock-fancy";
+  };
+
+  services.unclutter.enable = true;
 }
