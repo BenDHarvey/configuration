@@ -316,7 +316,7 @@ with import <home-manager/modules/lib/dag.nix> { inherit lib; };
 #            sha256 = null;
 #          };
 #          file = "zsh-vi-mode.zsh";
-        }
+#        }
       ];
     };
 
