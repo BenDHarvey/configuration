@@ -5,6 +5,9 @@
   home.packages = with pkgs; [
     texlive.combined.scheme-full
 
+    # Fonts
+    iosevka-nerd
+
     # i3
     acpi
     i3lock-fancy
@@ -28,6 +31,8 @@
     editorconfig-core-c
     nixfmt
     shellcheck
+
+    rofi
   ];
 
   programs.bat = {
@@ -93,6 +98,6 @@
   services.unclutter.enable = true;
 
   home.file.".config/i3/config".source = ./i3/i3_config;
-  #home.file.".config/i3/bar".source = ./i3/i3_status_rs
-  #  + ".${settings.flavour}.toml";
+  home.file.".config/i3/bar".source = ./i3/i3_status_rs";
+  home.file.".local/share/rofi/themes/base16-dracula.rasi".source = ./files/rofi_theme;
 }
