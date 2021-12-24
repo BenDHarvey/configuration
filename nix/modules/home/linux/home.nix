@@ -6,7 +6,7 @@
     texlive.combined.scheme-full
 
     # Fonts
-    iosevka-nerd
+    #iosevka-nerd
 
     # i3
     acpi
