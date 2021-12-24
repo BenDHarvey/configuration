@@ -1,6 +1,6 @@
 { config, pkgs, ... }:
 
-{
+in {
   imports = [ ./zsh.nix ];
 
   # Let Home Manager install and manage itself.
