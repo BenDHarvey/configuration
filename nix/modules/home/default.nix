@@ -2,13 +2,13 @@
 
 let
 
-  home-manager = builtins.fetchTarball {
-    name   = "home-manager-2021-08-21";
-    url    = "https://github.com/nix-community/home-manager/archive/f6d1cad.tar.gz";
-    sha256 = "0s8nlgrf16bz2bhnk0xrzvivagq55cifxf2p545c7n4zj9ryfkkp";
-  };
+  #home-manager = builtins.fetchTarball {
+   # name   = "home-manager-2021-08-21";
+   # url    = "https://github.com/nix-community/home-manager/archive/f6d1cad.tar.gz";
+   # sha256 = "0s8nlgrf16bz2bhnk0xrzvivagq55cifxf2p545c7n4zj9ryfkkp";
+ # };
 
-  evalHome = import "${toString home-manager}/modules";
+  #evalHome = import "${toString home-manager}/modules";
 in
 {
   home-config = pkgs.lib.recurseIntoAttrs (
