@@ -39,7 +39,7 @@ in
       docker-compose
       ranger
       tree
-      reattach-to-user-namespace
+#      reattach-to-user-namespace
       cocoapods
       rsync
       hugo
