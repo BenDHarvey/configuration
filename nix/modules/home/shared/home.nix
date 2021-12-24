@@ -5,15 +5,9 @@ with builtins;
 with lib;
 with import <home-manager/modules/lib/dag.nix> { inherit lib; };
 
-#let
-#  doom-emacs = pkgs.callPackage (builtins.fetchTarball {
-#    url = https://github.com/vlaci/nix-doom-emacs/archive/master.tar.gz;
-#  }) {
-#    doomPrivateDir = ../../../../dotfiles/doom.d;  # Directory containing your config.el init.el
-#  };
-#in 
-
 {
+  imports = [ ./zsh.nix ];
+
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
@@ -30,7 +24,7 @@ with import <home-manager/modules/lib/dag.nix> { inherit lib; };
       xclip
       jq
       wget
-      zsh
+      #zsh
       ripgrep
       fd
       htop
@@ -93,7 +87,6 @@ with import <home-manager/modules/lib/dag.nix> { inherit lib; };
     file.".authinfo.gpg".source = ../../../../dotfiles/authinfo.gpg;
     file.".snippets".source = ../../../../dotfiles/doom.d/snippets;
   };
-
 
   programs = {
     alacritty = {
