@@ -80,6 +80,7 @@ with import <home-manager/modules/lib/dag.nix> { inherit lib; };
       python38Packages.ansible
       emacs-all-the-icons-fonts
       emacs
+      radeontop
     ];
 
     file.".emacs.d/init.el".text = ''
