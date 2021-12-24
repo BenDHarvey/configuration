@@ -8,7 +8,7 @@ with lib;
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
-  imports = [ ./zsh.nix, ./mail.nix ];
+  imports = [ ./zsh.nix ./mail.nix ];
 
   home = {
     username = "ben";
