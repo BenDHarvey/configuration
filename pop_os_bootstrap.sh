@@ -4,6 +4,9 @@
 
 sudo apt update && sudo apt upgrade -y
 
+# Install i3
+sudo apt install i3
+
 # Install nix
 curl -L https://nixos.org/nix/install | sh
 

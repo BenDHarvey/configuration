@@ -9,8 +9,8 @@ let
   settings = import ./config;
 in {
   imports = [
-#    <home-manager/nix-darwin>
+    <home-manager/nix-darwin>
     ./shared/home.nix
-    ./linux/home.nix
+    ./osx/home.nix
   ];
 }

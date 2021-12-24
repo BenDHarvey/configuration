@@ -8,7 +8,7 @@ with import <home-manager/modules/lib/dag.nix> { inherit lib; };
 {
   imports = [
     <home-manager/nix-darwin>
-    ../homebrew/homebrew.nix
+    ./homebrew.nix
   ];
 
     programs = {
