@@ -2,7 +2,7 @@
 set $mod Mod4
 
 #font pango:Iosevka Nerd Font 8
-exec --no-startup-id setxkbmap -option caps:escape
+#exec --no-startup-id setxkbmap -option caps:ctrl
 #exec --no-startup-id slack
 exec --no-startup-id nm-applet
 exec --no-startup-id xset r rate 200 60
@@ -37,7 +37,7 @@ bar {
     binding_mode       #FF5555 #FF5555 #F8F8F2
   }
 
-  status_command i3status-rs ~/.config/i3/bar
+  #status_command i3status-rs ~/.config/i3/bar
 }
 
 ## Keybindings ##
