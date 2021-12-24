@@ -43,9 +43,6 @@
       AGKOZAK_MULTILINE=0
       AGKOZAK_PROMPT_CHAR=( ❯ ❯ ❮ )
       autopair-init
-
-      if [ -e /Users/ben/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/ben/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
-
                               '';
 
     plugins = with pkgs; [
