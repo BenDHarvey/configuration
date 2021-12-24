@@ -3,12 +3,8 @@
 with import <nixpkgs> {};
 with builtins;
 with lib;
-with import <home-manager/modules/lib/dag.nix> { inherit lib; };
 
 {
-  # Let Home Manager install and manage itself.
-  programs.home-manager.enable = true;
-
   home = {
     packages = with pkgs; [
       python38Packages.ansible
@@ -37,5 +33,12 @@ with import <home-manager/modules/lib/dag.nix> { inherit lib; };
 
     file."./i3/config".source = ./files/i3_config;
     file.".config/i3/bar".source = ./i3_status_rs.toml";
+
+    services.screen-locker = {
+      enable = true;
+      lockCmd = "\${pkgs.i3lock-fancy}/bin/i3lock-fancy";
+    };
+
+    services.unclutter.enable = true;
   };
 }
