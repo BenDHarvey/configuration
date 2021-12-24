@@ -11,9 +11,234 @@ with import <home-manager/modules/lib/dag.nix> { inherit lib; };
     ../homebrew/homebrew.nix
   ];
 
+    programs = {
+    alacritty = {
+      enable = true;
+      settings = {
+        font.size = 12;
+        normal = {
+          family = "Iosevka Nerd Font";
+          style = "Regular";
+        };
+        mouse.hide_when_typing = true;
+      };
+    };
+
+    zoxide.enable = true;
+
+    go = {
+      enable = true;
+    };
+
+    msmtp = {
+      enable = true;
+    };
+
+    mbsync = {
+      enable = true;
+      extraConfig = lib.mkBefore ''
+        MaildirStore ben@harvey.onl-local
+        Path ~/Mail/ben@harvey.onl/
+        Inbox ~/Mail/ben@harvey.onl/Inbox
+        Trash Trash
+        SubFolders Verbatim
+
+        IMAPStore ben@harvey.onl-remote
+        Host imap.fastmail.com
+        Port 993
+        User ben@harvey.onl
+        PassCmd "sops -d --extract '[\"benHarveyOnl_fastmail\"][\"password\"]' ~/.configuration/secrets/mail.yaml"
+        SSLType IMAPS
+        SSLVersions TLSv1.2
+
+        Channel ben@harvey.onl
+        Master :ben@harvey.onl-remote:
+        Slave :ben@harvey.onl-local:
+        Patterns *
+        Expunge None
+        CopyArrivalDate yes
+        Sync All
+        Create Slave
+        SyncState *
+      '';
+    };
+
+    zsh = {
+      enable = true;
+      autocd = true;
+      dotDir = ".config/zsh";
+      enableAutosuggestions = true;
+      enableCompletion = true;
+      shellAliases = {
+        ls = "ls -las";
+        emacs = "emacs -nw";
+        gs = "git status";
+        gl = "git log --decorate --graph";
+        gd = "git diff";
+        vim = "nvim";
+        cl = "clear";
+
+        # Nix aliases
+        nixre="darwin-rebuild switch";
+        nixrb="darwin-rebuild --rollback";
+        nixgc="nix-collect-garbage -d";
+        nixq="nix-env -qaP";
+        nixupgrade-darwin="sudo -i sh -c 'nix-channel --update && nix-env -iA nixpkgs.nix && launchctl remove org.nixos.nix-daemon && launchctl load /Library/LaunchDaemons/org.nixos.nix-daemon.plist'";
+        nixup="nix-env -u";
+      };
+
+      profileExtra = ''
+        export GPG_TTY=$(tty)
+        if ! pgrep -x "gpg-agent" > /dev/null; then
+            ${pkgs.gnupg}/bin/gpgconf --launch gpg-agent
+        fi
+
+        export PATH=/opt/homebrew/bin:$PATH
+      '';
+
+      initExtra = ''
+        bindkey '^ ' autosuggest-accept
+        AGKOZAK_CMD_EXEC_TIME=5
+        AGKOZAK_COLORS_CMD_EXEC_TIME='yellow'
+        AGKOZAK_COLORS_PROMPT_CHAR='magenta'
+        AGKOZAK_CUSTOM_SYMBOLS=( '⇣⇡' '⇣' '⇡' '+' 'x' '!' '>' '?' )
+        AGKOZAK_MULTILINE=0
+        AGKOZAK_PROMPT_CHAR=( ❯ ❯ ❮ )
+        autopair-init
+
+        if [ -e /Users/ben/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/ben/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+
+        # Extra functions
+
+        dockerNuke() {
+          docker stop $(docker ps -a -q)
+          docker system prune -a -f
+          docker volume prune -f
+        }
+
+        postgresUp() {
+          docker run --name switchdin-postgres \
+            -e POSTGRES_PASSWORD=postgres \
+            -e POSTGRES_USER=postgres \
+            -e POSTGRES_DB=switchdin \
+            -p "5432:5432" \
+            -d postgres
+        }
+
+        # Removes node_modules folder and package-lock.json reinstalls node_modules
+        node-reinstall() {
+          echo "Removing node_modules...."
+          sudo rm -r node_modules
+          echo "Removing package-lock.json"
+          sudo rm package-lock.json
+          echo "Installing node_modules"
+          npm i
+        }
+
+        jwtDecode () {
+          sed 's/\./\n/g' <<< $(cut -d. -f1,2 <<< $1) | base64 --decode | jq
+        }
+
+        clean-repo() {
+          git clean -xfd
+          git submodule foreach --recursive git clean -xfd
+          git reset --hard
+          git submodule foreach --recursive git reset --hard
+          git submodule update --init --recursive
+        }
+
+        git-contributors() {
+          git shortlog --summary --numbered --email
+        }
+
+        function killByPort {
+          if [ "$1" != "" ]
+          then
+            kill -9 $(lsof -ni tcp:"$1" | awk 'FNR==2{print $2}')
+          else
+            echo "Missing argument! Usage: kill-by-port $PORT"
+          fi
+        }
+
+        ## zsh-vim-mode config
+        ZVM_VI_INSERT_ESCAPE_BINDKEY=jk
+        ## Allow fzf to still work with vi-mode
+        # Define an init function and append to zvm_after_init_commands
+        function vi_mode_init() {
+          [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+        }
+        zvm_after_init_commands+=(vi_mode_init)
+
+        eval "$(zoxide init zsh)"
+      '';
+
+      plugins = with pkgs; [
+        {
+          name = "agkozak-zsh-prompt";
+          src = fetchFromGitHub {
+            owner = "agkozak";
+            repo = "agkozak-zsh-prompt";
+            rev = "v3.7.0";
+            sha256 = "1iz4l8777i52gfynzpf6yybrmics8g4i3f1xs3rqsr40bb89igrs";
+          };
+          file = "agkozak-zsh-prompt.plugin.zsh";
+        }
+        {
+          name = "formarks";
+          src = fetchFromGitHub {
+            owner = "wfxr";
+            repo = "formarks";
+            rev = "8abce138218a8e6acd3c8ad2dd52550198625944";
+            sha256 = "1wr4ypv2b6a2w9qsia29mb36xf98zjzhp3bq4ix6r3cmra3xij90";
+          };
+          file = "formarks.plugin.zsh";
+        }
+        {
+          name = "zsh-syntax-highlighting";
+          src = fetchFromGitHub {
+            owner = "zsh-users";
+            repo = "zsh-syntax-highlighting";
+            rev = "0.6.0";
+            sha256 = "0zmq66dzasmr5pwribyh4kbkk23jxbpdw4rjxx0i7dx8jjp2lzl4";
+          };
+          file = "zsh-syntax-highlighting.zsh";
+        }
+        {
+          name = "zsh-abbrev-alias";
+          src = fetchFromGitHub {
+            owner = "momo-lab";
+            repo = "zsh-abbrev-alias";
+            rev = "637f0b2dda6d392bf710190ee472a48a20766c07";
+            sha256 = "16saanmwpp634yc8jfdxig0ivm1gvcgpif937gbdxf0csc6vh47k";
+          };
+          file = "abbrev-alias.plugin.zsh";
+        }
+        {
+          name = "zsh-autopair";
+          src = fetchFromGitHub {
+            owner = "hlissner";
+            repo = "zsh-autopair";
+            rev = "34a8bca0c18fcf3ab1561caef9790abffc1d3d49";
+            sha256 = "1h0vm2dgrmb8i2pvsgis3lshc5b0ad846836m62y8h3rdb3zmpy1";
+          };
+          file = "autopair.zsh";
+        }
+        {
+          name = "zsh-vi-mode";
+          src = fetchFromGitHub {
+            owner = "jeffreytse";
+            repo = "zsh-vi-mode";
+            rev = "5eb9c43f941a3ac419584a5c390aeedf4916b245";
+            sha256 = null;
+          };
+          file = "zsh-vi-mode.zsh";
+        }
+      ];
+    };
+  };
+
     packages = with pkgs; [
       reattach-to-user-namespace
       cocoapods
     ];
-  };
 }
