@@ -8,7 +8,7 @@ with import <nixpkgs> {};
             mu
             isync
         ];
-    }
+    };
 
     programs = {
         mbsync = {
@@ -43,5 +43,5 @@ with import <nixpkgs> {};
         msmtp = {
             enable = true;
         };
-    }
+    };
 }
