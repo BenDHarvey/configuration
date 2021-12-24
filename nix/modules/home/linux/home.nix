@@ -13,13 +13,9 @@
     # desktop
     arandr
     chromium
-    discord
-    evince
-    feh
     libnotify
     pavucontrol
     slack
-    spotify
     tdesktop
     virtmanager
     vlc
