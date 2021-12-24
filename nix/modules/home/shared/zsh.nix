@@ -6,7 +6,7 @@
     autocd = true;
     dotDir = ".config/zsh";
     enableAutosuggestions = true;
-    enableCompletion = true;
+    enableCompletion = false;
     shellAliases = {
         ls = "ls -las";
         emacs = "emacs -nw";
@@ -42,7 +42,6 @@
       AGKOZAK_CUSTOM_SYMBOLS=( '⇣⇡' '⇣' '⇡' '+' 'x' '!' '>' '?' )
       AGKOZAK_MULTILINE=0
       AGKOZAK_PROMPT_CHAR=( ❯ ❯ ❮ )
-      eval $(thefuck --alias)
       autopair-init
                               '';
 
@@ -98,10 +97,5 @@
         file = "autopair.zsh";
       }
     ];
-  };
-
-  programs.fzf = {
-    enable = true;
-    enableZshIntegration = true;
   };
 }
