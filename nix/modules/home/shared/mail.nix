@@ -3,10 +3,12 @@
 with import <nixpkgs> {};
 
 {
-    packages = with pkgs; [
-      mu
-      isync
-    ];
+    home = {
+        packages = with pkgs; [
+            mu
+            isync
+        ];
+    }
 
     programs.mbsync = {
       enable = true;
