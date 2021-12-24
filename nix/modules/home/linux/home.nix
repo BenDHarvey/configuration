@@ -42,8 +42,6 @@
 
   programs.direnv = { enable = true; };
 
-  programs.emacs.enable = true;
-
   services.dunst = {
     enable = true;
     settings = {
