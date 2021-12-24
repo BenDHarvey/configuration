@@ -1,9 +1,4 @@
-  { config, pkgs, ... }:
-
-with import <nixpkgs> {};
-with builtins;
-with lib;
-with import <home-manager/modules/lib/dag.nix> { inherit lib; };
+{ config, pkgs, ... }:
 
 {
   imports = [ ./zsh.nix ];
