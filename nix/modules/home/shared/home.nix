@@ -20,7 +20,6 @@ with lib;
       xclip
       jq
       wget
-      #zsh
       ripgrep
       fd
       htop
