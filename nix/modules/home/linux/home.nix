@@ -34,6 +34,9 @@ with import <home-manager/modules/lib/dag.nix> { inherit lib; };
       i3lock-fancy
       i3status-rust
     ];
+
+    file."./i3/config".source = ./files/i3_config;
+    file.".config/i3/bar".source = ./i3_status_rs.toml";
   };
 
   services.dunst = {
@@ -82,6 +85,5 @@ with import <home-manager/modules/lib/dag.nix> { inherit lib; };
     };
   };
 
-  home.file."./i3/config".source = ./files/i3_config;
-  home.file.".config/i3/bar".source = ./i3_status_rs.toml";
+
 }
