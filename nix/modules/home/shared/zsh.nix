@@ -6,7 +6,7 @@
     autocd = true;
     dotDir = ".config/zsh";
     enableAutosuggestions = true;
-    enableCompletion = true;
+    enableCompletion = false;
     shellAliases = {
         ls = "ls -las";
         emacs = "emacs -nw";
