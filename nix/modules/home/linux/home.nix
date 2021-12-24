@@ -24,9 +24,9 @@
     networkmanagerapplet
 
     # Emacs dependencies
-    aspell
-    aspellDicts.en
-    aspellDicts.en-computers
+    #aspell
+    #aspellDicts.en
+    #spellDicts.en-computers
     ccls
     editorconfig-core-c
     nixfmt
