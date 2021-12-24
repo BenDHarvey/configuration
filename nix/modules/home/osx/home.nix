@@ -8,6 +8,12 @@ with import <home-manager/modules/lib/dag.nix> { inherit lib; };
 {
   imports = [
     <home-manager/nix-darwin>
-    ./homebrew/homebrew.nix
+    ../homebrew/homebrew.nix
   ];
+
+    packages = with pkgs; [
+      reattach-to-user-namespace
+      cocoapods
+    ];
+  };
 }
