@@ -4,5 +4,5 @@
 }:
 
 {
-  home = pkgs.callPackage ./modules/home { };
+  home = pkgs.callPackage /home/ben/.configuration/nix/modules/home { };
 }
