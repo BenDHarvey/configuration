@@ -3,12 +3,12 @@
 {
 
   home.packages = with pkgs; [
-    texlive.combined.scheme-full
 
     # Fonts
     #iosevka-nerd
 
     # i3
+    i3
     acpi
     i3lock-fancy
     i3status-rust
