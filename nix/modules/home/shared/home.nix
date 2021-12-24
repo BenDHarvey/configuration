@@ -1,4 +1,8 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, ... }:
+
+with import <nixpkgs> {};
+with builtins;
+with lib;
 
 {
   imports = [ ./zsh.nix ];
