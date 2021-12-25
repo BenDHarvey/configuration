@@ -10,8 +10,8 @@
     # i3
     i3
     acpi
-    #i3lock-fancy
-    #i3status-rust
+    i3lock-fancy
+    i3status-rust
 
     # desktop
     arandr

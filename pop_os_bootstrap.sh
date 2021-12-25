@@ -40,3 +40,7 @@ sudo chsh -s $(which zsh)
 #https://github.com/guibou/nixGL/
 nix-channel --add https://github.com/guibou/nixGL/archive/main.tar.gz nixgl && nix-channel --update
 nix-env -iA nixgl.auto.nixGLDefault
+
+# Install doom emacs
+git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.emacs.d
+~/.emacs.d/bin/doom install
