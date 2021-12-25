@@ -1,5 +1,5 @@
 # Setting modifier key
-set $mod Mod4
+#set $mod Mod4
 
 #font pango:Iosevka Nerd Font 8
 #exec --no-startup-id setxkbmap -option caps:ctrl
@@ -37,7 +37,7 @@ bar {
     binding_mode       #FF5555 #FF5555 #F8F8F2
   }
 
-  #status_command i3status-rs ~/.config/i3/bar
+  status_command i3status-rs ~/.config/i3/bar
 }
 
 ## Keybindings ##
@@ -45,9 +45,9 @@ bar {
 bindsym $mod+Ctrl+l exec i3lock-fancy && xset dpms force off
 
 # Volume buttons
-bindsym XF86AudioRaiseVolume exec amixer -q -D pulse sset Master 5%+ && pkill -RTMIN+1 i3blocks
-bindsym XF86AudioLowerVolume exec amixer -q -D pulse sset Master 5%- && pkill -RTMIN+1 i3blocks
-bindsym XF86AudioMute exec amixer -q -D pulse sset Master toggle && pkill -RTMIN+1 i3blocks
+#bindsym XF86AudioRaiseVolume exec amixer -q -D pulse sset Master 5%+ && pkill -RTMIN+1 i3blocks
+#bindsym XF86AudioLowerVolume exec amixer -q -D pulse sset Master 5%- && pkill -RTMIN+1 i3blocks
+#bindsym XF86AudioMute exec amixer -q -D pulse sset Master toggle && pkill -RTMIN+1 i3blocks
 
 # start a terminal
 bindsym $mod+Return exec alacritty
