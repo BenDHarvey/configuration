@@ -28,7 +28,9 @@ git clone git@github.com:BenDHarvey/configuration.git ~/.configuration
 
 # Link default.nix file from .configuration repo to local home directory
 rm ~/.config/nixpkgs/home.nix
+rm ~/.config/nixpkgs/config.nix
 ln -s ~/.configuration/nix/modules/home/home.nix ~/.config/nixpkgs/home.nix
+ln -s ~/.configuration/nix/modules/home/config.nix ~/.config/nixpkgs/config.nix
 
 # Apply the home-manager config
 home-manager switch
