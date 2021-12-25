@@ -72,15 +72,12 @@ with lib;
       radeontop
     ];
 
-    file.".emacs.d/init.el".text = ''
-        (load "default.el")
-    '';
     file.".vimrc".source = ../../../../dotfiles/vimrc;
     file.".gitconfig".source = ../../../../dotfiles/gitconfig;
     file.".gitconfig-ben".source = ../../../../dotfiles/gitconfig-ben;
     file.".gitconfig-bmlonline".source = ../../../../dotfiles/gitconfig-bmlonline;
     file.".authinfo.gpg".source = ../../../../dotfiles/authinfo.gpg;
-    file.".snippets".source = ../../../../dotfiles/doom.d/snippets;
+    file.".doom.d".source = ../../../../dotfiles/doom.d;
   };
 
   programs = {
