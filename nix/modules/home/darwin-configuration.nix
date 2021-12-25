@@ -11,7 +11,7 @@ let home           = builtins.getEnv "HOME";
 in {
   imports = [
     <home-manager/nix-darwin>
-    ./homebrew/homebrew.nix
+    ./osx/home.nix
   ];
 
   services = {

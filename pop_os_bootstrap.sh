@@ -32,3 +32,6 @@ ln -s ~/.configuration/nix/modules/home/home.nix ~/.config/nixpkgs/home.nix
 
 # Apply the home-manager config
 home-manager switch
+
+# Make zsh the default terminal
+sudo chsh -s $(which zsh)

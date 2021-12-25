@@ -174,7 +174,7 @@ with lib;
           ## Default terminal is 256 colors
           set -g default-terminal "screen-256color"
           ## This option has issues when running in linux
-          set-option -g default-command "reattach-to-user-namespace -l zsh"
+          ##set-option -g default-command "reattach-to-user-namespace -l zsh"
           #
           unbind c
           unbind '"'
