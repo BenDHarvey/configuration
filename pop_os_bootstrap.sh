@@ -35,3 +35,8 @@ home-manager switch
 
 # Make zsh the default terminal
 sudo chsh -s $(which zsh)
+
+# nix has some trouble with loading graphicall app the fix is to install this
+#https://github.com/guibou/nixGL/
+nix-channel --add https://github.com/guibou/nixGL/archive/main.tar.gz nixgl && nix-channel --update
+nix-env -iA nixgl.auto.nixGLDefault
