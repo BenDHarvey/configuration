@@ -52,7 +52,7 @@ bindsym $mod+Ctrl+l exec i3lock-fancy && xset dpms force off
 # start a terminal
 bindsym $mod+Return exec nixGL alacritty
 bindsym $mod+q kill
-bindsym $mod+d exec rofi -theme base16-dracula -show run
+bindsym $mod+space exec rofi -theme base16-dracula -show run
 bindsym $mod+Tab exec emacsclient -c
 bindsym $mod+m exec sh ~/.screenlayout/default.sh
 
@@ -85,7 +85,7 @@ bindsym $mod+e layout toggle split
 bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+bindsym $mod+t focus mode_toggle
 
 # focus the parent container
 bindsym $mod+a focus parent

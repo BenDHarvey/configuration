@@ -46,3 +46,7 @@ nix-env -iA nixgl.auto.nixGLDefault
 # Install doom emacs
 git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.emacs.d
 ~/.emacs.d/bin/doom install
+
+
+# Clone all org files down in to the documents directory
+git clone git@github.com:BenDHarvey/org.git ~/Documents/org

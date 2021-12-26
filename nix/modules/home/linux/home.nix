@@ -2,6 +2,8 @@
 
 {
 
+  imports = [ ./tmux.nix ];
+
   home.packages = with pkgs; [
 
     # Fonts

@@ -2,16 +2,16 @@
 { config, lib, ... }:
 
 let
-  mkIfCaskPresent = cask: lib.mkIf (lib.any (x: x == cask) config.homebrew.casks);
-in
+  mkIfCaskPresent = cask:
+    lib.mkIf (lib.any (x: x == cask) config.homebrew.casks);
 
-{
+in {
   homebrew.enable = true;
   homebrew.autoUpdate = true;
   homebrew.cleanup = "zap";
   homebrew.global.brewfile = true;
   homebrew.global.noLock = true;
-  homebrew.brewPrefix= "/opt/homebrew/bin";
+  homebrew.brewPrefix = "/opt/homebrew/bin";
 
   homebrew.taps = [
     "homebrew/cask"
@@ -33,8 +33,7 @@ in
     GoodNotes = 1444383602;
   };
 
-  homebrew.brews = [
-  ];
+  homebrew.brews = [ ];
 
   homebrew.casks = [
     "vlc"

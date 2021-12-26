@@ -8,7 +8,7 @@ with lib;
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
-  imports = [ ./zsh.nix ./mail.nix ./firefox.nix ./git.nix ];
+  imports = [ ./zsh.nix ./mail.nix ./firefox.nix ./git.nix ./alacritty.nix ];
 
   home = {
     username = "ben";
@@ -79,19 +79,6 @@ with lib;
   };
 
   programs = {
-    alacritty = {
-      enable = true;
-      settings = {
-        font.size = 11;
-        normal = {
-          family = "Iosevka Nerd Font";
-          style = "Regular";
-        };
-        mouse.hide_when_typing = true;
-        shell.program = "/home/ben/.nix-profile/bin/zsh";
-      };
-    };
-
     zoxide.enable = true;
 
     go = { enable = true; };
