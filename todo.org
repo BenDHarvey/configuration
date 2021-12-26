@@ -1,4 +1,9 @@
 * Inbox
+** TODO This could be a good way to have all chat clients in one place
+
+[[file:~/.configuration/nix/modules/home/linux/home.nix::programs.pidgin = {]]
+
+If i can get this working I can have slack / telegram / any other chat app all the one place
 ** TODO Get this working
 
 [[file:~/.configuration/nix/modules/talos.nix::{ pkgs, config, lib, ... }:]]
