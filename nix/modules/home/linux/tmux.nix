@@ -29,7 +29,7 @@ with import <nixpkgs> { };
         bind -r C-s set -g status
         #
         set-option -ga terminal-overrides ",xterm-256color:Tc"
-        #set-option -g default-shell /usr/bin/zsh
+        set-option -g default-shell /home/ben/.nix-profile/bin/zsh
         ## Default terminal is 256 colors
         set -g default-terminal "screen-256color"
         ## This option has issues when running in linux

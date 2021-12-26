@@ -38,6 +38,9 @@
     radeontop
     _1password-gui
     slack
+
+    docker
+    docker-compose
   ];
 
   #  programs.pidgin = {
