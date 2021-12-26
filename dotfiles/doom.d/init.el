@@ -81,14 +81,14 @@
        upload            ; map local to remote projects via ssh/ftp
 
        :lang
- ;;      (csharp +lsp)       ; unity, .NET, and mono shenanigans
+       ;;      (csharp +lsp)       ; unity, .NET, and mono shenanigans
        data              ; config/data formats
        emacs-lisp        ; drown in parentheses
        (go
         +lsp)                ; the hipster dialect
        (javascript
-         +lsp
-         +onsave)        ; all(hope(abandon(ye(who(enter(here))))))
+        +lsp
+        +onsave)        ; all(hope(abandon(ye(who(enter(here))))))
        markdown          ; writing docs for people to ignore
        nix
        (org              ; organize your plain life in plain text
@@ -99,15 +99,15 @@
         +lsp)            ; beautiful is better than ugly
        sh                ; she sells {ba,z,fi}sh shells on the C xor
        (web
-         +lsp)               ; the tubes
+        +lsp)               ; the tubes
        (dart
-         +lsp
-         +flutter)
+        +lsp
+        +flutter)
 
        :email
        (mu4e
-         +org
-         +gmail)
+        +org
+        +gmail)
 
        :app
        (rss +org)        ; emacs as an RSS reader
