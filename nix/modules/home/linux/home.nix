@@ -5,16 +5,13 @@
   imports = [ ./tmux.nix ];
 
   home.packages = with pkgs; [
-
     # Fonts
     #iosevka
-
     # i3
     i3
     acpi
     i3lock-fancy
     i3status-rust
-
     # desktop
     arandr
     chromium
@@ -24,7 +21,6 @@
     virtmanager
     vlc
     networkmanagerapplet
-
     # Emacs dependencies
     #aspell
     #aspellDicts.en
@@ -33,14 +29,13 @@
     editorconfig-core-c
     nixfmt
     shellcheck
-
     rofi
     radeontop
     _1password-gui
     slack
-
     docker
     docker-compose
+    libreoffice
   ];
 
   #  programs.pidgin = {
