@@ -36,6 +36,9 @@
     docker
     docker-compose
     libreoffice
+    nfs-utils
+    nitrogen
+    feh
   ];
 
   #  programs.pidgin = {
