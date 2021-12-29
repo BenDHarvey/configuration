@@ -8,31 +8,32 @@
     enableAutosuggestions = true;
     enableCompletion = false;
     shellAliases = {
-        ls = "ls -las";
-        emacs = "emacs -nw";
-        gs = "git status";
-        gl = "git log --decorate --graph";
-        gd = "git diff";
-        vim = "nvim";
-        cl = "clear";
+      ls = "ls -las";
+      emacs = "emacs -nw";
+      gs = "git status";
+      gl = "git log --decorate --graph";
+      gd = "git diff";
+      vim = "nvim";
+      cl = "clear";
 
-        # Nix aliases
-        nixre="darwin-rebuild switch";
-        nixrb="darwin-rebuild --rollback";
-        nixgc="nix-collect-garbage -d";
-        nixq="nix-env -qaP";
-        nixupgrade-darwin="sudo -i sh -c 'nix-channel --update && nix-env -iA nixpkgs.nix && launchctl remove org.nixos.nix-daemon && launchctl load /Library/LaunchDaemons/org.nixos.nix-daemon.plist'";
-        nixup="nix-env -u";
+      # Nix aliases
+      nixre = "darwin-rebuild switch";
+      nixrb = "darwin-rebuild --rollback";
+      nixgc = "nix-collect-garbage -d";
+      nixq = "nix-env -qaP";
+      nixupgrade-darwin =
+        "sudo -i sh -c 'nix-channel --update && nix-env -iA nixpkgs.nix && launchctl remove org.nixos.nix-daemon && launchctl load /Library/LaunchDaemons/org.nixos.nix-daemon.plist'";
+      nixup = "nix-env -u";
     };
 
     profileExtra = ''
-        export GPG_TTY=$(tty)
-        if ! pgrep -x "gpg-agent" > /dev/null; then
-            ${pkgs.gnupg}/bin/gpgconf --launch gpg-agent
-        fi
+      export GPG_TTY=$(tty)
+      if ! pgrep -x "gpg-agent" > /dev/null; then
+          ${pkgs.gnupg}/bin/gpgconf --launch gpg-agent
+      fi
 
-        export PATH=/opt/homebrew/bin:$PATH
-      '';
+      export PATH=/opt/homebrew/bin:$PATH
+    '';
 
     initExtra = ''
       bindkey '^ ' autosuggest-accept
@@ -43,6 +44,22 @@
       AGKOZAK_MULTILINE=0
       AGKOZAK_PROMPT_CHAR=( ❯ ❯ ❮ )
       autopair-init
+
+      dockerNuke() {
+        docker stop $(docker ps -a -q)
+        docker system prune -a -f
+        docker volume prune -f
+      }
+
+      ## zsh-vim-mode config
+      ZVM_VI_INSERT_ESCAPE_BINDKEY=jk
+      ## Allow fzf to still work with vi-mode
+      # Define an init function and append to zvm_after_init_commands
+      function vi_mode_init() {
+        [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+      }
+      zvm_after_init_commands+=(vi_mode_init)
+      eval "$(zoxide init zsh)"
                               '';
 
     plugins = with pkgs; [
@@ -96,6 +113,17 @@
         };
         file = "autopair.zsh";
       }
+      # TODO: Get this workign
+      #      {
+      #        name = "zsh-vi-mode";
+      #        src = fetchFromGitHub {
+      #          owner = "jeffreytse";
+      #          repo = "zsh-vi-mode";
+      #          rev = "5eb9c43f941a3ac419584a5c390aeedf4916b245";
+      #          sha256 = null;
+      #        };
+      #        file = "zsh-vi-mode.zsh";
+      #      }
     ];
   };
 }

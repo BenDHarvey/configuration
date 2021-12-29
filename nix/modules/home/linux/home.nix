@@ -6,13 +6,11 @@
 
   home.packages = with pkgs; [
     # Fonts
-    #iosevka
-    # i3
+    iosevka
     i3
     acpi
     i3lock-fancy
     i3status-rust
-    # desktop
     arandr
     chromium
     libnotify
@@ -21,10 +19,6 @@
     virtmanager
     vlc
     networkmanagerapplet
-    # Emacs dependencies
-    #aspell
-    #aspellDicts.en
-    #spellDicts.en-computers
     ccls
     editorconfig-core-c
     nixfmt

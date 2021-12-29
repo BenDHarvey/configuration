@@ -1,4 +1,9 @@
 * Inbox
+** TODO Get this import working
+
+- Currently getting an error when trying to download the files. Have a look into why this is not working any more
+
+[[file:~/.configuration/nix/modules/home/shared/zsh.nix::TODO: Get this workign]]
 ** TODO This could be a good way to have all chat clients in one place
 
 [[file:~/.configuration/nix/modules/home/linux/home.nix::programs.pidgin = {]]
