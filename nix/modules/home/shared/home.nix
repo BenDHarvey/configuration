@@ -67,6 +67,7 @@ with lib;
       python38Packages.ansible
       emacs-all-the-icons-fonts
       emacs
+      dbeaver
     ];
 
     file.".vimrc".source = ../../../../dotfiles/vimrc;

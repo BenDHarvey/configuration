@@ -31,6 +31,7 @@ in {
     Telegram = 747648890;
     Magnet = 441258766;
     GoodNotes = 1444383602;
+    # Zoom
   };
 
   homebrew.brews = [ ];

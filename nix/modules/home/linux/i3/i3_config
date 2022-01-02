@@ -53,8 +53,10 @@ bindsym $mod+Ctrl+l exec i3lock-fancy && xset dpms force off
 bindsym $mod+Return exec nixGL alacritty
 bindsym $mod+q kill
 bindsym $mod+space exec rofi -theme base16-dracula -show run
-bindsym $mod+Tab exec emacsclient -c
-bindsym $mod+m exec sh ~/.screenlayout/default.sh
+#bindsym $mod+Tab exec emacsclient -c
+#bindsym $mod+m exec sh ~/.screenlayout/default.sh
+bindsym $mod+m move workspace to output right
+bindsym $mod+n move workspace to output left
 
 bindsym $mod+h focus left
 bindsym $mod+j focus down

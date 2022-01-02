@@ -33,6 +33,8 @@
     nfs-utils
     nitrogen
     feh
+    apple-music-electron
+    zoom-us
   ];
 
   #  programs.pidgin = {
