@@ -1,4 +1,9 @@
 * Inbox
+** TODO Find the zoom id so that it can be managed here
+
+zoom-us
+
+[[file:~/.configuration/nix/modules/home/osx/homebrew.nix::Zoom]]
 ** TODO This could be a good way to have all chat clients in one place
 
 [[file:~/.configuration/nix/modules/home/linux/home.nix::programs.pidgin = {]]
