@@ -34,7 +34,6 @@
     nitrogen
     feh
     apple-music-electron
-    zoom-us
   ];
 
   #  programs.pidgin = {
@@ -100,10 +99,10 @@
     };
   };
 
-  services.screen-locker = {
-    enable = true;
-    lockCmd = "\${pkgs.i3lock-fancy}/bin/i3lock-fancy";
-  };
+  #  services.screen-locker = {
+  #    enable = true;
+  #    lockCmd = "\${pkgs.i3lock-fancy}/bin/i3lock-fancy";
+  #  };
 
   services.unclutter.enable = true;
 

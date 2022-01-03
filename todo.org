@@ -1,4 +1,7 @@
 * Inbox
+** TODO this is not working.... investigate why
+
+[[file:~/.configuration/nix/modules/home/linux/home.nix::home.file.".local/share/rofi/themes/base16-dracula.rasi".source =]]
 ** TODO Find the zoom id so that it can be managed here
 
 zoom-us
