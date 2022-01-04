@@ -36,6 +36,7 @@
     apple-music-electron
     imagemagick
     flameshot
+    postman
   ];
 
   programs.bat = {
