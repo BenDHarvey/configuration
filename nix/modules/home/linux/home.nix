@@ -34,17 +34,9 @@
     nitrogen
     feh
     apple-music-electron
+    imagemagick
+    flameshot
   ];
-
-  #  programs.pidgin = {
-  #    enable = true;
-  #    package = pkgs.pidgin-with-plugins;
-  #    plugins = [
-  #      pkgs.pidgin-window-merge
-  #      pkgs.pidgin-xmpp-receipts
-  #      pkgs.purple-plugin-pack
-  #    ];
-  #  };
 
   programs.bat = {
     enable = true;
