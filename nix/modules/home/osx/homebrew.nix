@@ -46,5 +46,6 @@ in {
     "caffeine"
     "alacritty"
     "dbeaver-community"
+    "synergy"
   ];
 }
