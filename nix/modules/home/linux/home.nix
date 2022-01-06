@@ -37,6 +37,8 @@
     imagemagick
     flameshot
     postman
+    cmus
+    synergy
   ];
 
   programs.bat = {
