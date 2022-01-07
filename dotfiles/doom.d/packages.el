@@ -25,7 +25,7 @@
 ;;(package! nvm)
 
 ;;(package! slack)
-;;(package! code-review)
+(package! code-review)
 (package! restclient)
 
 (provide 'packages)

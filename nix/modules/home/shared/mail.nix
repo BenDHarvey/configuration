@@ -12,7 +12,6 @@ with import <nixpkgs> { };
         MaildirStore ben@harvey.onl-local
         Path ~/Mail/ben@harvey.onl/
         Inbox ~/Mail/ben@harvey.onl/Inbox
-        Trash Trash
         SubFolders Verbatim
 
         IMAPStore ben@harvey.onl-remote

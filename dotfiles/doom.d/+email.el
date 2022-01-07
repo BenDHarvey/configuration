@@ -32,6 +32,7 @@
   (setq mu4e-update-interval (* 10 60))
   (setq mu4e-get-mail-command "mbsync -a")
   (setq mu4e-maildir "~/Mail")
+  (setq mu4e-attachment-dir "~/Downloads")
 
   ;; Make sure that moving a message (like to Trash) causes the
   ;; message to get a new file name.  This helps to avoid the
@@ -48,13 +49,12 @@
             :vars '(
                     (user-full-name . "Ben Harvey")
                     (user-mail-address . "ben@harvey.onl")
-                    (mu4e-sent-folder . "/ben@harvey.onl/Sent")
-                    (mu4e-trash-folder . "/ben@harvey.onl/Trash")
-                    (mu4e-drafts-folder . "/ben@harvey.onl/Drafts")
-                    (mu4e-refile-folder . "/ben@harvey.onl/Archive")
-                    (mu4e-sent-messages-behavior . sent)
-                    ))
-          ))
+                    (mu4e-sent-folder . "/Sent")
+                    (mu4e-trash-folder . "/Trash")
+                    (mu4e-drafts-folder . "/Drafts")
+                    (mu4e-refile-folder . "/Archive")
+                    (mu4e-sent-messages-behavior . sent)))))
+
   (setq mu4e-context-policy 'pick-first)
 
   ;; Prevent mu4e from permanently deleting trashed items

@@ -1,0 +1,24 @@
+#+TITLE: Mail setup
+
+Most of the configuration for email is setup through nix. There are however a couple of commands that need to get run after a new install has taken place.
+
+* Download all mail
+
+All email files need to be downloaded before they can be indexed. This will need to be done initially but the process will be taken over by emacs and mu4e after the initial download.
+
+To do this use the following command:
+
+#+begin_src sh
+mbsync -a
+#+end_src
+
+* Index mail files
+
+If mu4e is opened without doing an initial index of mail files it will throw and error. To do an index of mail files run the following:
+
+#+begin_src sh
+mu init --maildir ~/Mail/ben@harvey.onl --my-address=ben@harvey.onl
+mu index
+#+end_src
+
+mu4e should now open with now errors

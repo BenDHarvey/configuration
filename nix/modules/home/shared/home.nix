@@ -68,6 +68,8 @@ with lib;
       emacs-all-the-icons-fonts
       emacs
       dbeaver
+
+      sentry-cli
     ];
 
     file.".vimrc".source = ../../../../dotfiles/vimrc;
