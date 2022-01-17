@@ -8,7 +8,14 @@ with lib;
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
-  imports = [ ./zsh.nix ./mail.nix ./firefox.nix ./git.nix ./alacritty.nix ];
+  imports = [
+    ./zsh.nix
+    ./mail.nix
+    ./firefox.nix
+    ./git.nix
+    ./alacritty.nix
+    ./vscode.nix
+  ];
 
   home = {
     username = "ben";
