@@ -28,8 +28,8 @@
   ;; Load org-mode integration
   (require 'org-mu4e)
 
-  ;; Refresh mail using isync every 10 minutes
-  (setq mu4e-update-interval (* 10 60))
+  ;; Refresh mail using isync every 5 minutes
+  (setq mu4e-update-interval (* 5 60))
   (setq mu4e-get-mail-command "mbsync -a")
   (setq mu4e-maildir "~/Mail")
   (setq mu4e-attachment-dir "~/Downloads")

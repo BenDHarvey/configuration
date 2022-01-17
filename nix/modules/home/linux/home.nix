@@ -39,6 +39,7 @@
     postman
     cmus
     synergy
+    kube3d
   ];
 
   programs.bat = {

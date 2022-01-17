@@ -70,6 +70,9 @@ with lib;
       dbeaver
 
       sentry-cli
+      pulumi-bin
+      google-cloud-sdk
+      kubectl
     ];
 
     file.".vimrc".source = ../../../../dotfiles/vimrc;
@@ -79,6 +82,7 @@ with lib;
       ../../../../dotfiles/gitconfig-bmlonline;
     file.".authinfo.gpg".source = ../../../../dotfiles/authinfo.gpg;
     file.".doom.d".source = ../../../../dotfiles/doom.d;
+    file."./.ssh/config".source = ../../../../dotfiles/ssh_config;
   };
 
   programs = {
