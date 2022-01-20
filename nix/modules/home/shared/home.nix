@@ -80,6 +80,11 @@ with lib;
       pulumi-bin
       google-cloud-sdk
       kubectl
+
+      emacs27Packages.pdf-tools
+
+      ruby
+      rubyPackages.rails
     ];
 
     file.".vimrc".source = ../../../../dotfiles/vimrc;

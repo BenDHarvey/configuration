@@ -1,0 +1,8 @@
+#+TITLE: nix - node packages
+
+Installed node packages can be a little trick and will fail if trying to use nix and installing node packages globally
+
+https://code-notes.jhuizy.com/add-custom-npm-to-home-manager/
+
+
+// TODO: Get this working!!!

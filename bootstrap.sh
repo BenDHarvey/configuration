@@ -57,3 +57,7 @@ git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.emacs.d
 #Install docker
 curl -fsSL https://get.docker.com -o get-docker.sh
 sh get-docker.sh
+
+# Add some common folders
+mkdir -p ~/Workspace/github.com/BMLOnline
+mkdir -p ~/Workspace/github.com/BenDHarvey
