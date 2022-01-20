@@ -61,3 +61,6 @@ sh get-docker.sh
 # Add some common folders
 mkdir -p ~/Workspace/github.com/BMLOnline
 mkdir -p ~/Workspace/github.com/BenDHarvey
+
+# Nix seems not to have the greatest support for sqlite3 so install manually some of the things that we might need
+sudo apt install -y libsqlite3-dev sqlite3

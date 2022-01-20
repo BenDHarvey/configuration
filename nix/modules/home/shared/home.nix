@@ -37,8 +37,6 @@ with lib;
       ranger
       tree
       rsync
-      hugo
-      argocd
       neovim
       gh
       act
@@ -47,13 +45,12 @@ with lib;
       sops
       k9s
       kubernetes-helm
-      influxdb2
       coreutils
       clang
       cmake
       ffmpeg
-      vagrant
       nmap
+      dbeaver
 
       # go and golang packages
       gopls
@@ -61,9 +58,11 @@ with lib;
       gocode
       gotests
       gomodifytags
+
       # Kinda go packages
       protobuf
       protoc-gen-go
+
       # Node and node packages
       nodejs-16_x
       nodePackages.typescript
@@ -71,20 +70,25 @@ with lib;
       nodePackages.prettier
       nodePackages.typescript-language-server
       nodePackages.js-beautify
+      yarn
+
+      # Python packages
       python38Packages.ansible
+
+      # Emacs and emacs packages
       emacs-all-the-icons-fonts
       emacs
-      dbeaver
+      emacs27Packages.pdf-tools
 
       sentry-cli
       pulumi-bin
       google-cloud-sdk
       kubectl
 
-      emacs27Packages.pdf-tools
-
+      # Ruby packages
       ruby
       rubyPackages.rails
+      rubyPackages.sqlite3
     ];
 
     file.".vimrc".source = ../../../../dotfiles/vimrc;

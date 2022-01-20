@@ -40,12 +40,6 @@
     cmus
     synergy
     kube3d
-
-    # Gaming
-    steamPackages.steam
-    steamPackages.steamcmd
-    steamPackages.steam-fonts
-    steamPackages.steam-runtime
   ];
 
   programs.bat = {
