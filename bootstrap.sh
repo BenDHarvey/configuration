@@ -57,3 +57,10 @@ git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.emacs.d
 #Install docker
 curl -fsSL https://get.docker.com -o get-docker.sh
 sh get-docker.sh
+
+# Add some common folders
+mkdir -p ~/Workspace/github.com/BMLOnline
+mkdir -p ~/Workspace/github.com/BenDHarvey
+
+# Nix seems not to have the greatest support for sqlite3 so install manually some of the things that we might need
+sudo apt install -y libsqlite3-dev sqlite3
