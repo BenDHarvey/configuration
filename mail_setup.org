@@ -2,6 +2,13 @@
 
 Most of the configuration for email is setup through nix. There are however a couple of commands that need to get run after a new install has taken place.
 
+
+* Create the mail folder
+
+#+begin_src sh
+mkdir -p ~/Mail/ben@harvey.onl
+#+end_src
+
 * Download all mail
 
 All email files need to be downloaded before they can be indexed. This will need to be done initially but the process will be taken over by emacs and mu4e after the initial download.
