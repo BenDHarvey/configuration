@@ -50,7 +50,11 @@ with lib;
       cmake
       ffmpeg
       nmap
-      dbeaver
+      fluxcd
+      tmuxinator
+      neovim
+      postgresql
+      discord
 
       # go and golang packages
       gopls
@@ -58,6 +62,7 @@ with lib;
       gocode
       gotests
       gomodifytags
+      go-migrate
 
       # Kinda go packages
       protobuf
@@ -72,7 +77,6 @@ with lib;
       nodePackages.js-beautify
       yarn
 
-      # Python packages
       python38Packages.ansible
 
       # Emacs and emacs packages
@@ -86,9 +90,9 @@ with lib;
       kubectl
 
       # Ruby packages
-      ruby
-      rubyPackages.rails
-      rubyPackages.sqlite3
+      #      ruby
+      #      rubyPackages.rails
+      #      rubyPackages.sqlite3
     ];
 
     file.".vimrc".source = ../../../../dotfiles/vimrc;

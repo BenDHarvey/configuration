@@ -97,6 +97,13 @@
        plantuml          ; diagrams for confusing people more
        (python
         +lsp)            ; beautiful is better than ugly
+
+       (ruby
+        +rails
+        +rvm
+        +rbenv
+        +chruby
+        +lsp)
        sh                ; she sells {ba,z,fi}sh shells on the C xor
        (web
         +lsp)               ; the tubes
