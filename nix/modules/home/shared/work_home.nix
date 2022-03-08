@@ -55,6 +55,7 @@ with lib;
       tmuxinator
       neovim
       postgresql
+      kubectl
 
       # go and golang packages
       gopls
@@ -63,10 +64,6 @@ with lib;
       gotests
       gomodifytags
       go-migrate
-
-      # Kinda go packages
-      protobuf
-      protoc-gen-go
 
       # Node and node packages
       nodejs-16_x
@@ -77,17 +74,10 @@ with lib;
       nodePackages.js-beautify
       yarn
 
-      python38Packages.ansible
-
       # Emacs and emacs packages
       emacs-all-the-icons-fonts
       emacs
       emacs27Packages.pdf-tools
-
-      sentry-cli
-      pulumi-bin
-      google-cloud-sdk
-      kubectl
     ];
 
     file.".vimrc".source = ../../../../dotfiles/vimrc;
