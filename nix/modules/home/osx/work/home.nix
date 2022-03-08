@@ -8,11 +8,9 @@
   {
     imports = [
       <home-manager/nix-darwin>
-      ../shared/home.nix
-      ../shared/mail.nix
-      ../shared/zsh.nix
-      ./homebrew.nix
-      ./tmux.nix
+      #../shared/home.nix
+      ../homebrew.nix
+      ../tmux.nix
     ];
 
     home = { packages = with pkgs; [ reattach-to-user-namespace cocoapods ]; };

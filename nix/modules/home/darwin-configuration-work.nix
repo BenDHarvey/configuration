@@ -1,3 +1,4 @@
+# Configuration for my work laptop
 { pkgs, lib, config, ... }:
 
 let home           = builtins.getEnv "HOME";
@@ -11,7 +12,7 @@ let home           = builtins.getEnv "HOME";
 in {
   imports = [
     <home-manager/nix-darwin>
-    ./osx/personal/home.nix
+    #./osx/work/home.nix
   ];
 
   services = {
@@ -37,8 +38,8 @@ in {
 
   users = {
     users.ben = {
-      name = "ben";
-      home = "/Users/ben";
+      name = "ben.harvey";
+      home = "/Users/ben.harvey";
       shell = pkgs.zsh;
     };
   };
