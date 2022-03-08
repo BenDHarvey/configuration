@@ -12,10 +12,7 @@ with lib;
     ./zsh.nix
     ./mail.nix
     ../osx/tmux.nix
-    #./firefox.nix
     ./git.nix
-    #./alacritty.nix
-    #./vscode.nix
   ];
 
   home = {
