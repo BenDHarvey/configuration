@@ -39,13 +39,9 @@ in {
   homebrew.casks = [
     "vlc"
     "visual-studio-code"
-    "notion"
     "postman"
-    "google-cloud-sdk"
     "ledger-live"
     "caffeine"
     "alacritty"
-    "dbeaver-community"
-    "synergy"
   ];
 }

@@ -13,7 +13,7 @@ with lib;
     ./mail.nix
     ../osx/tmux.nix
     #./firefox.nix
-    #./git.nix
+    ./git.nix
     #./alacritty.nix
     #./vscode.nix
   ];
@@ -84,8 +84,7 @@ with lib;
     file.".vimrc".source = ../../../../dotfiles/vimrc;
     file.".gitconfig".source = ../../../../dotfiles/gitconfig;
     file.".gitconfig-ben".source = ../../../../dotfiles/gitconfig-ben;
-    file.".gitconfig-bmlonline".source =
-      ../../../../dotfiles/gitconfig-bmlonline;
+    file.".gitconfig-nibgroup".source = ../../../../dotfiles/gitconfig-nibgroup;
     file.".authinfo.gpg".source = ../../../../dotfiles/authinfo.gpg;
     file.".doom.d".source = ../../../../dotfiles/doom.d;
     file."./.ssh/config".source = ../../../../dotfiles/ssh_config;
