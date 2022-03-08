@@ -37,7 +37,7 @@ in {
   };
 
   users = {
-    users.ben = {
+    users."ben.harvey" = {
       name = "ben.harvey";
       home = "/Users/ben.harvey";
       shell = pkgs.zsh;
@@ -46,7 +46,7 @@ in {
 
   home-manager = {
     useGlobalPkgs = true;
-    users.ben = "${home}/.config/nixpkgs/home.nix";
+    users."ben.harvey" = "${home}/.config/nixpkgs/home.nix";
   };
 
   system = {

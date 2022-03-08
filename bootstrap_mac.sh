@@ -19,4 +19,10 @@ ln -s ~/.configuration/nix/modules/home/darwin-configuration-work.nix /Users/ben
 ln -s ~/.configuration/nix/modules/home/home.nix ~/.config/nixpkgs/home.nix
 ln -s ~/.configuration/nix/modules/home/config.nix ~/.config/nixpkgs/config.nix
 
+# Install doom emacs
+git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.emacs.d
+~/.emacs.d/bin/doom install
+
 # Run inital nix generation
+darwin-rebuild switch
+home-manager switch -b backup # if there are existing file the backup flag is needed

@@ -3,6 +3,8 @@
 with import <nixpkgs> { };
 
 {
+  home = { packages = with pkgs; [ reattach-to-user-namespace cocoapods ]; };
+  
   programs = {
     tmux = {
       enable = true;

@@ -10,7 +10,8 @@ with lib;
 
   imports = [
     ./zsh.nix
-    #./mail.nix
+    ./mail.nix
+    ../osx/tmux.nix
     #./firefox.nix
     #./git.nix
     #./alacritty.nix
