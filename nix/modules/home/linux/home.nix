@@ -40,6 +40,7 @@
     cmus
     synergy
     kube3d
+    emacs
   ];
 
   programs.bat = {

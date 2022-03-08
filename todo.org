@@ -1,4 +1,8 @@
 * Inbox
+** TODO Have a look at getting nvm setup correctly
+
+I tried using the nvm command and found that it was not installed correctly. Looks like its just not on the path. Likely not correctly added to the zsh config. Have a look at getting this working correctly. Might have some issues with an nvm version and the version o
+
 ** TODO this is not working.... investigate why
 
 [[file:~/.configuration/nix/modules/home/linux/home.nix::home.file.".local/share/rofi/themes/base16-dracula.rasi".source =]]

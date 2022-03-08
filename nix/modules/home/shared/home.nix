@@ -82,12 +82,8 @@ with lib;
 
       # Emacs and emacs packages
       emacs-all-the-icons-fonts
-      emacs
       emacs27Packages.pdf-tools
-
-      sentry-cli
-      pulumi-bin
-      google-cloud-sdk
+      
       kubectl
     ];
 

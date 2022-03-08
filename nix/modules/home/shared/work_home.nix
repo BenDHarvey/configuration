@@ -70,11 +70,11 @@ with lib;
       nodePackages.prettier
       nodePackages.typescript-language-server
       nodePackages.js-beautify
+      nodePackages.lerna
       yarn
 
       # Emacs and emacs packages
       emacs-all-the-icons-fonts
-      emacs
       emacs27Packages.pdf-tools
     ];
 
@@ -88,6 +88,8 @@ with lib;
   };
 
   programs = {
+    zoxide.enable = true;
+
     go = { enable = true; };
 
     fzf = {
