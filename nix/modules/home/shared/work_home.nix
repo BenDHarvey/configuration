@@ -74,6 +74,7 @@ with lib;
       yarn
 
       # Emacs and emacs packages
+      emacs
       emacs-all-the-icons-fonts
       emacs27Packages.pdf-tools
     ];
