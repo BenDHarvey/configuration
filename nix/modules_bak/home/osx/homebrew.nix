@@ -20,7 +20,6 @@ in {
     "homebrew/cask-versions"
     "homebrew/core"
     "homebrew/services"
-    "d12frosted/emacs-plus"
   ];
 
   homebrew.masApps = {
@@ -35,16 +34,12 @@ in {
     # Zoom
   };
 
-  homebrew.brews = [
-    "emacs@27"
-   ];
-
   homebrew.casks = [
     "vlc"
-    "visual-studio-code"
-    "postman"
-    "ledger-live"
-    "caffeine"
-    "alacritty"
+    #"visual-studio-code"
+    #"postman"
+    #"ledger-live"
+    #"caffeine"
+    #"alacritty"
   ];
 }

@@ -15,8 +15,10 @@ nix-channel --add https://github.com/nix-community/home-manager/archive/master.t
 nix-channel --update
 
 # Move configuration files for nix-darwin
-ln -s ~/.configuration/nix/modules/home/darwin-configuration-work.nix /Users/ben.harvey/.nixpkgs/darwin-configuration.nix
-ln -s ~/.configuration/nix/modules/home/home.nix ~/.config/nixpkgs/home.nix
+ln -s ~/.configuration/nix/darwin-configuration-work.nix /Users/ben.harvey/.nixpkgs/darwin-configuration.nix
+# For a work setup use the following commented line instead
+# ln -s ~/.configuration/nix/work.nix ~/.config/nixpkgs/home.nix
+ln -s ~/.configuration/nix/modules/home.nix ~/.config/nixpkgs/home.nix
 ln -s ~/.configuration/nix/modules/home/config.nix ~/.config/nixpkgs/config.nix
 
 # Install doom emacs
