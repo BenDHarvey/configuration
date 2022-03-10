@@ -37,12 +37,13 @@ in {
   homebrew.casks = [
     "vlc"
     "postman"
+    "alacritty"
     #"ledger-live"
     #"caffeine"
-    #"alacritty"
   ];
 
   homebrew.brews = [
     "nvm"
+    "podman"
   ];
 }

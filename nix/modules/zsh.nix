@@ -25,9 +25,11 @@
         "sudo -i sh -c 'nix-channel --update && nix-env -iA nixpkgs.nix && launchctl remove org.nixos.nix-daemon && launchctl load /Library/LaunchDaemons/org.nixos.nix-daemon.plist'";
       nixup = "nix-env -u";
 
-      dcu = "docker-compose up";
-      dcud = "docker-compose up -d";
-      dcd = "docker-compose down";
+#      dcu = "docker-compose up";
+#      dcud = "docker-compose up -d";
+#      dcd = "docker-compose down";
+
+      docker = "podman";
     };
 
     profileExtra = ''

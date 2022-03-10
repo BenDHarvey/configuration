@@ -33,7 +33,6 @@
       fluxcd
       tmuxinator
       postgresql
-      podman
 
       kubectl
     ];

@@ -1,46 +1,11 @@
 * Inbox
-** TODO Have a look at getting nvm setup correctly
-
-I tried using the nvm command and found that it was not installed correctly. Looks like its just not on the path. Likely not correctly added to the zsh config. Have a look at getting this working correctly. Might have some issues with an nvm version and the version o
-
 ** TODO this is not working.... investigate why
 
 [[file:~/.configuration/nix/modules/home/linux/home.nix::home.file.".local/share/rofi/themes/base16-dracula.rasi".source =]]
-** TODO Find the zoom id so that it can be managed here
 
-zoom-us
-
-[[file:~/.configuration/nix/modules/home/osx/homebrew.nix::Zoom]]
-** TODO This could be a good way to have all chat clients in one place
-
-[[file:~/.configuration/nix/modules/home/linux/home.nix::programs.pidgin = {]]
-
-If i can get this working I can have slack / telegram / any other chat app all the one place
-** TODO Get this working
-
-[[file:~/.configuration/nix/modules/talos.nix::{ pkgs, config, lib, ... }:]]
-** TODO Get this working correctly
-
-Started looking into this but was unable to get it working correctly.
-
-Looking for a package that can help with "smartly" moving between folders. Another option could be https://github.com/ajeetdsouza/zoxide
-
-[[file:~/.configuration/nix/home.nix::autojump = {]]
 ** TODO Recreate the secrets dir
 
 Looks like the secrets directory got lost at some point. Find this and recreate so that some of this config works
-
-** TODO Get this working with zsh-vi-mode
-
-There is a plugin for zsh that we are using that enables vi on the shell prompt. This looks like it is not interacting well with fzf. Likely have to find that correct location of the fzf.sh file.
-
-This will likely fix things
-https://github.com/jeffreytse/zsh-vi-mode#execute-extra-commands
-
-** TODO Have a look at this for adding node_modules to personal config
-https://github.com/nocoolnametom/nixos-configuration/tree/main/myPkgs/development/node-packages
-
-This could be a good way of managing the node_modules that are installed globally
 
 ** TODO Setup the yabai window manager
 
@@ -96,8 +61,3 @@ services.skhd = {
   skhdConfig = builtins.readFile "${config_home}/dotfiles/skhdrc";
 };
 #+END_SRC
-** TODO Kitty doesn't compile with apple m1
-
-[[file:~/.configuration/nix/home.nix::pkgs.kitty # TODO: Does compile with apple m1]]
-
-- Have a look into this and work out why its not compiling or find a work around

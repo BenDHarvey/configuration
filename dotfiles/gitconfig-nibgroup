@@ -1,4 +1,4 @@
 [user]
 name = Ben Harvey
 email = ben.harvey@nib.com.au
-IdentityFile = ~/.ssh/nib_group_id_rsa
+IdentityFile = ~/.ssh/nib_id_rsa
