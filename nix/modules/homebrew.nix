@@ -26,10 +26,10 @@ in {
 #    "1Password" = 1333542190;
 #    Numbers = 409203825;
 #    Pages = 409201541;
-#    Slack = 803453959;
+    Slack = 803453959;
 #    Vimari = 1480933944;
 #    Telegram = 747648890;
-#    Magnet = 441258766;
+    Magnet = 441258766;
 #    GoodNotes = 1444383602;
 #    # Zoom
   };

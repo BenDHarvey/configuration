@@ -33,14 +33,7 @@
       fluxcd
       tmuxinator
       postgresql
-
-      # go and golang packages
-      gopls
-      gore
-      gocode
-      gotests
-      gomodifytags
-      go-migrate
+      podman
 
       kubectl
     ];

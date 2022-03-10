@@ -16,6 +16,7 @@ with lib;
     ./modules/neovim.nix
     ./modules/git.nix
     ./modules/mac_tmux.nix
+    ./modules/nodes.nix
   ];
 
   home = {
@@ -29,8 +30,6 @@ with lib;
 
   programs = {
     zoxide.enable = true;
-
-    go = { enable = true; };
 
     fzf = {
       enable = true;
