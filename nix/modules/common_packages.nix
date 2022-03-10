@@ -32,7 +32,6 @@
       nmap
       fluxcd
       tmuxinator
-      neovim
       postgresql
 
       # go and golang packages
@@ -42,16 +41,6 @@
       gotests
       gomodifytags
       go-migrate
-
-      # Node and node packages
-      nodejs-16_x
-      nodePackages.typescript
-      nodePackages.eslint
-      nodePackages.prettier
-      nodePackages.typescript-language-server
-      nodePackages.js-beautify
-      nodePackages.lerna
-      yarn
 
       kubectl
     ];
