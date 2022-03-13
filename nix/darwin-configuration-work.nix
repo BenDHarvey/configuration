@@ -13,6 +13,7 @@ in {
   imports = [
     <home-manager/nix-darwin>
     ./modules/homebrew.nix # Note: This should be required in the darwin config and not in home-manager config
+#    ./modules/mac/wm.nix
   ];
 
   services = {

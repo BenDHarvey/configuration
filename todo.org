@@ -1,4 +1,16 @@
 * Inbox
+** TODO Tweak the yabai config
+
+[[file:~/.configuration/nix/modules/mac/wm.nix::{config, pkgs, ...}:]]
+
+Have been looking at getting this config working correctly. It installs fine and can confirm that yabai is working. Need to put some work into getting the keybindings working correctly. There are some bindings in the config that I grabbed but they are not quiet what I am used to.
+
+Some resources that I used to get things working:
+-  https://github.com/heywoodlh/nixos-builds/blob/master/darwin/wm.nix
+- https://cmacr.ae/post/2020-05-13-yabai-module-in-nix-darwin-now-generally-available/
+
+This is a good start but still needs some tweaking
+
 ** TODO this is not working.... investigate why
 
 [[file:~/.configuration/nix/modules/home/linux/home.nix::home.file.".local/share/rofi/themes/base16-dracula.rasi".source =]]
@@ -6,58 +18,3 @@
 ** TODO Recreate the secrets dir
 
 Looks like the secrets directory got lost at some point. Find this and recreate so that some of this config works
-
-** TODO Setup the yabai window manager
-
-[[file:~/.configuration/nix/darwin-configuration.nix::TODO: Add config for yabai window manager. See todo.org for details]]
-
-Have already found some config that should work for this. At the moment yabai is not compiling correctly. Suspect this might have something to do with being on m1
-
-#+BEGIN_SRC
-services.yabai = {
-  enable = true;
-  package = pkgs.yabai;
-  config = {
-    mouse_follows_focus = "off";
-    focus_follows_mouse = "off";
-    window_placement = "second_child";
-    window_topmost = "off";
-    window_opacity = "off";
-    window_opacity_duration = 0.0;
-    window_shadow = "on";
-    window_border = "off";
-    window_border_placement = "inset";
-    window_border_width = 4;
-    window_border_radius = -1.0;
-    active_window_border_topmost = "off";
-    active_window_border_color = "0xff775759";
-    normal_window_border_color = "0xff505050";
-    insert_window_border_color = "0xffd75f5f";
-    active_window_opacity = 1.0;
-    normal_window_opacity = 0.9;
-    split_ratio = 0.5;
-    auto_balance = "on";
-    mouse_modifier = "fn";
-    mouse_action1 = "move";
-    mouse_action2 = "resize";
-    layout = "bsp";
-    top_padding = 5;
-    bottom_padding = 5;
-    left_padding = 5;
-    right_padding = 5;
-    window_gap = 5;
-  };
-  extraConfig = ''
-      # rules
-      yabai -m rule --add app='System Preferences' manage=off
-
-      # Any other arbitrary config here
-    '';
-};
-
-services.skhd = {
-  enable = true;
-  package = pkgs.skhd;
-  skhdConfig = builtins.readFile "${config_home}/dotfiles/skhdrc";
-};
-#+END_SRC

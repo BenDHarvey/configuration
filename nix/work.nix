@@ -36,12 +36,6 @@ with lib;
       enableZshIntegration = true;
       enableBashIntegration = true;
     };
-
-    direnv = {
-      enable = true;
-      enableBashIntegration = true;
-      enableZshIntegration = true;
-    };
   };
 
   # Store mails in ~/Mail
