@@ -38,6 +38,7 @@ in {
     "vlc"
     "postman"
     "alacritty"
+    "miro"
     #"ledger-live"
     #"caffeine"
   ];
@@ -45,5 +46,12 @@ in {
   homebrew.brews = [
     "nvm"
     "podman"
+    "k3d"
+    "pkg-config" # This is to get the node-canvas npm package running
+    "cairo" # This is to get the node-canvas npm package running
+    "pango" # This is to get the node-canvas npm package running
+    "jpeg" # This is to get the node-canvas npm package running
+    "giflib" # This is to get the node-canvas npm package running
+    "librsvg" # This is to get the node-canvas npm package running
   ];
 }
