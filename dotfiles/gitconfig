@@ -3,7 +3,7 @@
 [user]
 	email = ben@harvey.onl
 	name = Ben Harvey
-[includeIf "gitdir:~/Workspace/github.com/BMLOnline/"]
-  path = .gitconfig-bmlonline
+[includeIf "gitdir:~/Workspace/github.com/nib-group/"]
+  path = .gitconfig-nibgroup
 [init]
 	defaultBranch = main

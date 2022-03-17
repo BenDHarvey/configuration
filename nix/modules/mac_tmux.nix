@@ -1,8 +1,11 @@
+# Tmux config with some mac specific additions
 { config, lib, pkgs, ... }:
 
 with import <nixpkgs> { };
 
 {
+  home = { packages = with pkgs; [ reattach-to-user-namespace cocoapods ]; };
+
   programs = {
     tmux = {
       enable = true;
@@ -29,10 +32,11 @@ with import <nixpkgs> { };
         bind -r C-s set -g status
         #
         set-option -ga terminal-overrides ",xterm-256color:Tc"
-        set-option -g default-shell /home/ben/.nix-profile/bin/zsh
+        #set-option -g default-shell /usr/bin/zsh
         ## Default terminal is 256 colors
         set -g default-terminal "screen-256color"
         ## This option has issues when running in linux
+        set-option -g default-command "reattach-to-user-namespace -l zsh"
         #
         unbind c
         unbind '"'

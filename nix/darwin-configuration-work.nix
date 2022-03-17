@@ -1,3 +1,4 @@
+# Configuration for my work laptop
 { pkgs, lib, config, ... }:
 
 let home           = builtins.getEnv "HOME";
@@ -11,41 +12,40 @@ let home           = builtins.getEnv "HOME";
 in {
   imports = [
     <home-manager/nix-darwin>
-    ./osx/home.nix
+    ./modules/homebrew.nix # Note: This should be required in the darwin config and not in home-manager config
+#    ./modules/mac/wm.nix
   ];
 
   services = {
-    nix-daemon.enable = false;
+    nix-daemon.enable = true;
     activate-system.enable = true;
-  };
-
-  ## Need to keep this. nix-darwin seems to be missing from the path if it is removed
-  programs = {
-    zsh = {
-      enable = true;
-    };
   };
 
   nixpkgs = {
     config = {
       allowUnfree = true;
-      allowBroken = false;
-      allowInsecure = false;
-      allowUnsupportedSystem = true;
+      chromium = { enableWideVine = true; };
+      packageOverrides = pkgs: {
+        nur = import (builtins.fetchTarball
+          "https://github.com/nix-community/NUR/archive/master.tar.gz") {
+            inherit pkgs;
+          };
+      };
+      permittedInsecurePackages = [ "openssl-1.0.2u" ];
     };
   };
 
   users = {
-    users.ben = {
-      name = "ben";
-      home = "/Users/ben";
+    users."ben.harvey" = {
+      name = "ben.harvey";
+      home = "/Users/ben.harvey";
       shell = pkgs.zsh;
     };
   };
 
   home-manager = {
     useGlobalPkgs = true;
-    users.ben = "${home}/.config/nixpkgs/home.nix";
+    users."ben.harvey" = "${home}/.config/nixpkgs/home.nix";
   };
 
   system = {

@@ -17,17 +17,17 @@
       cl = "clear";
 
       # Nix aliases
-      #      nixre = "darwin-rebuild switch";
-      #      nixrb = "darwin-rebuild --rollback";
-      #      nixgc = "nix-collect-garbage -d";
-      #      nixq = "nix-env -qaP";
-      #      nixupgrade-darwin =
-      #        "sudo -i sh -c 'nix-channel --update && nix-env -iA nixpkgs.nix && launchctl remove org.nixos.nix-daemon && launchctl load /Library/LaunchDaemons/org.nixos.nix-daemon.plist'";
-      #      nixup = "nix-env -u";
+      nixre = "darwin-rebuild switch";
+      nixrb = "darwin-rebuild --rollback";
+      nixgc = "nix-collect-garbage -d";
+      nixq = "nix-env -qaP";
+      nixupgrade-darwin =
+        "sudo -i sh -c 'nix-channel --update && nix-env -iA nixpkgs.nix && launchctl remove org.nixos.nix-daemon && launchctl load /Library/LaunchDaemons/org.nixos.nix-daemon.plist'";
+      nixup = "nix-env -u";
 
-      dcu = "docker-compose up";
-      dcud = "docker-compose up -d";
-      dcd = "docker-compose down";
+#      dcu = "docker-compose up";
+#      dcud = "docker-compose up -d";
+#      dcd = "docker-compose down";
     };
 
     profileExtra = ''
@@ -37,6 +37,7 @@
       fi
 
       export PATH=/opt/homebrew/bin:$PATH
+
     '';
 
     initExtra = ''
@@ -70,6 +71,10 @@
       }
       zvm_after_init_commands+=(vi_mode_init)
       eval "$(zoxide init zsh)"
+
+      export NVM_DIR="$HOME/.nvm"
+      [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+      [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
                               '';
 
     plugins = with pkgs; [
