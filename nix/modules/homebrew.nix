@@ -20,18 +20,15 @@ in {
     "homebrew/cask-versions"
     "homebrew/core"
     "homebrew/services"
+    "d12frosted/emacs-plus"
   ];
 
   homebrew.masApps = {
     "1Password" = 1333542190;
-#    Numbers = 409203825;
-#    Pages = 409201541;
     Slack = 803453959;
     Vimari = 1480933944;
     Telegram = 747648890;
     Magnet = 441258766;
-#    GoodNotes = 1444383602;
-#    # Zoom
   };
 
   homebrew.casks = [
@@ -41,6 +38,7 @@ in {
     "miro"
     "ledger-live"
     "caffeine"
+    "gpg-suite-pinentry"
   ];
 
   homebrew.brews = [
@@ -50,6 +48,7 @@ in {
     "pkg-config" # This is to get the node-canvas npm package running
     "cairo" # This is to get the node-canvas npm package running
     "pango" # This is to get the node-canvas npm package running
+    "libpng" # This is to get the node-canvas npm package running
     "jpeg" # This is to get the node-canvas npm package running
     "giflib" # This is to get the node-canvas npm package running
     "librsvg" # This is to get the node-canvas npm package running
