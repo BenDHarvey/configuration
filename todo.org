@@ -1,4 +1,30 @@
 * Inbox
+** TODO Sort out the mail issues
+
+[[file:~/.configuration/nix/modules/mail.nix::{ config, lib, pkgs, ... }:]]
+
+There are currently some issues with this mail config. When trying to run the ~mbsync -a~ command we get an error
+
+Example of the error:
+
+#+begin_src bash
+/Users/ben.harvey/.mbsyncrc:7: keyword 'IMAPStore' is not recognized in MaildirStore sections
+/Users/ben.harvey/.mbsyncrc:8: keyword 'Host' is not recognized in MaildirStore sections
+/Users/ben.harvey/.mbsyncrc:9: keyword 'Port' is not recognized in MaildirStore sections
+/Users/ben.harvey/.mbsyncrc:10: keyword 'User' is not recognized in MaildirStore sections
+/Users/ben.harvey/.mbsyncrc:11: keyword 'PassCmd' is not recognized in MaildirStore sections
+/Users/ben.harvey/.mbsyncrc:12: keyword 'SSLType' is not recognized in MaildirStore sections
+/Users/ben.harvey/.mbsyncrc:13: keyword 'SSLVersions' is not recognized in MaildirStore sections
+/Users/ben.harvey/.mbsyncrc:14: keyword 'Channel' is not recognized in MaildirStore sections
+/Users/ben.harvey/.mbsyncrc:15: keyword 'Master' is not recognized in MaildirStore sections
+/Users/ben.harvey/.mbsyncrc:16: keyword 'Slave' is not recognized in MaildirStore sections
+/Users/ben.harvey/.mbsyncrc:17: keyword 'Patterns' is not recognized in MaildirStore sections
+/Users/ben.harvey/.mbsyncrc:18: keyword 'Expunge' is not recognized in MaildirStore sections
+/Users/ben.harvey/.mbsyncrc:19: keyword 'CopyArrivalDate' is not recognized in MaildirStore sections
+/Users/ben.harvey/.mbsyncrc:20: keyword 'Sync' is not recognized in MaildirStore sections
+/Users/ben.harvey/.mbsyncrc:21: keyword 'Create' is not recognized in MaildirStore sections
+/Users/ben.harvey/.mbsyncrc:22: keyword 'SyncState' is not recognized in MaildirStore sections
+#+end_src
 ** TODO Tweak the yabai config
 
 [[file:~/.configuration/nix/modules/mac/wm.nix::{config, pkgs, ...}:]]
@@ -11,10 +37,3 @@ Some resources that I used to get things working:
 
 This is a good start but still needs some tweaking
 
-** TODO this is not working.... investigate why
-
-[[file:~/.configuration/nix/modules/home/linux/home.nix::home.file.".local/share/rofi/themes/base16-dracula.rasi".source =]]
-
-** TODO Recreate the secrets dir
-
-Looks like the secrets directory got lost at some point. Find this and recreate so that some of this config works
