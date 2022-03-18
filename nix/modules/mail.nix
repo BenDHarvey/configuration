@@ -1,7 +1,5 @@
 { config, lib, pkgs, ... }:
 
-with import <nixpkgs> { };
-
 {
   home = { packages = with pkgs; [ mu isync ]; };
 

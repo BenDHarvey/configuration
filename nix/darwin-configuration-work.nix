@@ -13,7 +13,6 @@ in {
   imports = [
     <home-manager/nix-darwin>
     ./modules/homebrew.nix # Note: This should be required in the darwin config and not in home-manager config
-#    ./modules/mac/wm.nix
   ];
 
   services = {
@@ -32,6 +31,15 @@ in {
           };
       };
       permittedInsecurePackages = [ "openssl-1.0.2u" ];
+    };
+  };
+
+
+  # This needs to always be included
+  # If removed it will result in nix-darwin not being available on your path
+  programs = {
+    zsh = {
+      enable = true;
     };
   };
 

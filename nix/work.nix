@@ -1,6 +1,5 @@
 { config, pkgs, ... }:
 
-with import <nixpkgs> { };
 with builtins;
 with lib;
 
@@ -17,8 +16,6 @@ with lib;
     ./modules/git.nix
     ./modules/mac_tmux.nix
     ./modules/nodes.nix
-#    ./modules/mail.nix
-#    ./modules/alacritty.nix
   ];
 
   home = {

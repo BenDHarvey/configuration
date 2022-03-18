@@ -1,7 +1,5 @@
 { config, lib, pkgs, ... }:
 
-with import <nixpkgs> { };
-
 {
   programs = {
     alacritty = {

@@ -1,8 +1,6 @@
 # Tmux config with some mac specific additions
 { config, lib, pkgs, ... }:
 
-with import <nixpkgs> { };
-
 {
   home = { packages = with pkgs; [ reattach-to-user-namespace cocoapods ]; };
 
