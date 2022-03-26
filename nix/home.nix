@@ -14,7 +14,7 @@ with lib;
     ./modules/secrets.nix
     ./modules/neovim.nix
     ./modules/git.nix
-    ./modules/mac_tmux.nix
+    ./modules/tmux.nix
     ./modules/nodes.nix
     ./modules/kitty.nix
   ];
