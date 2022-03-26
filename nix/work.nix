@@ -16,6 +16,7 @@ with lib;
     ./modules/git.nix
     ./modules/mac_tmux.nix
     ./modules/nodes.nix
+    ./modules/kitty.nix
   ];
 
   home = {

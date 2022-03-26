@@ -1,9 +1,9 @@
 {config, pkgs, ...}:
 
 {
-  services.yabai.enable = true;
+
   services.yabai.package = pkgs.yabai;
-  services.yabai.enableScriptingAddition = false;
+  services.yabai.enableScriptingAddition = true;
   services.yabai.extraConfig = ''
     yabai -m config status_bar                   off
     yabai -m config status_bar_text_font         "Helvetica Neue:Bold:12.0"
@@ -189,13 +189,6 @@
     #ctrl + alt - a : yabai -m space --layout bsp
     #ctrl + alt - d : yabai -m space --layout float
 
-    # Custom stuff
-    :: passthrough
-    ctrl + cmd - p ; passthrough
-    passthrough < ctrl + cmd - p ; default
-
-    ctrl + cmd - s : $HOME/.choose-scripts/bwmenu
-
     # open terminal (disabled in favor of just using iTerm's hotkey stuff)
     #cmd - return : open -a iTerm.app
     #ctrl + alt - t : open -a iTerm.app
@@ -203,14 +196,8 @@
     # lock screen
     cmd - l : /System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend
 
-    ctrl + cmd - b : bash -c 'source ~/.bash.d/functions && battpop'
-    ctrl + cmd - d : bash -c 'source ~/.bash.d/functions && timepop
-
-    ctrl + cmd - w : zsh -c "fish -c wifi-toggle"
-
 #    cmd - space : zsh -c "bash ~/.local/bin/choose-launcher.sh"
     cmd + shift - f : zsh -c "bash ~/.local/bin/choose-file-manager.sh"
     cmd + shift - b : zsh -c "bash ~/.local/bin/choose-buku.sh"
-
   '';
 }

@@ -14,7 +14,7 @@
       gl = "git log --decorate --graph";
       gd = "git diff";
       vim = "nvim";
-      cl = "clear";
+      cl = "clear && ls";
 
       # Nix aliases
       nixre = "darwin-rebuild switch";
@@ -51,6 +51,13 @@
       dockerNuke() {
         docker stop $(docker ps -a -q)
         docker system prune -a -f
+        docker volume prune -f
+        docker network prune -f
+      }
+
+      dockerClean() {
+        docker stop $(docker ps -a -q)
+        docker volume prune -f
         docker volume prune -f
       }
 

@@ -39,6 +39,10 @@ in {
     "ledger-live"
     "caffeine"
     "gpg-suite-pinentry"
+    "discord"
+    "iterm2"
+    "visual-studio-code"
+    "kitty"
   ];
 
   homebrew.brews = [
