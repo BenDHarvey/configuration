@@ -14,7 +14,7 @@
       gl = "git log --decorate --graph";
       gd = "git diff";
       vim = "nvim";
-      cl = "clear && ls";
+      clear = "clear && ls";
 
       # Nix aliases
       nixre = "darwin-rebuild switch";
