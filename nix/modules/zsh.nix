@@ -13,6 +13,7 @@
       gs = "git status";
       gl = "git log --decorate --graph";
       gd = "git diff";
+      clean = "git clean -xdf";
       vim = "nvim";
       clear = "clear && ls";
 
