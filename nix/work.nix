@@ -17,6 +17,7 @@ with lib;
     ./modules/mac_tmux.nix
     ./modules/nodes.nix
     ./modules/kitty.nix
+    ./modules/dotfiles.nix
   ];
 
   home = {
@@ -24,8 +25,6 @@ with lib;
     homeDirectory = "/Users/ben.harvey";
 
     sessionVariables = { EDITOR = "emacs -nw"; };
-
-    file."./.ssh/config".source = ../dotfiles/ssh_config;
   };
 
   programs = {

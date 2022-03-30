@@ -35,6 +35,8 @@
       postgresql
 
       kubectl
+      glow
+      pandoc
     ];
   };
 }

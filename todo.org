@@ -1,4 +1,13 @@
 * Inbox
+** TODO Take a look at this blog
+
+[[file:~/.configuration/nix/modules/mac_tmux.nix::{ config, lib, pkgs, ... }:]]
+
+Take a look at this blog post
+https://ianthehenry.com/posts/how-to-configure-tmux/
+
+Looks like there are some good things that I could grab from this. Specifically the stuff around doing keyboard navigation
+
 ** TODO Sort out the mail issues
 
 [[file:~/.configuration/nix/modules/mail.nix::{ config, lib, pkgs, ... }:]]

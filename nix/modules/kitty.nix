@@ -7,7 +7,7 @@
   programs.kitty = {
     enable = true;
     settings = {
-      font_size = "14.0";
+      font_size = "13.0";
       font_family      = "FiraCode Nerd Font";
       bold_font        = "auto";
       italic_font      = "auto";
