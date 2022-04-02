@@ -50,5 +50,29 @@
 (add-to-list 'auto-mode-alist '("\\.make$" . makefile-gmake-mode))
 (add-to-list 'auto-mode-alist '("[._]bash.*" . shell-script-mode))
 
+
+;; SETUP PRETTIER
+;; The has been copied from here: https://www.cheng92.com/emacs/doom-emacs-with-org/
+;; Try and find / use a prettierrc file if it exists
+(defun +dev-maybe-use-prettier ()
+  "Enable prettier-js-mode if an rc file is located."
+  (if (locate-dominating-file default-directory ".prettierrc")
+      (prettier-js-mode +1)))
+(add-hook 'typescript-mode-hook '+dev-maybe-use-prettier)
+(add-hook 'js2-mode-hook '+dev-maybe-use-prettier)
+(add-hook 'web-mode-hook '+dev-maybe-use-prettier)
+(add-hook 'rjsx-mode-hook '+dev-maybe-use-prettier)
+
+;; Try and find / use a prettierjs file if it exists
+;;(defun maybe-use-prettierjs ()
+;;  "Enable prettier-js-mode if an rc file is located."
+;;  (if (locate-dominating-file default-directory "prettierrc.js")
+;;      (prettier-js-mode +1)))
+;;(add-hook 'typescript-mode-hook 'maybe-use-prettierjs)
+;;(add-hook 'js2-mode-hook 'maybe-use-prettierjs)
+;;(add-hook 'web-mode-hook 'maybe-use-prettierjs)
+;;(add-hook 'rjsx-mode-hook 'maybe-use-prettierjs)
+;; END PRETTIER SETUP
+
 (provide '+dev)
 ;;;

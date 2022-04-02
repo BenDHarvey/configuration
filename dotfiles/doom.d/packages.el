@@ -27,6 +27,7 @@
 ;;(package! slack)
 (package! code-review)
 (package! restclient)
+(package! prettier-js)
 
 (provide 'packages)
 ;;; packages.el ends here

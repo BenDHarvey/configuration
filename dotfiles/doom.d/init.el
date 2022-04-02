@@ -51,7 +51,7 @@
        ;;eshell            ; a consistent, cross-platform shell (WIP)
 
        ;; term              ; terminals in Emacs
-       vterm             ; another terminals in Emacs
+       ;;vterm             ; another terminals in Emacs
 
        :checkers
        syntax              ; tasing you for every semicolon you forget
