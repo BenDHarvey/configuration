@@ -41,6 +41,8 @@ in {
     "iterm2"
     "visual-studio-code"
     "kitty"
+    "alfred"
+    "google-chrome"
   ];
 
   homebrew.brews = [

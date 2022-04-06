@@ -11,6 +11,7 @@
         Path ~/Mail/ben@harvey.onl/
         Inbox ~/Mail/ben@harvey.onl/Inbox
         SubFolders Verbatim
+
         IMAPStore ben@harvey.onl-remote
         Host imap.fastmail.com
         Port 993
@@ -18,6 +19,7 @@
         PassCmd "sops -d --extract '[\"benHarveyOnl_fastmail\"][\"password\"]' ~/.configuration/secrets/mail.yaml"
         SSLType IMAPS
         SSLVersions TLSv1.2
+
         Channel ben@harvey.onl
         Master :ben@harvey.onl-remote:
         Slave :ben@harvey.onl-local:

@@ -18,6 +18,7 @@ with lib;
     ./modules/nodes.nix
     ./modules/kitty.nix
     ./modules/dotfiles.nix
+    ./modules/mail.nix
   ];
 
   home = {
