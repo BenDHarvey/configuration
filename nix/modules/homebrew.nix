@@ -43,6 +43,7 @@ in {
     "kitty"
     "alfred"
     "google-chrome"
+    "utm"
   ];
 
   homebrew.brews = [

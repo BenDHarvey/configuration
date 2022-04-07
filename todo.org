@@ -1,4 +1,9 @@
 * Inbox
+** TODO Get this working
+
+[[file:~/.configuration/nix/modules/work/rqp.nix::{ pkgs ? import <nixpkgs> {} }:]]
+
+Should be downloading the rqp tool and installing using nix and home-manager
 ** TODO Take a look at this blog
 
 [[file:~/.configuration/nix/modules/mac_tmux.nix::{ config, lib, pkgs, ... }:]]
