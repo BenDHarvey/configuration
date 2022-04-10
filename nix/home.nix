@@ -21,7 +21,7 @@ with lib;
 
   home = {
     username = "ben";
-    homeDirectory = "/Users/ben";
+    homeDirectory = "/home/ben";
 
     sessionVariables = { EDITOR = "emacs -nw"; };
 

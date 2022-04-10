@@ -50,5 +50,6 @@ in {
     "nvm"
     "podman"
     "k3d"
+    "ansible"
   ];
 }

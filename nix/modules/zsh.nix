@@ -62,7 +62,6 @@
       dockerClean() {
         docker stop $(docker ps -a -q)
         docker volume prune -f
-        docker volume prune -f
       }
 
       update() {
