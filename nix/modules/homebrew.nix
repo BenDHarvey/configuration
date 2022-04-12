@@ -44,6 +44,7 @@ in {
     "alfred"
     "google-chrome"
     "utm"
+    "growlnotify"
   ];
 
   homebrew.brews = [

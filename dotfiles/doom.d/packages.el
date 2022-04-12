@@ -28,6 +28,7 @@
 (package! code-review)
 (package! restclient)
 (package! prettier-js)
+(package! mu4e-alert)
 
 (provide 'packages)
 ;;; packages.el ends here

@@ -28,6 +28,9 @@
 
       # Doom aliases
       doom-sync = "~/.emacs.d/bin/doom upgrade && ~/.emacs.d/bin/doom sync";
+
+      # rqp
+      rqp = "~/apps/rqp";
     };
 
     profileExtra = ''
@@ -66,6 +69,14 @@
 
       update() {
         sudo apt update && sudo apt upgrade -y
+      }
+
+      ksauth () {
+        auth -s kaos -r poweruser -z sercure
+      }
+
+      auth () {
+        rqp auth -e ben.harvey@nib.com.au $@
       }
 
       ## zsh-vim-mode config

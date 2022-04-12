@@ -31,3 +31,6 @@ git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.emacs.d
 # Run inital nix generation
 darwin-rebuild switch
 home-manager switch -b backup # if there are existing file the backup flag is needed
+
+# Link the emacs app to the applications folder after it has been installed with homebrew
+ln -s /opt/homebrew/opt/emacs-plus@27/Emacs.app /Applications
