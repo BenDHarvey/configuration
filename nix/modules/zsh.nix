@@ -79,6 +79,11 @@
         rqp auth -e ben.harvey@nib.com.au $@
       }
 
+      git-nuke() {
+        git checkout .
+        git clean -xdf
+      }
+
       ## zsh-vim-mode config
       ZVM_VI_INSERT_ESCAPE_BINDKEY=jk
       ## Allow fzf to still work with vi-mode
