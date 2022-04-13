@@ -1,21 +1,17 @@
 # This file should be used to bootstrap a mac install of this configuration project
 
-# Install nix on the system
-# This comes straight from the nix website
-# https://nixos.org/download.html#nix-install-macos
-sh <(curl -L https://nixos.org/nix/install) # Run this command and then follow the prompts
+source ./shared_bootstrap_funcs.sh
 
-# Install nix-darwin on the system
-# This also comes straight from the nix-darwin github page
-nix-build https://github.com/LnL7/nix-darwin/archive/master.tar.gz -A installer
-./result/bin/darwin-installer
+clone_important_repos()
+install_nix()
+install_nix_darwin()
+install_homemanager()
+link_config_files()
+#install_homemanager_post()
+#install_emacs()
+#install_addition_linux_packages()
+#install_docker()
 
-# Install home-manager
-nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
-nix-channel --update
-
-export NIX_PATH=$HOME/.nix-defexpr/channels:/nix/var/nix/profiles/per-user/root/channels${NIX_PATH:+:$NIX_PATH}
-nix-shell '<home-manager>' -A install
 
 # Move configuration files for nix-darwin
 ln -s ~/.configuration/nix/darwin-configuration-work.nix /Users/ben.harvey/.nixpkgs/darwin-configuration.nix

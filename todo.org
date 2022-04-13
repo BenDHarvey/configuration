@@ -1,4 +1,9 @@
 * Inbox
+** TODO Finish moving this to shared functions
+
+[[file:~/.configuration/bootstrap_mac.sh::source ./shared_bootstrap_funcs.sh]]
+
+Started moving a lot of the shell scripts out into a shared functions file. A lot of the commands were shared between mac and linux setups. This file is not yet finished so will need some work
 ** TODO Get this working
 
 [[file:~/.configuration/nix/modules/work/rqp.nix::{ pkgs ? import <nixpkgs> {} }:]]
