@@ -79,6 +79,10 @@
         rqp auth -e ben.harvey@nib.com.au $@
       }
 
+      auth-kaos-contact() {
+        ~/apps/rqp auth -e ben.harvey@nib.com.au -s kaos -r poweruser -z contact
+      }
+
       git-nuke() {
         git checkout .
         git clean -xdf

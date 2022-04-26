@@ -28,6 +28,7 @@ in {
     Vimari = 1480933944;
     Telegram = 747648890;
     Magnet = 441258766;
+    Pages = 409201541;
   };
 
   homebrew.casks = [

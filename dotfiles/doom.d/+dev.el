@@ -74,5 +74,7 @@
 ;;(add-hook 'rjsx-mode-hook 'maybe-use-prettierjs)
 ;; END PRETTIER SETUP
 
+(set-formatter! 'black "black -q -S -")
+
 (provide '+dev)
 ;;;

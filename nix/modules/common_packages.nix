@@ -33,10 +33,17 @@
       fluxcd
       tmuxinator
       postgresql
+      packer
 
       kubectl
       glow
       pandoc
+
+      # Python stuff
+      black
+
+      # ruby
+      rbenv
     ];
   };
 }
