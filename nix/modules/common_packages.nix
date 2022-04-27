@@ -34,6 +34,7 @@
       tmuxinator
       postgresql
       packer
+      aws-sam-cli
 
       kubectl
       glow
