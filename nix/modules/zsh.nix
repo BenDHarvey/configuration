@@ -9,7 +9,7 @@
     enableCompletion = false;
     shellAliases = {
       ls = "ls -las";
-      emacs = "emacs -nw";
+      emacs = "emacsclient -t -a ''";
       gs = "git status";
       gl = "git log --decorate --graph";
       gd = "git diff";

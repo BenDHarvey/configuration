@@ -19,6 +19,7 @@ in {
   services = {
     nix-daemon.enable = true;
     activate-system.enable = true;
+    emacs.enable = true;
   };
 
   nixpkgs = {
