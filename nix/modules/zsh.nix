@@ -31,6 +31,11 @@
 
       # rqp
       rqp = "~/apps/rqp";
+
+      nib-pw = "sops -d --extract '[\"password\"]' ~/.secrets/nib.yaml";
+
+
+      nixre-test = "echo nib-pw | darwin-rebuild switch";
     };
 
     profileExtra = ''
@@ -76,7 +81,7 @@
       }
 
       auth () {
-        rqp auth -e ben.harvey@nib.com.au $@
+        ~/apps/rqp auth -e ben.harvey@nib.com.au $@
       }
 
       auth-kaos-contact() {

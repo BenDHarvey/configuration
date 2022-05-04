@@ -35,6 +35,7 @@
       postgresql
       packer
       aws-sam-cli
+      plantuml
 
       kubectl
       glow
