@@ -19,6 +19,7 @@ with lib;
     ./modules/kitty.nix
     ./modules/dotfiles.nix
     ./modules/mail.nix
+    ./modules/go.nix
 #    ./modules/work/rqp.nix
   ];
 

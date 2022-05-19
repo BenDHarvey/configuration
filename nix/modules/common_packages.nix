@@ -13,7 +13,6 @@
       htop
       terraform
       awscli
-      docker-compose
       ranger
       tree
       rsync

@@ -46,11 +46,11 @@ in {
     "google-chrome"
     "utm"
     "growlnotify"
+    "rancher"
   ];
 
   homebrew.brews = [
     "nvm"
-    "podman"
     "k3d"
     "ansible"
   ];

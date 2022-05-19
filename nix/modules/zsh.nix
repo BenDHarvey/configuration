@@ -17,6 +17,13 @@
       vim = "nvim";
       clear = "clear && ls";
 
+      # TODO: rancher SHOULD make these avaiable on the path but it does not.
+      #       Assuming this is due to the way that nix is manageing the shell and this config file
+      #       Manually add in these alias to get things working. Would be nice to come back
+      #       and take another look at this when time permits
+      docker = "~/.rd/bin/docker";
+      docker-compose = "~/.rd/bin/docker-compose";
+
       # Nix aliases
       nixre = "darwin-rebuild switch";
       nixrb = "darwin-rebuild --rollback";
@@ -33,9 +40,6 @@
       rqp = "~/apps/rqp";
 
       nib-pw = "sops -d --extract '[\"password\"]' ~/.secrets/nib.yaml";
-
-
-      nixre-test = "echo nib-pw | darwin-rebuild switch";
     };
 
     profileExtra = ''
