@@ -4,7 +4,9 @@
   services.emacs.enable = true;
 
   home = {
-
+    programs.emacs = {
+      enable = true;
+    };
 
     # Install the needed emacs packages
     packages = with pkgs; [
