@@ -3,8 +3,6 @@
 {
   home = {
     packages = with pkgs; [
-      zoom-us
-      slack
       postman
       kitty
       pinentry
