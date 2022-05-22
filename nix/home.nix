@@ -10,7 +10,8 @@ with lib;
   imports = [
     ./modules/zsh.nix
     ./modules/common_packages.nix
-    ./modules/emacs.nix
+    ./modules/linux_packages.nix
+    ./modules/emacs_linux.nix
     ./modules/secrets.nix
     ./modules/neovim.nix
     ./modules/git.nix
