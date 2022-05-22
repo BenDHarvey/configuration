@@ -83,13 +83,30 @@ link_config_files() {
   echo ""
 }
 
+install_regolith_desktop() {
+  echo "=== Starting regolith install ==="
+
+  wget -qO - https://regolith-linux.github.io/package-repo/regolith.key | sudo tee /etc/apt/trusted.gpg.d/regolith.asc
+
+  echo deb "[arch=amd64] https://regolith-release-ubuntu-jammy-amd64.s3.amazonaws.com jammy main" | \
+  sudo tee /etc/apt/sources.list.d/regolith.list
+
+  sudo apt update
+  sudo apt install regolith-desktop
+  sudo apt upgrade
+
+  echo ""
+  echo "=== Done ==="
+  echo ""
+}
+
 install_addition_linux_packages() {
-  echo "=== Starting link config files ==="
+  echo "=== Starting additional packages install ==="
 
   sudo add-apt-repository ppa:regolith-linux/release
   sudo apt-get update
  
-    sudo apt install -y i3-gaps \
+    sudo apt install -y \
         libsqlite3-dev \
         sqlite3 \
         gcc \
