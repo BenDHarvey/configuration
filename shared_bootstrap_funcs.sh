@@ -5,7 +5,7 @@ apt_update_system() {
 }
 
 clone_important_repos() {
-    git clone git@github.com:BenDHarvey/org.git ~/Documents/org
+  git clone git@github.com:BenDHarvey/org.git ~/Documents/org
 }
 
 install_nix() {
