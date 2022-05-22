@@ -6,7 +6,7 @@
     packages = with pkgs; [
       emacs
       emacs-all-the-icons-fonts
-      emacs27Packages.pdf-tools
+      #emacs27Packages.pdf-tools
     ];
 
     # Link doom config files to the correct location
