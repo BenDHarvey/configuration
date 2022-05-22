@@ -102,9 +102,6 @@ install_regolith_desktop() {
 
 install_addition_linux_packages() {
   echo "=== Starting additional packages install ==="
-
-  sudo add-apt-repository ppa:regolith-linux/release
-  sudo apt-get update
  
     sudo apt install -y \
         libsqlite3-dev \
