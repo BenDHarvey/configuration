@@ -1,8 +1,10 @@
 { config, lib, pkgs, ... }:
 
 {
+  services.emacs.enable = true;
+
   home = {
-    services.emacs.enable = true;
+
 
     # Install the needed emacs packages
     packages = with pkgs; [
