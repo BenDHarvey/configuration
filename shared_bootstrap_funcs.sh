@@ -5,8 +5,6 @@ apt_update_system() {
 }
 
 clone_important_repos() {
-    # clone some repos
-    git clone git@github.com:BenDHarvey/configuration.git ~/.configuration
     git clone git@github.com:BenDHarvey/org.git ~/Documents/org
 }
 
