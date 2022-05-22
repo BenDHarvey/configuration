@@ -92,8 +92,6 @@ install_addition_linux_packages() {
     sudo apt install -y i3-gaps \
         libsqlite3-dev \
         sqlite3 \
-        ruby \
-        ruby-dev \
         gcc \
         texlive-latex-base \
         texlive-fonts-recommended \
@@ -104,13 +102,6 @@ install_addition_linux_packages() {
   #https://github.com/guibou/nixGL/
   nix-channel --add https://github.com/guibou/nixGL/archive/main.tar.gz nixgl && nix-channel --update
   nix-env -iA nixgl.auto.nixGLDefault
-
-  # Install pgadmin4
-  curl https://www.pgadmin.org/static/packages_pgadmin_org.pub | sudo apt-key add
-  sudo sh -c 'echo "deb https://ftp.postgresql.org/pub/pgadmin/pgadmin4/apt/$(lsb_release -cs) pgadmin4 main" > /etc/apt/sources.list.d/pgadmin4.list && apt update'
-  sudo apt install pgadmin4 -y
-
-  sudo gem install rails
 
   echo ""
   echo "=== Done ==="
