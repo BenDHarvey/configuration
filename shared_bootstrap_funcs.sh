@@ -138,3 +138,13 @@ install_docker() {
   curl -fsSL https://get.docker.com -o get-docker.sh
   sh get-docker.sh
 }
+
+install_nvm() {
+  echo "=== Starting doom emacs install ==="
+
+  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+
+  echo ""
+  echo "=== Done ==="
+  echo ""
+}

@@ -45,6 +45,8 @@
 
       # ruby
       rbenv
+
+      vagrant
     ];
   };
 }
