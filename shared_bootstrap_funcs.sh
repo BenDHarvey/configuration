@@ -11,8 +11,10 @@ apt_update_system() {
 
 clone_important_repos() {
   echo "=== Starting repo clone ==="
-  git clone git@github.com:BenDHarvey/org.git ~/Documents/org
-  
+
+  make create-dirs
+  make clone-repos
+
   echo ""
   echo "=== Done ==="
   echo ""

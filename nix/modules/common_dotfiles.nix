@@ -4,7 +4,5 @@
 {
   home = {
     file."./.ssh/config".source = ../../dotfiles/ssh_config;
-    file.".yabairc".source = ../../dotfiles/yabirc;
-    file.".skhdrc".source = ../../dotfiles/skhdrc;
   };
 }
