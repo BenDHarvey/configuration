@@ -94,7 +94,7 @@ install_regolith_desktop() {
   sudo tee /etc/apt/sources.list.d/regolith.list
 
   sudo apt update
-  sudo apt install regolith-desktop
+  #sudo apt install regolith-desktop
   sudo apt upgrade
 
   echo ""
@@ -106,13 +106,14 @@ install_addition_linux_packages() {
   echo "=== Starting additional packages install ==="
  
     sudo apt install -y \
-        libsqlite3-dev \
-        sqlite3 \
-        gcc \
-        texlive-latex-base \
-        texlive-fonts-recommended \
-        texlive-fonts-extra \
-        texlive-latex-extra
+      nfs-common \
+      libsqlite3-dev \
+      sqlite3 \
+      gcc \
+      texlive-latex-base \
+      texlive-fonts-recommended \
+      texlive-fonts-extra \
+      texlive-latex-extra
 
   # nix has some trouble with loading graphicall app the fix is to install this
   #https://github.com/guibou/nixGL/

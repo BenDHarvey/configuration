@@ -31,3 +31,14 @@ clone-repos: ## Clone important repos that I use a lot
 	# BenDHarvey repos
 	git clone git@github.com:BenDHarvey/homelab.git ~/Workspace/github.com/BenDHarvey/homelab || true
   git clone git@github.com:BenDHarvey/org.git ~/Documents/org
+
+mount: ## Mount some important directories to local machine
+	# Make the nfs directories to make sure they are present before mounting
+	mkdir -p ~/nfs_mounts/media
+
+	# NFS will translate any root operations on the client to the nobody:nogroup credentials as a security measure.
+	# Therefore, we need to change the directory ownership to match those credentials.
+	sudo chown nobody:nogroup ~/nfs_mounts/media
+
+	# Use nfs to mount the directory
+	sudo mount 192.168.30.5:/mnt/HD/HD_b2/media ~/nfs_mounts/media
