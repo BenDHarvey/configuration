@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+i3-gapsusr/bin/env bash
 
 apt_update_system() {
   echo "=== Starting system update ==="
@@ -94,7 +94,7 @@ install_i3_gaps() {
   sudo tee /etc/apt/sources.list.d/regolith.list
 
   sudo apt update
-  sudo apt install i3-gaps
+  sudo apt install i3-gaps -y
   sudo apt upgrade
 
   echo ""

@@ -4,11 +4,11 @@
 set $mod Mod4
 
 # Configure border style <normal|1pixel|pixel xx|none|pixel>
-#new_window pixel 1
-#new_float normal
+new_window pixel 1
+new_float normal
 
 # Hide borders
-#hide_edge_borders none
+hide_edge_borders none
 
 # change borders
 #bindsym $mod+u border none
@@ -20,15 +20,13 @@ set $mod Mod4
 #font xft:URWGothic-Book 11
 font pango:monospace 8
 
-# start a $myTerm
-#set $myTerm st
-#bindsym $mod+Return exec $myTerm
+bindsym $mod+Return exec i3-sensible-terminal
 
 # kill focused window
 #bindsym $mod+Shift+c kill
 
 # start program launcher
-#bindsym $mod+Shift+Return exec --no-startup-id rofi -show run
+bindsym $mod+space exec --no-startup-id rofi -show run
 
 # launch categorized menu
 #bindsym $mod+' exec --no-startup-id morc_menu
@@ -108,7 +106,7 @@ bindsym $mod+e layout toggle split
 bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+#bindsym $mod+space focus mode_toggle
 
 # toggle sticky
 # bindsym $mod+Shift+s sticky toggle

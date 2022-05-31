@@ -19,6 +19,7 @@ with lib;
     ./modules/tmux_linux.nix
     ./modules/nodes.nix
     ./modules/mail.nix
+    ./modules/i3-gaps.nix
 #    ./modules/kitty.nix
   ];
 
