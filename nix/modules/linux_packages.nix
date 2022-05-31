@@ -9,6 +9,7 @@
       discord
       kube3d
       ansible
+      slack
     ];
   };
 }

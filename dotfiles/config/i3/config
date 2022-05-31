@@ -23,7 +23,7 @@ font pango:monospace 8
 bindsym $mod+Return exec i3-sensible-terminal
 
 # kill focused window
-#bindsym $mod+Shift+c kill
+bindsym $mod+Shift+q kill
 
 # start program launcher
 bindsym $mod+space exec --no-startup-id rofi -show run
@@ -284,17 +284,17 @@ gaps outer -4
 # Additionally, you can issue commands with the following syntax. This is useful to bind keys to changing the gap size.
 # gaps inner|outer current|all set|plus|minus <px>
 #
-# gaps inner all set 10
-# gaps outer all plus 5
+#gaps inner all set 10
+#gaps outer all plus 5
 
 # Smart gaps (gaps used if only more than one container on the workspace)
 #
-smart_gaps on
+#smart_gaps on
 
 # Smart borders (draw borders around container only if it is not the only container on this workspace)
 # on|no_gaps (on=always activate and no_gaps=only activate if the gap size to the edge of the screen is 0)
 #
-smart_borders on
+#smart_borders on
 
 # Press $mod+Shift+g to enter the gap mode.
 # Choose o or i for modifying outer/inner gaps.
