@@ -9,7 +9,9 @@
       discord
       kube3d
       ansible
+      vlc
       slack
+      flameshot
     ];
   };
 }
