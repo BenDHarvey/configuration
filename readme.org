@@ -1,3 +1,20 @@
 #+TITLE: Configuration
 
-This repo contains the majority of my personal workstation configuration. Its is a collection of files and scripts that I run on all my workstations machine. The goal of this repo is to completely setup a workstation with a single command. There are still a few items to work through to get to this point but in general it is getting close. Majority of the configuration is done using [[https://nixos.org/guides/install-nix.html][nix]] and the [[https://github.com/nix-community/home-manager][home-manager]] extension to manage my home directory.
+his repo contains the majority of my personal workstation configuration. Its is a collection of files and scripts that I run on all my workstations machine. The goal of this repo is to completely setup a workstation with a single command. There are still a few items to work through to get to this point but in general it is getting close. Majority of the configuration is done using [[https://nixos.org/guides/install-nix.html][nix]] and the [[https://github.com/nix-community/home-manager][home-manager]] extension to manage my home directory.
+
+
+## Base operating system
+
+There are two operating systems that this configuration has been tested on. These are outlined below.
+
+### Pop_OS - 20.04
+
+Any config that is prefixed with `linux_` assumes that it is running on pop_os. Configuration found here will likely run on most debian based operating systems though this has not been tested.
+
+### MacOS - Monterey
+
+Any config that is prefixed with `mac` assumes that it is running on MacOS monterey
+
+## Getting up and running
+
+There are two bootstrap scripts found here that can be used to get the system up and running. These will install any common packages as well as setup and do an initial run of nix and home-manager. There is a bootstrap script for linux and mac
