@@ -359,3 +359,6 @@ mode "$mode_gaps_outer" {
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
+
+# remap caps to crtl
+exec --no-startup-id /usr/bin/setxkbmap -option "ctrl:nocaps"
