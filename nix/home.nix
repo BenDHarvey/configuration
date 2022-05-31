@@ -20,6 +20,7 @@ with lib;
     ./modules/nodes.nix
     ./modules/mail.nix
     ./modules/i3-gaps.nix
+    ./modules/rofi.nix
 #    ./modules/kitty.nix
   ];
 
