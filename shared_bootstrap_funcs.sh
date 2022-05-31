@@ -85,8 +85,8 @@ link_config_files() {
   echo ""
 }
 
-install_regolith_desktop() {
-  echo "=== Starting regolith install ==="
+install_i3_gaps() {
+  echo "=== Starting i3-gaps install ==="
 
   wget -qO - https://regolith-linux.github.io/package-repo/regolith.key | sudo tee /etc/apt/trusted.gpg.d/regolith.asc
 
@@ -94,7 +94,7 @@ install_regolith_desktop() {
   sudo tee /etc/apt/sources.list.d/regolith.list
 
   sudo apt update
-  #sudo apt install regolith-desktop
+  sudo apt install i3-gaps
   sudo apt upgrade
 
   echo ""
