@@ -21,7 +21,7 @@ with lib;
     ./modules/mail.nix
     ./modules/i3-gaps.nix
     ./modules/rofi.nix
-#    ./modules/kitty.nix
+    ./modules/alacritty.nix
   ];
 
   home = {
