@@ -17,8 +17,9 @@ with lib;
     ./modules/mac_tmux.nix
     ./modules/nodes.nix
     ./modules/kitty.nix
+    ./modules/alacritty.nix
     ./modules/common_dotfiles.nix
-    ./modules/mac/dotfiles.nix
+#    ./modules/mac/dotfiles.nix
     ./modules/mail.nix
     ./modules/go.nix
 #    ./modules/work/rqp.nix

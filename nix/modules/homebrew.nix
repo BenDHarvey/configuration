@@ -47,6 +47,7 @@ in {
     "utm"
     "growlnotify"
     "rancher"
+    "alacritty"
   ];
 
   homebrew.brews = [

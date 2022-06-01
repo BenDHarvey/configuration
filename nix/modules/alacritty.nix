@@ -5,13 +5,13 @@
     alacritty = {
       enable = true;
       settings = {
-        font.size = 11;
+        font.size = 12;
         normal = {
           family = "Iosevka Nerd Font";
           style = "Regular";
         };
         mouse.hide_when_typing = true;
-        shell.program = "/home/ben/.nix-profile/bin/zsh";
+#        shell.program = "/home/ben/.nix-profile/bin/zsh";
       };
     };
   };
