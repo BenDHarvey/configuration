@@ -21,8 +21,6 @@
       #       Assuming this is due to the way that nix is manageing the shell and this config file
       #       Manually add in these alias to get things working. Would be nice to come back
       #       and take another look at this when time permits
-      docker = "~/.rd/bin/docker";
-      docker-compose = "~/.rd/bin/docker-compose";
 
       # Nix aliases
       nixre = "darwin-rebuild switch";
