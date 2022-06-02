@@ -22,6 +22,7 @@ with lib;
     ./modules/i3-gaps.nix
     ./modules/rofi.nix
     ./modules/alacritty.nix
+    ./modules/go.nix
   ];
 
   home = {

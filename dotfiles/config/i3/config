@@ -1,5 +1,10 @@
 # The base of this config comes from here: https://gitlab.com/dwt1/dotfiles/-/blob/master/.config/i3/config
 
+# Set some monitor configuration
+# TODO: This can likely be moved out that is something specific to this current workstation. This will not be the same for every place that this config might be used
+set $monitor_bottom HDMI-A-1
+set $monitor_top HDMI-A-0
+
 # Set mod key (Mod1=<Alt>, Mod4=<Super>)
 set $mod Mod4
 
@@ -112,6 +117,15 @@ set $ws6 6
 set $ws7 7
 set $ws8 8
 
+workspace $ws1 output $monitor_bottom
+workspace $ws2 output $monitor_top
+workspace $ws3 output $monitor_bottom
+workspace $ws4 output $monitor_top
+workspace $ws5 output $monitor_bottom
+workspace $ws6 output $monitor_top
+workspace $ws7 output $monitor_bottom
+workspace $ws8 output $monitor_top
+
 # switch to workspace
 bindsym $mod+1 workspace $ws1
 bindsym $mod+2 workspace $ws2
@@ -142,6 +156,8 @@ bindsym $mod+Shift+6 move container to workspace $ws6; workspace $ws6
 bindsym $mod+Shift+7 move container to workspace $ws7; workspace $ws7
 bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
 
+assign [class="slack"] $ws2
+
 # switch to workspace with urgent window automatically
 #for_window [urgent=latest] focus
 
@@ -152,7 +168,7 @@ bindsym $mod+Ctrl+r reload
 bindsym $mod+Shift+r restart
 
 # exit i3 (logs you out of your X session)
-# bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # Set shut down, restart and locking features
 bindsym $mod+0 mode "$mode_system"
@@ -269,6 +285,10 @@ exec --no-startup-id /usr/bin/setxkbmap -option "ctrl:nocaps"
 bar {
     status_command i3status
 }
+
+# TODO: Play around with this config and get working for all monitors
+# Start yabar
+#exec --no-startup-id yabar
 
 # Theme colors
 # class                   border  backgr. text    indic.  child_border

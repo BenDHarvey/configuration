@@ -13,6 +13,7 @@
       slack
       flameshot
 #      zoom-us
+      yabar
     ];
   };
 }
