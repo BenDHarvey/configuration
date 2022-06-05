@@ -47,6 +47,8 @@
       rbenv
 
       vagrant
+      argocd
+      expect
     ];
   };
 }

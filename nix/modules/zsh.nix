@@ -83,6 +83,8 @@
       }
 
       auth () {
+        echo $(sops -d --extract '["nib"]["domain"]' $HOME/.configuration/secrets/passwords.yml) | xclip -sel clip
+
         ~/apps/rqp auth -e ben.harvey@nib.com.au $@
       }
 

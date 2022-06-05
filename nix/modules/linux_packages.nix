@@ -12,8 +12,9 @@
       vlc
       slack
       flameshot
-#      zoom-us
+      zoom-us
       yabar
+      cmus
     ];
   };
 }

@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+# Found this here: https://github.com/Airblader/dotfiles-manjaro/blob/master/.i3/i3exit
+
+lock() {
+    $HOME/.config/i3lock/i3lock.sh
+}
+
+case "$1" in
+    lock)
+        lock
+        ;;
+    logout)
+        i3-msg exit
+        ;;
+    suspend)
+        systemctl suspend
+        ;;
+    hibernate)
+        systemctl hibernate
+        ;;
+    reboot)
+        systemctl reboot
+        ;;
+    shutdown)
+        systemctl poweroff
+        ;;
+    *)
+        echo "Usage: $0 [lock|logout|suspend|hibernate|reboot|shutdown]"
+        exit 2
+esac
+
+exit 0
