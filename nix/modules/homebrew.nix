@@ -41,12 +41,10 @@ in {
     "discord"
     "iterm2"
     "visual-studio-code"
-    "kitty"
     "alfred"
     "google-chrome"
     "utm"
     "growlnotify"
-    "rancher"
     "alacritty"
   ];
 
@@ -54,5 +52,6 @@ in {
     "nvm"
     "k3d"
     "ansible"
+    "podman"
   ];
 }
