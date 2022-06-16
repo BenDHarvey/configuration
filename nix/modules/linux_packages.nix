@@ -15,6 +15,7 @@
       zoom-us
       yabar
       cmus
+      rhythmbox
     ];
   };
 }
