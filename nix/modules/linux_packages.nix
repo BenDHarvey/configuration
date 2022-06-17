@@ -14,8 +14,6 @@
       flameshot
       zoom-us
       yabar
-      cmus
-      rhythmbox
     ];
   };
 }
