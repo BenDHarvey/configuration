@@ -49,6 +49,8 @@
       vagrant
       argocd
       expect
+
+      _1password
     ];
   };
 }
