@@ -51,6 +51,10 @@
       expect
 
       _1password
+
+      docker-compose
+
+      openssl
     ];
   };
 }
