@@ -1,4 +1,4 @@
-i3-gapsusr/bin/env bash
+# /bin/bash
 
 apt_update_system() {
   echo "=== Starting system update ==="
@@ -158,4 +158,78 @@ install_nvm() {
   echo ""
   echo "=== Done ==="
   echo ""
+}
+
+# Install 1password cli so that we can download ssh keys
+install_onepassword() {
+  # NOTE: This is copied straight from here: https://developer.1password.com/docs/cli/get-started#install
+
+  curl -sS https://downloads.1password.com/linux/keys/1password.asc | \
+  sudo gpg --dearmor --output /usr/share/keyrings/1password-archive-keyring.gpg
+
+  echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/1password-archive-keyring.gpg] https://downloads.1password.com/linux/debian/$(dpkg --print-architecture) stable main" |
+  sudo tee /etc/apt/sources.list.d/1password.list
+
+  sudo mkdir -p /etc/debsig/policies/AC2D62742012EA22/
+  curl -sS https://downloads.1password.com/linux/debian/debsig/1password.pol | \
+  sudo tee /etc/debsig/policies/AC2D62742012EA22/1password.pol
+  sudo mkdir -p /usr/share/debsig/keyrings/AC2D62742012EA22
+  curl -sS https://downloads.1password.com/linux/keys/1password.asc | \
+  sudo gpg --dearmor --output /usr/share/debsig/keyrings/AC2D62742012EA22/debsig.gpg
+
+  sudo apt update && sudo apt install 1password-cli
+
+  op --version
+}
+
+# Use 1password to fetch ssh keys and put in the correct place
+download_ssh_keys() {
+  # NOTE: !!!!! https://1password.community/discussion/128054/how-to-export-ssh-private-key-using-cli
+  #       Currently an issue with the way that op downloads the key files. This is being looked at but is currently not working
+  #       Have manually moved the keys for now
+
+  # Create a temp dir for exporting keys
+  echo "=== Creating tmp dir for keys ==="
+  mkdir -p ~/tmp
+
+  # Make sure we have a session token
+  echo "=== Login in to 1password ==="
+  eval $(op signin)
+
+  # Create a temp key. This is a hacky way of making sure that the ~/.ssh/ dir exists and has the correct permissions
+  echo "=== Creating a temp ssh key ==="
+  ssh-keygen -q -t rsa -N '' -f ~/.ssh/temp_id_rsa <<<y >/dev/null 2>&1
+
+  echo "=== Current ssh keys ==="
+  ls -las ~/.ssh/
+
+  echo "=== Downloading keys from 1password ==="
+  # Personal keys
+  op read op://homelab/ben_personal/'private key' >> ~/tmp/ben_personal_id_25519
+  op read op://homelab/ben_personal/'public key' >> ~/tmp/ben_personal_id_25519.pub
+
+  # Github deploy keys
+  op read op://homelab/github_deploy_key/'private key' >> ~/tmp/gh_deploy_id_25519
+  op read op://homelab/github_deploy_key/'public key' >> ~/tmp/gh_deploy_id_25519.pub
+  ls -las ~/tmp
+
+  echo "=== Moving keys into the correct dir ==="
+  cp ~/tmp/ben_personal_id_25519 ~/.ssh/
+  cp ~/tmp/ben_personal_id_25519.pub ~/.ssh/
+
+  cp ~/tmp/gh_deploy_id_25519 ~/.ssh/
+  cp ~/tmp/gh_deploy_id_25519.pub ~/.ssh/
+
+  echo "=== Setting permission of ssh keys ==="
+  chmod 600 ~/.ssh/ben_personal_id_25519.pub
+  chmod 600 ~/.ssh/gh_deploy_id_25519.pub
+  chmod 600 ~/.ssh/ben_personal_id_25519
+  chmod 600 ~/.ssh/gh_deploy_id_25519
+
+  echo "=== Cleaning up temp items ==="
+  rm -rf ~/tmp
+  rm -f ~/.ssh/temp_id_rsa.pub
+  rm -f ~/.ssh/temp_id_rsa
+
+  ls -las ~/.ssh/
 }

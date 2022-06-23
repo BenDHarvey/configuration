@@ -12,6 +12,7 @@
       nodePackages.typescript-language-server
       nodePackages.js-beautify
       nodePackages.lerna
+      nodePackages.prisma
       yarn
     ];
 
