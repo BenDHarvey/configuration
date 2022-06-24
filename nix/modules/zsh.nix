@@ -76,7 +76,14 @@
       }
 
       update() {
-        sudo apt update && sudo apt upgrade -y
+        echo $(sops -d --extract '["sudo_password"]' ~/.secrets/personal.yaml) | sudo -S apt update && sudo apt upgrade -y
+        echo $(sops -d --extract '["sudo_password"]' ~/.secrets/personal.yaml) | sudo -S apt autoremove -y
+      }
+
+      update-all() {
+        echo $(sops -d --extract '["sudo_password"]' ~/.secrets/personal.yaml) | sudo -S apt update && sudo apt upgrade -y
+        echo $(sops -d --extract '["sudo_password"]' ~/.secrets/personal.yaml) | sudo -S apt autoremove -y
+        home-manager switch -b backup
       }
 
       ksauth () {

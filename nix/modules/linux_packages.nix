@@ -14,7 +14,6 @@
       flameshot
       zoom-us
       yabar
-      cmus
     ];
   };
 }

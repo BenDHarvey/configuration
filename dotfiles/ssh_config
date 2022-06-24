@@ -1,2 +1,6 @@
-IdentityFile ~/.ssh/id_rsa_personal
 IdentitiesOnly yes
+
+Host *
+    AddKeysToAgent yes
+    IdentityFile ~/.ssh/ben_personal_id_25519
+    IdentityFile ~/.ssh/id_rsa_personal

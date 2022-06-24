@@ -35,20 +35,20 @@
       packer
       aws-sam-cli
       plantuml
-
       kubectl
       glow
       pandoc
-
       # Python stuff
       black
-
       # ruby
       rbenv
-
       vagrant
       argocd
       expect
+      _1password
+      docker-compose
+      openssl
+      flyctl
     ];
   };
 }

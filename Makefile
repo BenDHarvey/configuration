@@ -31,6 +31,7 @@ clone-repos: ## Clone important repos that I use a lot
 	# BenDHarvey repos
 	git clone git@github.com:BenDHarvey/homelab.git ~/Workspace/github.com/BenDHarvey/homelab || true
   git clone git@github.com:BenDHarvey/org.git ~/Documents/org
+  git clone git@github.com:BenDHarvey/secrets.git ~/.secrets
 
 mount: ## Mount some important directories to local machine
 	# Make the nfs directories to make sure they are present before mounting
