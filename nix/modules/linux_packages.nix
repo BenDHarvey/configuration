@@ -12,8 +12,6 @@
       vlc
       slack
       flameshot
-      zoom-us
-      yabar
     ];
   };
 }
