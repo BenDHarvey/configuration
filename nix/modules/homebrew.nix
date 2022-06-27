@@ -23,7 +23,6 @@ in {
   ];
 
   homebrew.masApps = {
-    "1Password" = 1333542190;
     Slack = 803453959;
     Vimari = 1480933944;
     Telegram = 747648890;
@@ -46,6 +45,7 @@ in {
     "utm"
     "growlnotify"
     "alacritty"
+    "1password"
   ];
 
   homebrew.brews = [
