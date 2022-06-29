@@ -45,7 +45,6 @@
       vagrant
       argocd
       expect
-      _1password
       docker-compose
       openssl
       flyctl

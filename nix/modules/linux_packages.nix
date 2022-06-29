@@ -12,6 +12,7 @@
       vlc
       slack
       flameshot
+      _1password
     ];
   };
 }
