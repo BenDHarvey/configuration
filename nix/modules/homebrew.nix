@@ -20,6 +20,7 @@ in {
     "homebrew/cask-versions"
     "homebrew/core"
     "homebrew/services"
+    "1password/tap"
   ];
 
   homebrew.masApps = {
@@ -46,7 +47,7 @@ in {
     "growlnotify"
     "alacritty"
     "1password"
-    "1password/tap/1password-cli"
+    "1password-cli"
   ];
 
   homebrew.brews = [
