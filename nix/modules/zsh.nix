@@ -16,7 +16,6 @@
       clean = "git clean -xdf";
       vim = "nvim";
       clear = "clear && ls";
-      docker = "podman";
 
       # TODO: rancher SHOULD make these avaiable on the path but it does not.
       #       Assuming this is due to the way that nix is manageing the shell and this config file

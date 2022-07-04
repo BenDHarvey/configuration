@@ -21,6 +21,7 @@ in {
     "homebrew/core"
     "homebrew/services"
     "1password/tap"
+    "d12frosted/emacs-plus"
   ];
 
   homebrew.masApps = {
@@ -48,12 +49,13 @@ in {
     "alacritty"
     "1password"
     "1password-cli"
+    "docker"
   ];
 
   homebrew.brews = [
     "nvm"
     "k3d"
     "ansible"
-    "podman"
+    "emacs-plus"
   ];
 }
