@@ -4,4 +4,5 @@
 # --
 it("", () => {
   console.log("Should do the thing")
+  expect(1).toBe(2);
 })

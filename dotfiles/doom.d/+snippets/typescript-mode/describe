@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name: it
+# key: it
+# --
+describe("something", () => {
+  it("", () => {
+    console.log("Should do the thing")
+    expect(1).toBe(2);
+  })
+})

@@ -13,6 +13,7 @@
       nodePackages.js-beautify
       nodePackages.lerna
       nodePackages.prisma
+      nodePackages.yalc
       yarn
     ];
 
