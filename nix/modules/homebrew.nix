@@ -57,5 +57,6 @@ in {
     "k3d"
     "ansible"
     "emacs-plus"
+    "swiftlint"
   ];
 }

@@ -90,7 +90,9 @@
         +lsp
         +onsave)        ; all(hope(abandon(ye(who(enter(here))))))
        markdown          ; writing docs for people to ignore
-       nix
+       (nix
+        +lsp
+        +onsave)        ; all(hope(abandon(ye(who(enter(here))))))
        (org              ; organize your plain life in plain text
         +dragndrop       ; drag & drop files/images into org buffers
         +present)        ; using org-mode for presentations
@@ -107,9 +109,9 @@
        sh                ; she sells {ba,z,fi}sh shells on the C xor
        (web
         +lsp)               ; the tubes
-       (dart
-        +lsp
-        +flutter)
+;;       (dart
+;;        +lsp
+;;        +flutter)
 
        :email
        (mu4e
