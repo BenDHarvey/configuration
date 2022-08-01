@@ -19,8 +19,8 @@
 ;;
 ;;; Code:
 
-(add-to-list 'load-path "~/.nix-profile/share/emacs/site-lisp/mu4e/")
-(mu4e-alert-set-default-style 'growl)
+;;(add-to-list 'load-path "~/.nix-profile/share/emacs/site-lisp/mu4e/")
+;;(mu4e-alert-set-default-style 'growl)
 
 (use-package mu4e
   :defer 20 ; Wait until 20 seconds after startup

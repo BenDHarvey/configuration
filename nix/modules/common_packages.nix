@@ -48,6 +48,7 @@
       docker-compose
       openssl
       flyctl
+      ngrok
     ];
   };
 }
