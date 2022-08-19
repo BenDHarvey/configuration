@@ -37,7 +37,6 @@
     videoDrivers = [ "amdgpu" ];
    
     desktopManager = {
-      default = "xfce";
       xterm.enable = false;
       xfce = {
         enable = true;
@@ -45,7 +44,21 @@
         enableXfwm = false;
       };
     };
-    windowManager.i3.enable = true;
+
+    displayManager = {
+      defaultSession= "xfce+i3";
+    };
+
+    windowManager = {
+      i3.enable = true;
+      i3.package = pkgs.i3-gaps;
+      i3.extraPackages = with pkgs; [
+        dmenu
+        i3status-rust
+        i3-gaps
+        rofi
+      ];
+    };
 
     xkbOptions = "ctrl:nocaps"; 
   };
