@@ -1,5 +1,11 @@
 #+TITLE: Configuration
 
+* DEPRECIATED
+
+Have more all nix config and dot files to https://github.com/BenDHarvey/nix-config
+
+* Readme
+
 his repo contains the majority of my personal workstation configuration. Its is a collection of files and scripts that I run on all my workstations machine. The goal of this repo is to completely setup a workstation with a single command. There are still a few items to work through to get to this point but in general it is getting close. Majority of the configuration is done using [[https://nixos.org/guides/install-nix.html][nix]] and the [[https://github.com/nix-community/home-manager][home-manager]] extension to manage my home directory.
 
 ## Base operating system
